@@ -5,13 +5,6 @@ CSE-CIC-DDoS2019 dataset (51.2 GB, 70.4 million flow records).
 
 Team 17, 23AID302 Big Data Analytics, Amrita Vishwa Vidyapeetham, Coimbatore
 
-| Name | Register number |
-|---|---|
-| Nirmal A R | CB.AI.U4AID24001 |
-| Dheeraj Kumar G | CB.AI.U4AID24017 |
-| Meera S Raj | CB.AI.U4AID24031 |
-| Vishnu Vardhan N | CB.AI.U4AID24072 |
-
 Report: [docs/report.pdf](docs/report.pdf) · Slides: [docs/presentation.pptx](docs/presentation.pptx)
 
 ## What the project does
@@ -182,18 +175,3 @@ and stand in for a human analyst. Everything runs on one machine, so Kafka has o
 one replica. The live job scores every connection with all five models so the dashboards can compare
 them; the speed figures come from `EfficiencyCheck`, which runs only the model each connection is
 routed to. The system detects attacks; it does not block them.
-
-## References
-
-The main ones (the full list of 26 is in the report):
-
-- I. Sharafaldin, A. H. Lashkari, S. Hakak, A. A. Ghorbani, "Developing Realistic Distributed Denial of
-  Service (DDoS) Attack Dataset and Taxonomy," IEEE ICCST, 2019.
-- M. J. Awan et al., "Real-Time DDoS Attack Detection System Using Big Data Approach," Sustainability,
-  13(19), 10743, 2021.
-- F. Pendlebury et al., "TESSERACT: Eliminating Experimental Bias in Malware Classification across
-  Space and Time," USENIX Security, 2019.
-- R. Jordaney et al., "Transcend: Detecting Concept Drift in Malware Classification Models," USENIX
-  Security, 2017.
-- L. Yang et al., "CADE: Detecting and Explaining Concept Drift Samples for Security Applications,"
-  USENIX Security, 2021.
