@@ -17,3 +17,6 @@ logs/RuleGroups*
 logs/look.txt
 logs/all-tests-done.txt
 logs/router-day2-done.txt
+logs/ThroughputCheck.txt
+logs/ThroughputCheck200.txt
+docs/cleaning-report.md
