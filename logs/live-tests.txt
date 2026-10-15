@@ -1,0 +1,3 @@
+NOTICE:  table "live_learning_router75" does not exist, skipping
+NOTICE:  table "live_learning_routerfull" does not exist, skipping
+NOTICE:  table "live_learning_specialistfull" does not exist, skipping

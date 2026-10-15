@@ -1,0 +1,530 @@
+26/10/03 08:26:08 INFO SparkContext: Running Spark version 3.5.5
+26/10/03 08:26:08 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/10/03 08:26:08 INFO SparkContext: Java version 11.0.26
+26/10/03 08:26:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/03 08:26:09 INFO ResourceUtils: ==============================================================
+26/10/03 08:26:09 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/03 08:26:09 INFO ResourceUtils: ==============================================================
+26/10/03 08:26:09 INFO SparkContext: Submitted application: TrainModelsWhole
+26/10/03 08:26:09 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/03 08:26:09 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/10/03 08:26:09 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/03 08:26:09 INFO SecurityManager: Changing view acls to: root
+26/10/03 08:26:09 INFO SecurityManager: Changing modify acls to: root
+26/10/03 08:26:09 INFO SecurityManager: Changing view acls groups to: 
+26/10/03 08:26:09 INFO SecurityManager: Changing modify acls groups to: 
+26/10/03 08:26:09 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/03 08:26:09 INFO Utils: Successfully started service 'sparkDriver' on port 35453.
+26/10/03 08:26:09 INFO SparkEnv: Registering MapOutputTracker
+26/10/03 08:26:09 INFO SparkEnv: Registering BlockManagerMaster
+26/10/03 08:26:09 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/03 08:26:09 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/03 08:26:09 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/03 08:26:09 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-6887f527-f245-464b-bf7c-614395cd93ac
+26/10/03 08:26:09 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/10/03 08:26:09 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/03 08:26:10 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/03 08:26:10 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/03 08:26:10 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:35453/jars/ddos-detection.jar with timestamp 1791015968933
+26/10/03 08:26:10 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/10/03 08:26:10 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.6:7077 after 46 ms (0 ms spent in bootstraps)
+26/10/03 08:26:10 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261003082610-0003
+26/10/03 08:26:10 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261003082610-0003/0 on worker-20261003065052-172.18.0.7-36737 (172.18.0.7:36737) with 3 core(s)
+26/10/03 08:26:10 INFO StandaloneSchedulerBackend: Granted executor ID app-20261003082610-0003/0 on hostPort 172.18.0.7:36737 with 3 core(s), 2.4 GiB RAM
+26/10/03 08:26:10 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261003082610-0003/1 on worker-20261003065052-172.18.0.7-36737 (172.18.0.7:36737) with 3 core(s)
+26/10/03 08:26:10 INFO StandaloneSchedulerBackend: Granted executor ID app-20261003082610-0003/1 on hostPort 172.18.0.7:36737 with 3 core(s), 2.4 GiB RAM
+26/10/03 08:26:10 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33355.
+26/10/03 08:26:10 INFO NettyBlockTransferService: Server created on spark-master:33355
+26/10/03 08:26:10 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/03 08:26:10 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 33355, None)
+26/10/03 08:26:10 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:33355 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 33355, None)
+26/10/03 08:26:10 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 33355, None)
+26/10/03 08:26:10 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 33355, None)
+26/10/03 08:26:10 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261003082610-0003/1 is now RUNNING
+26/10/03 08:26:10 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261003082610-0003/0 is now RUNNING
+26/10/03 08:26:11 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20261003082610-0003.inprogress
+26/10/03 08:26:11 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+Settings chosen by tuning: random forest maxDepth=16, numTrees=100; gradient-boosted trees maxDepth=6, maxIter=40
+
+=== Experiment: standard (all rows)
+  training on all 71,334 benign + 9,412,710 attack rows
+26/10/03 08:27:01 WARN TaskSetManager: Lost task 6.0 in stage 43.0 (TID 59) (172.18.0.7 executor 1): java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.nio.HeapByteBuffer.<init>(Unknown Source)
+	at java.base/java.nio.ByteBuffer.allocate(Unknown Source)
+	at org.apache.spark.sql.execution.columnar.ColumnBuilder$.ensureFreeSpace(ColumnBuilder.scala:167)
+	at org.apache.spark.sql.execution.columnar.BasicColumnBuilder.appendFrom(ColumnBuilder.scala:73)
+	at org.apache.spark.sql.execution.columnar.ComplexColumnBuilder.org$apache$spark$sql$execution$columnar$NullableColumnBuilder$$super$appendFrom(ColumnBuilder.scala:93)
+	at org.apache.spark.sql.execution.columnar.NullableColumnBuilder.appendFrom(NullableColumnBuilder.scala:61)
+	at org.apache.spark.sql.execution.columnar.NullableColumnBuilder.appendFrom$(NullableColumnBuilder.scala:54)
+	at org.apache.spark.sql.execution.columnar.ComplexColumnBuilder.appendFrom(ColumnBuilder.scala:93)
+	at org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer$$anon$1.next(InMemoryRelation.scala:80)
+	at org.apache.spark.sql.execution.columnar.CachedRDDBuilder$$anon$2.next(InMemoryRelation.scala:290)
+	at org.apache.spark.sql.execution.columnar.CachedRDDBuilder$$anon$2.next(InMemoryRelation.scala:287)
+	at org.apache.spark.storage.memory.PartiallyUnrolledIterator.next(MemoryStore.scala:785)
+	at org.apache.spark.serializer.SerializationStream.writeAll(Serializer.scala:140)
+	at org.apache.spark.serializer.SerializerManager.dataSerializeStream(SerializerManager.scala:177)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$3(BlockManager.scala:1606)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$3$adapted(BlockManager.scala:1604)
+	at org.apache.spark.storage.BlockManager$$Lambda$1627/0x0000000840dbb840.apply(Unknown Source)
+	at org.apache.spark.storage.DiskStore.put(DiskStore.scala:89)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$1(BlockManager.scala:1604)
+	at org.apache.spark.storage.BlockManager$$Lambda$678/0x00000008405d0040.apply(Unknown Source)
+	at org.apache.spark.storage.BlockManager.org$apache$spark$storage$BlockManager$$doPut(BlockManager.scala:1524)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:1588)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:1389)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdateRDDBlock(BlockManager.scala:1343)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:379)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.executor.Executor$TaskRunner$$Lambda$584/0x0000000840575c40.apply(Unknown Source)
+
+26/10/03 08:27:02 ERROR TaskSchedulerImpl: Lost executor 1 on 172.18.0.7: Command exited with code 52
+26/10/03 08:27:02 WARN TaskSetManager: Lost task 8.0 in stage 43.0 (TID 61) (172.18.0.7 executor 1): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:27:02 WARN TaskSetManager: Lost task 7.0 in stage 43.0 (TID 60) (172.18.0.7 executor 1): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:27:02 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_4 !
+26/10/03 08:27:02 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_2 !
+26/10/03 08:27:02 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_0 !
+26/10/03 08:27:09 ERROR TaskSchedulerImpl: Lost executor 0 on 172.18.0.7: Command exited with code 52
+26/10/03 08:27:09 WARN TaskSetManager: Lost task 6.2 in stage 43.0 (TID 68) (172.18.0.7 executor 0): ExecutorLostFailure (executor 0 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:27:09 WARN TaskSetManager: Lost task 7.1 in stage 43.0 (TID 66) (172.18.0.7 executor 0): ExecutorLostFailure (executor 0 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:27:09 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_5 !
+26/10/03 08:27:09 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_9 !
+26/10/03 08:27:09 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_10 !
+26/10/03 08:27:09 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_11 !
+26/10/03 08:27:09 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_1 !
+26/10/03 08:27:09 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_3 !
+26/10/03 08:27:40 WARN TaskSetManager: Lost task 1.0 in stage 44.0 (TID 77) (172.18.0.7 executor 2): java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.nio.HeapByteBuffer.<init>(Unknown Source)
+	at java.base/java.nio.ByteBuffer.allocate(Unknown Source)
+	at org.apache.spark.sql.execution.columnar.ColumnBuilder$.ensureFreeSpace(ColumnBuilder.scala:167)
+	at org.apache.spark.sql.execution.columnar.BasicColumnBuilder.appendFrom(ColumnBuilder.scala:73)
+	at org.apache.spark.sql.execution.columnar.ComplexColumnBuilder.org$apache$spark$sql$execution$columnar$NullableColumnBuilder$$super$appendFrom(ColumnBuilder.scala:93)
+	at org.apache.spark.sql.execution.columnar.NullableColumnBuilder.appendFrom(NullableColumnBuilder.scala:61)
+	at org.apache.spark.sql.execution.columnar.NullableColumnBuilder.appendFrom$(NullableColumnBuilder.scala:54)
+	at org.apache.spark.sql.execution.columnar.ComplexColumnBuilder.appendFrom(ColumnBuilder.scala:93)
+	at org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer$$anon$1.next(InMemoryRelation.scala:80)
+	at org.apache.spark.sql.execution.columnar.CachedRDDBuilder$$anon$2.next(InMemoryRelation.scala:290)
+	at org.apache.spark.sql.execution.columnar.CachedRDDBuilder$$anon$2.next(InMemoryRelation.scala:287)
+	at org.apache.spark.storage.memory.PartiallyUnrolledIterator.next(MemoryStore.scala:785)
+	at org.apache.spark.serializer.SerializationStream.writeAll(Serializer.scala:140)
+	at org.apache.spark.serializer.SerializerManager.dataSerializeStream(SerializerManager.scala:177)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$3(BlockManager.scala:1606)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$3$adapted(BlockManager.scala:1604)
+	at org.apache.spark.storage.BlockManager$$Lambda$1902/0x0000000840e34040.apply(Unknown Source)
+	at org.apache.spark.storage.DiskStore.put(DiskStore.scala:89)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$1(BlockManager.scala:1604)
+	at org.apache.spark.storage.BlockManager$$Lambda$719/0x00000008405f1840.apply(Unknown Source)
+	at org.apache.spark.storage.BlockManager.org$apache$spark$storage$BlockManager$$doPut(BlockManager.scala:1524)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:1588)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:1389)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdateRDDBlock(BlockManager.scala:1343)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:379)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+
+26/10/03 08:27:42 ERROR TaskSchedulerImpl: Lost executor 2 on 172.18.0.7: Command exited with code 52
+26/10/03 08:27:42 WARN TaskSetManager: Lost task 9.0 in stage 44.0 (TID 82) (172.18.0.7 executor 2): ExecutorLostFailure (executor 2 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:27:42 WARN TaskSetManager: Lost task 0.0 in stage 44.0 (TID 76) (172.18.0.7 executor 2): ExecutorLostFailure (executor 2 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:27:42 WARN TaskSetManager: Lost task 2.0 in stage 44.0 (TID 78) (172.18.0.7 executor 2): ExecutorLostFailure (executor 2 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:27:42 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_8 !
+26/10/03 08:27:42 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_6 !
+26/10/03 08:27:42 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_7 !
+26/10/03 08:27:56 WARN TaskSetManager: Lost task 6.1 in stage 44.0 (TID 84) (172.18.0.7 executor 3): java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.nio.HeapByteBuffer.<init>(Unknown Source)
+	at java.base/java.nio.ByteBuffer.allocate(Unknown Source)
+	at org.apache.spark.sql.execution.columnar.ColumnBuilder$.ensureFreeSpace(ColumnBuilder.scala:167)
+	at org.apache.spark.sql.execution.columnar.BasicColumnBuilder.appendFrom(ColumnBuilder.scala:73)
+	at org.apache.spark.sql.execution.columnar.ComplexColumnBuilder.org$apache$spark$sql$execution$columnar$NullableColumnBuilder$$super$appendFrom(ColumnBuilder.scala:93)
+	at org.apache.spark.sql.execution.columnar.NullableColumnBuilder.appendFrom(NullableColumnBuilder.scala:61)
+	at org.apache.spark.sql.execution.columnar.NullableColumnBuilder.appendFrom$(NullableColumnBuilder.scala:54)
+	at org.apache.spark.sql.execution.columnar.ComplexColumnBuilder.appendFrom(ColumnBuilder.scala:93)
+	at org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer$$anon$1.next(InMemoryRelation.scala:80)
+	at org.apache.spark.sql.execution.columnar.CachedRDDBuilder$$anon$2.next(InMemoryRelation.scala:290)
+	at org.apache.spark.sql.execution.columnar.CachedRDDBuilder$$anon$2.next(InMemoryRelation.scala:287)
+	at org.apache.spark.storage.memory.PartiallyUnrolledIterator.next(MemoryStore.scala:785)
+	at org.apache.spark.serializer.SerializationStream.writeAll(Serializer.scala:140)
+	at org.apache.spark.serializer.SerializerManager.dataSerializeStream(SerializerManager.scala:177)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$3(BlockManager.scala:1606)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$3$adapted(BlockManager.scala:1604)
+	at org.apache.spark.storage.BlockManager$$Lambda$1812/0x0000000840d9c040.apply(Unknown Source)
+	at org.apache.spark.storage.DiskStore.put(DiskStore.scala:89)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$1(BlockManager.scala:1604)
+	at org.apache.spark.storage.BlockManager$$Lambda$699/0x00000008405e9040.apply(Unknown Source)
+	at org.apache.spark.storage.BlockManager.org$apache$spark$storage$BlockManager$$doPut(BlockManager.scala:1524)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:1588)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:1389)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdateRDDBlock(BlockManager.scala:1343)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:379)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+
+26/10/03 08:27:57 ERROR TaskSchedulerImpl: Lost executor 3 on 172.18.0.7: Command exited with code 52
+26/10/03 08:27:57 WARN TaskSetManager: Lost task 8.1 in stage 44.0 (TID 83) (172.18.0.7 executor 3): ExecutorLostFailure (executor 3 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:27:57 WARN TaskSetManager: Lost task 7.1 in stage 44.0 (TID 85) (172.18.0.7 executor 3): ExecutorLostFailure (executor 3 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:27:57 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_5 !
+26/10/03 08:27:57 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_4 !
+26/10/03 08:27:57 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_3 !
+26/10/03 08:28:19 WARN TaskSetManager: Lost task 1.2 in stage 44.0 (TID 93) (172.18.0.7 executor 4): java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.nio.HeapByteBuffer.<init>(Unknown Source)
+	at java.base/java.nio.ByteBuffer.allocate(Unknown Source)
+	at org.apache.spark.sql.execution.columnar.ColumnBuilder$.ensureFreeSpace(ColumnBuilder.scala:167)
+	at org.apache.spark.sql.execution.columnar.BasicColumnBuilder.appendFrom(ColumnBuilder.scala:73)
+	at org.apache.spark.sql.execution.columnar.ComplexColumnBuilder.org$apache$spark$sql$execution$columnar$NullableColumnBuilder$$super$appendFrom(ColumnBuilder.scala:93)
+	at org.apache.spark.sql.execution.columnar.NullableColumnBuilder.appendFrom(NullableColumnBuilder.scala:61)
+	at org.apache.spark.sql.execution.columnar.NullableColumnBuilder.appendFrom$(NullableColumnBuilder.scala:54)
+	at org.apache.spark.sql.execution.columnar.ComplexColumnBuilder.appendFrom(ColumnBuilder.scala:93)
+	at org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer$$anon$1.next(InMemoryRelation.scala:80)
+	at org.apache.spark.sql.execution.columnar.CachedRDDBuilder$$anon$2.next(InMemoryRelation.scala:290)
+	at org.apache.spark.sql.execution.columnar.CachedRDDBuilder$$anon$2.next(InMemoryRelation.scala:287)
+	at org.apache.spark.storage.memory.PartiallyUnrolledIterator.next(MemoryStore.scala:785)
+	at org.apache.spark.serializer.SerializationStream.writeAll(Serializer.scala:140)
+	at org.apache.spark.serializer.SerializerManager.dataSerializeStream(SerializerManager.scala:177)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$3(BlockManager.scala:1606)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$3$adapted(BlockManager.scala:1604)
+	at org.apache.spark.storage.BlockManager$$Lambda$1678/0x00000008406fb040.apply(Unknown Source)
+	at org.apache.spark.storage.DiskStore.put(DiskStore.scala:89)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$1(BlockManager.scala:1604)
+	at org.apache.spark.storage.BlockManager$$Lambda$707/0x00000008405eb840.apply(Unknown Source)
+	at org.apache.spark.storage.BlockManager.org$apache$spark$storage$BlockManager$$doPut(BlockManager.scala:1524)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:1588)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:1389)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdateRDDBlock(BlockManager.scala:1343)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:379)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+
+26/10/03 08:28:20 ERROR TaskSchedulerImpl: Lost executor 4 on 172.18.0.7: Command exited with code 52
+26/10/03 08:28:20 WARN TaskSetManager: Lost task 3.1 in stage 44.0 (TID 95) (172.18.0.7 executor 4): ExecutorLostFailure (executor 4 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:28:20 WARN TaskSetManager: Lost task 11.0 in stage 44.0 (TID 98) (172.18.0.7 executor 4): ExecutorLostFailure (executor 4 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:28:20 WARN TaskSetManager: Lost task 5.1 in stage 44.0 (TID 94) (172.18.0.7 executor 4): ExecutorLostFailure (executor 4 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:28:20 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_9 !
+26/10/03 08:28:20 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_2 !
+26/10/03 08:28:20 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_0 !
+26/10/03 08:28:46 WARN TaskSetManager: Lost task 0.2 in stage 44.0 (TID 103) (172.18.0.7 executor 5): java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.nio.HeapByteBuffer.<init>(Unknown Source)
+	at java.base/java.nio.ByteBuffer.allocate(Unknown Source)
+	at org.apache.spark.sql.execution.columnar.ColumnBuilder$.ensureFreeSpace(ColumnBuilder.scala:167)
+	at org.apache.spark.sql.execution.columnar.BasicColumnBuilder.appendFrom(ColumnBuilder.scala:73)
+	at org.apache.spark.sql.execution.columnar.ComplexColumnBuilder.org$apache$spark$sql$execution$columnar$NullableColumnBuilder$$super$appendFrom(ColumnBuilder.scala:93)
+	at org.apache.spark.sql.execution.columnar.NullableColumnBuilder.appendFrom(NullableColumnBuilder.scala:61)
+	at org.apache.spark.sql.execution.columnar.NullableColumnBuilder.appendFrom$(NullableColumnBuilder.scala:54)
+	at org.apache.spark.sql.execution.columnar.ComplexColumnBuilder.appendFrom(ColumnBuilder.scala:93)
+	at org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer$$anon$1.next(InMemoryRelation.scala:105)
+	at org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer$$anon$1.next(InMemoryRelation.scala:80)
+	at org.apache.spark.sql.execution.columnar.CachedRDDBuilder$$anon$2.next(InMemoryRelation.scala:290)
+	at org.apache.spark.sql.execution.columnar.CachedRDDBuilder$$anon$2.next(InMemoryRelation.scala:287)
+	at org.apache.spark.storage.memory.PartiallyUnrolledIterator.next(MemoryStore.scala:785)
+	at org.apache.spark.serializer.SerializationStream.writeAll(Serializer.scala:140)
+	at org.apache.spark.serializer.SerializerManager.dataSerializeStream(SerializerManager.scala:177)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$3(BlockManager.scala:1606)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$3$adapted(BlockManager.scala:1604)
+	at org.apache.spark.storage.BlockManager$$Lambda$1636/0x0000000840d4a840.apply(Unknown Source)
+	at org.apache.spark.storage.DiskStore.put(DiskStore.scala:89)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$1(BlockManager.scala:1604)
+	at org.apache.spark.storage.BlockManager$$Lambda$677/0x00000008405d6840.apply(Unknown Source)
+	at org.apache.spark.storage.BlockManager.org$apache$spark$storage$BlockManager$$doPut(BlockManager.scala:1524)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:1588)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:1389)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdateRDDBlock(BlockManager.scala:1343)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:379)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+
+26/10/03 08:28:46 ERROR TaskSchedulerImpl: Lost executor 5 on 172.18.0.7: Command exited with code 52
+26/10/03 08:28:46 WARN TaskSetManager: Lost task 9.2 in stage 44.0 (TID 104) (172.18.0.7 executor 5): ExecutorLostFailure (executor 5 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:28:46 WARN TaskSetManager: Lost task 0.3 in stage 44.0 (TID 106) (172.18.0.7 executor 5): ExecutorLostFailure (executor 5 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:28:46 WARN TaskSetManager: Lost task 2.2 in stage 44.0 (TID 105) (172.18.0.7 executor 5): ExecutorLostFailure (executor 5 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:28:46 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_9 !
+26/10/03 08:28:46 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_8 !
+26/10/03 08:28:46 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_10 !
+26/10/03 08:28:46 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_4 !
+26/10/03 08:28:46 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_6 !
+26/10/03 08:28:46 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_1 !
+26/10/03 08:28:46 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_7 !
+26/10/03 08:29:18 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+26/10/03 08:29:58 WARN TaskSetManager: Lost task 10.0 in stage 46.0 (TID 129) (172.18.0.7 executor 7): java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Unknown Source)
+	at scala.collection.mutable.ArrayBuilder$ofDouble.mkArray(ArrayBuilder.scala:537)
+	at scala.collection.mutable.ArrayBuilder$ofDouble.resize(ArrayBuilder.scala:541)
+	at scala.collection.mutable.ArrayBuilder$ofDouble.ensureSize(ArrayBuilder.scala:553)
+	at scala.collection.mutable.ArrayBuilder$ofDouble.$plus$eq(ArrayBuilder.scala:558)
+	at scala.collection.mutable.ArrayBuilder$ofDouble.$plus$eq(ArrayBuilder.scala:528)
+	at org.apache.spark.ml.linalg.SparseMatrix$.$anonfun$fromVectors$2(Matrices.scala:865)
+	at org.apache.spark.ml.linalg.SparseMatrix$$$Lambda$1698/0x0000000840daf040.apply$mcVID$sp(Unknown Source)
+	at org.apache.spark.ml.linalg.Vector.$anonfun$foreachNonZero$1(Vectors.scala:142)
+	at org.apache.spark.ml.linalg.Vector.$anonfun$foreachNonZero$1$adapted(Vectors.scala:142)
+	at org.apache.spark.ml.linalg.Vector$$Lambda$1700/0x0000000840db0840.apply(Unknown Source)
+	at scala.collection.Iterator.foreach(Iterator.scala:943)
+	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1431)
+	at org.apache.spark.ml.linalg.Vector.foreachNonZero(Vectors.scala:142)
+	at org.apache.spark.ml.linalg.Vector.foreachNonZero$(Vectors.scala:141)
+	at org.apache.spark.ml.linalg.DenseVector.foreachNonZero(Vectors.scala:506)
+	at org.apache.spark.ml.linalg.SparseMatrix$.fromVectors(Matrices.scala:863)
+	at org.apache.spark.ml.linalg.Matrices$.fromVectors(Matrices.scala:1059)
+	at org.apache.spark.ml.feature.InstanceBlock$.fromInstances(Instance.scala:138)
+	at org.apache.spark.ml.feature.InstanceBlock$$anon$1.next(Instance.scala:177)
+	at org.apache.spark.ml.feature.InstanceBlock$$anon$1.next(Instance.scala:151)
+	at org.apache.spark.storage.memory.MemoryStore.putIterator(MemoryStore.scala:224)
+	at org.apache.spark.storage.memory.MemoryStore.putIteratorAsValues(MemoryStore.scala:302)
+	at org.apache.spark.storage.BlockManager.$anonfun$doPutIterator$1(BlockManager.scala:1597)
+	at org.apache.spark.storage.BlockManager$$Lambda$705/0x00000008405e5040.apply(Unknown Source)
+	at org.apache.spark.storage.BlockManager.org$apache$spark$storage$BlockManager$$doPut(BlockManager.scala:1524)
+	at org.apache.spark.storage.BlockManager.doPutIterator(BlockManager.scala:1588)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdate(BlockManager.scala:1389)
+	at org.apache.spark.storage.BlockManager.getOrElseUpdateRDDBlock(BlockManager.scala:1343)
+	at org.apache.spark.rdd.RDD.getOrCompute(RDD.scala:379)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+
+26/10/03 08:29:59 ERROR TaskSchedulerImpl: Lost executor 7 on 172.18.0.7: Command exited with code 52
+26/10/03 08:29:59 WARN TaskSetManager: Lost task 8.0 in stage 46.0 (TID 128) (172.18.0.7 executor 7): ExecutorLostFailure (executor 7 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:29:59 WARN TaskSetManager: Lost task 5.0 in stage 46.0 (TID 125) (172.18.0.7 executor 7): ExecutorLostFailure (executor 7 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:29:59 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_9 !
+26/10/03 08:29:59 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_133_0 !
+26/10/03 08:29:59 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_2 !
+26/10/03 08:29:59 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_133_2 !
+26/10/03 08:29:59 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_0 !
+26/10/03 08:29:59 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_133_9 !
+
+standard / detection / logistic_regression: macro-F1 0.8884, benign AUC-PR 0.8777
+    benign     precision 0.6414  recall 0.9915  F1 0.7789  (18,165 test rows)
+    attack     precision 0.9999  recall 0.9957  F1 0.9978  (2,355,474 test rows)
+26/10/03 08:32:48 WARN TaskSetManager: Lost task 7.0 in stage 281.0 (TID 1794) (172.18.0.7 executor 6): java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.lang.reflect.Array.newInstance(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+	at java.base/java.io.ObjectInputStream.defaultReadFields(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.DeserializationStream$$anon$1.getNext(Serializer.scala:168)
+	at org.apache.spark.util.NextIterator.hasNext(NextIterator.scala:73)
+	at org.apache.spark.storage.memory.PartiallyUnrolledIterator.hasNext(MemoryStore.scala:774)
+	at org.apache.spark.util.CompletionIterator.hasNext(CompletionIterator.scala:31)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:513)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificColumnarIterator.hasNext(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.hashAgg_doAggregateWithoutKey_0$(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:43)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.shuffle.sort.BypassMergeSortShuffleWriter.write(BypassMergeSortShuffleWriter.java:140)
+	at org.apache.spark.shuffle.ShuffleWriteProcessor.write(ShuffleWriteProcessor.scala:59)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:104)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:54)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+
+26/10/03 08:32:49 ERROR TaskSchedulerImpl: Lost executor 6 on 172.18.0.7: Command exited with code 52
+26/10/03 08:32:49 WARN TaskSetManager: Lost task 7.1 in stage 281.0 (TID 1798) (172.18.0.7 executor 6): ExecutorLostFailure (executor 6 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:32:49 WARN TaskSetManager: Lost task 5.0 in stage 281.0 (TID 1792) (172.18.0.7 executor 6): ExecutorLostFailure (executor 6 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:32:49 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_6 !
+26/10/03 08:32:49 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_3 !
+26/10/03 08:32:49 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_5 !
+26/10/03 08:32:49 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_7 !
+26/10/03 08:32:49 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_8 !
+26/10/03 08:32:49 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_4 !
+26/10/03 08:32:49 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_11 !
+26/10/03 08:32:49 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_10 !
+26/10/03 08:32:49 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_1 !
+26/10/03 08:33:24 WARN TaskSetManager: Lost task 5.0 in stage 286.0 (TID 1825) (172.18.0.7 executor 8): java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.lang.reflect.Array.newInstance(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readArray(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+	at java.base/java.io.ObjectInputStream.defaultReadFields(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readSerialData(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readOrdinaryObject(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readObject0(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+	at java.base/java.io.ObjectInputStream.readObject(Unknown Source)
+	at org.apache.spark.serializer.JavaDeserializationStream.readObject(JavaSerializer.scala:87)
+	at org.apache.spark.serializer.DeserializationStream$$anon$1.getNext(Serializer.scala:168)
+	at org.apache.spark.util.NextIterator.hasNext(NextIterator.scala:73)
+	at org.apache.spark.storage.memory.PartiallyUnrolledIterator.hasNext(MemoryStore.scala:774)
+	at org.apache.spark.util.CompletionIterator.hasNext(CompletionIterator.scala:31)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:513)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificColumnarIterator.hasNext(Unknown Source)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:43)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at scala.collection.Iterator$$anon$12.hasNext(Iterator.scala:513)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+	at org.apache.spark.util.collection.ExternalSorter.insertAll(ExternalSorter.scala:197)
+	at org.apache.spark.shuffle.sort.SortShuffleWriter.write(SortShuffleWriter.scala:63)
+	at org.apache.spark.shuffle.ShuffleWriteProcessor.write(ShuffleWriteProcessor.scala:59)
+	at org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:104)
+
+26/10/03 08:33:25 ERROR TaskSchedulerImpl: Lost executor 8 on 172.18.0.7: Command exited with code 52
+26/10/03 08:33:25 WARN TaskSetManager: Lost task 4.0 in stage 286.0 (TID 1824) (172.18.0.7 executor 8): ExecutorLostFailure (executor 8 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:33:25 WARN TaskSetManager: Lost task 3.0 in stage 286.0 (TID 1823) (172.18.0.7 executor 8): ExecutorLostFailure (executor 8 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:33:25 WARN TaskSetManager: Lost task 9.0 in stage 286.0 (TID 1829) (172.18.0.7 executor 8): ExecutorLostFailure (executor 8 exited caused by one of the running tasks) Reason: Command exited with code 52
+26/10/03 08:33:25 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_9 !
+26/10/03 08:33:25 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_8 !
+26/10/03 08:33:25 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_2 !
+26/10/03 08:33:25 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_4 !
+26/10/03 08:33:25 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_6 !
+26/10/03 08:33:25 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_0 !
+26/10/03 08:33:25 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_11 !
+26/10/03 08:33:25 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_3 !
+26/10/03 08:33:25 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_5 !
+26/10/03 08:33:25 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_1 !
+26/10/03 08:33:25 WARN BlockManagerMasterEndpoint: No more replicas available for rdd_113_7 !
+
+standard / detection / decision_tree: macro-F1 0.9511, benign AUC-PR 0.9754
+    benign     precision 0.8241  recall 0.9986  F1 0.9030  (18,165 test rows)
+    attack     precision 1.0000  recall 0.9984  F1 0.9992  (2,355,474 test rows)
+26/10/03 08:39:57 WARN DAGScheduler: Broadcasting large task binary with size 1492.0 KiB
+26/10/03 08:40:44 WARN DAGScheduler: Broadcasting large task binary with size 2.3 MiB
+26/10/03 08:41:30 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+26/10/03 08:42:11 WARN DAGScheduler: Broadcasting large task binary with size 4.6 MiB
+26/10/03 08:42:58 WARN DAGScheduler: Broadcasting large task binary with size 6.1 MiB
+26/10/03 08:43:42 WARN DAGScheduler: Broadcasting large task binary with size 7.8 MiB
+26/10/03 08:44:26 WARN DAGScheduler: Broadcasting large task binary with size 9.7 MiB
+26/10/03 08:45:15 WARN DAGScheduler: Broadcasting large task binary with size 11.7 MiB
+26/10/03 08:46:02 WARN DAGScheduler: Broadcasting large task binary with size 13.7 MiB
+26/10/03 08:46:54 WARN DAGScheduler: Broadcasting large task binary with size 15.8 MiB
+26/10/03 08:47:47 WARN DAGScheduler: Broadcasting large task binary with size 9.2 MiB
+26/10/03 08:48:06 WARN DAGScheduler: Broadcasting large task binary with size 9.3 MiB
+26/10/03 08:48:08 WARN DAGScheduler: Broadcasting large task binary with size 9.3 MiB
+26/10/03 08:48:08 WARN DAGScheduler: Broadcasting large task binary with size 9.3 MiB
+
+standard / detection / random_forest: macro-F1 0.9812, benign AUC-PR 0.9977
+    benign     precision 0.9291  recall 0.9990  F1 0.9628  (18,165 test rows)
+    attack     precision 1.0000  recall 0.9994  F1 0.9997  (2,355,474 test rows)
+26/10/03 08:48:11 WARN TaskSetManager: Stage 397 contains a task of very large size (1605 KiB). The maximum recommended task size is 1000 KiB.
+
+standard / detection / gradient_boosted_trees: macro-F1 0.9461, benign AUC-PR 0.9823
+    benign     precision 0.8073  recall 0.9991  F1 0.8930  (18,165 test rows)
+    attack     precision 1.0000  recall 0.9982  F1 0.9991  (2,355,474 test rows)
+
+standard / detection / neural_network: macro-F1 0.9774, benign AUC-PR 0.9914
+    benign     precision 0.9540  recall 0.9563  F1 0.9552  (18,165 test rows)
+    attack     precision 0.9997  recall 0.9996  F1 0.9997  (2,355,474 test rows)
+26/10/03 09:18:26 WARN DAGScheduler: Broadcasting large task binary with size 1010.9 KiB
+26/10/03 09:19:20 WARN DAGScheduler: Broadcasting large task binary with size 1945.7 KiB
+26/10/03 09:20:27 WARN DAGScheduler: Broadcasting large task binary with size 3.6 MiB
+26/10/03 09:21:39 WARN DAGScheduler: Broadcasting large task binary with size 1067.4 KiB
+26/10/03 09:21:42 WARN DAGScheduler: Broadcasting large task binary with size 6.9 MiB
+26/10/03 09:23:31 WARN DAGScheduler: Broadcasting large task binary with size 1870.3 KiB
+26/10/03 09:23:36 WARN DAGScheduler: Broadcasting large task binary with size 7.8 MiB
+26/10/03 09:24:42 WARN DAGScheduler: Broadcasting large task binary with size 1929.1 KiB
+26/10/03 09:24:45 WARN DAGScheduler: Broadcasting large task binary with size 9.0 MiB
+26/10/03 09:25:36 WARN DAGScheduler: Broadcasting large task binary with size 1925.7 KiB
+26/10/03 09:25:43 WARN DAGScheduler: Broadcasting large task binary with size 10.0 MiB
+26/10/03 09:26:21 WARN DAGScheduler: Broadcasting large task binary with size 1929.5 KiB
+26/10/03 09:26:25 WARN DAGScheduler: Broadcasting large task binary with size 11.3 MiB
+26/10/03 09:26:57 WARN DAGScheduler: Broadcasting large task binary with size 1925.5 KiB
+26/10/03 09:27:01 WARN DAGScheduler: Broadcasting large task binary with size 11.1 MiB
+26/10/03 09:27:36 WARN DAGScheduler: Broadcasting large task binary with size 1923.2 KiB
+26/10/03 09:27:40 WARN DAGScheduler: Broadcasting large task binary with size 11.4 MiB
+26/10/03 09:28:14 WARN DAGScheduler: Broadcasting large task binary with size 1927.8 KiB
+26/10/03 09:28:20 WARN DAGScheduler: Broadcasting large task binary with size 9.9 MiB
+26/10/03 09:29:01 WARN DAGScheduler: Broadcasting large task binary with size 1928.9 KiB
+26/10/03 09:29:04 WARN DAGScheduler: Broadcasting large task binary with size 9.9 MiB
+26/10/03 09:29:49 WARN DAGScheduler: Broadcasting large task binary with size 1928.5 KiB
+26/10/03 09:29:55 WARN DAGScheduler: Broadcasting large task binary with size 10.8 MiB
+26/10/03 09:30:30 WARN DAGScheduler: Broadcasting large task binary with size 1926.8 KiB
+26/10/03 09:30:36 WARN DAGScheduler: Broadcasting large task binary with size 11.2 MiB
+26/10/03 09:31:14 WARN DAGScheduler: Broadcasting large task binary with size 1927.6 KiB
+26/10/03 09:31:19 WARN DAGScheduler: Broadcasting large task binary with size 5.3 MiB
+26/10/03 09:31:49 WARN DAGScheduler: Broadcasting large task binary with size 1044.8 KiB
+26/10/03 09:31:52 WARN DAGScheduler: Broadcasting large task binary with size 6.6 MiB
+26/10/03 09:32:22 WARN DAGScheduler: Broadcasting large task binary with size 1222.2 KiB
+26/10/03 09:32:26 WARN DAGScheduler: Broadcasting large task binary with size 7.7 MiB
+26/10/03 09:32:54 WARN DAGScheduler: Broadcasting large task binary with size 1343.2 KiB
+26/10/03 09:32:57 WARN DAGScheduler: Broadcasting large task binary with size 5.7 MiB
+26/10/03 09:33:35 WARN TaskSetManager: Stage 1221 contains a task of very large size (5673 KiB). The maximum recommended task size is 1000 KiB.
+26/10/03 09:33:39 WARN DAGScheduler: Broadcasting large task binary with size 34.8 MiB
+26/10/03 09:34:24 WARN DAGScheduler: Broadcasting large task binary with size 34.8 MiB
+26/10/03 09:34:26 WARN DAGScheduler: Broadcasting large task binary with size 34.8 MiB
+
+standard / family / random_forest: macro-F1 0.6477, benign AUC-PR NaN
+    TFTP       precision 0.9986  recall 0.9983  F1 0.9985  (877,491 test rows)
+    UDP        precision 0.7648  recall 0.9906  F1 0.8632  (593,032 test rows)
+    NTP        precision 0.9938  recall 0.9962  F1 0.9950  (222,686 test rows)
+    MSSQL      precision 0.9197  recall 0.9664  F1 0.9425  (204,087 test rows)
+    Syn        precision 0.9854  recall 0.9970  F1 0.9912  (179,867 test rows)
+    SSDP       precision 0.7474  recall 0.0008  F1 0.0016  (176,363 test rows)
+    SNMP       precision 0.5630  recall 0.8837  F1 0.6878  (22,677 test rows)
+    DNS        precision 0.7739  recall 0.3151  F1 0.4479  (22,231 test rows)
+    LDAP       precision 0.7014  recall 0.4721  F1 0.5644  (18,776 test rows)
+    UDPLag     precision 0.9582  recall 0.6552  F1 0.7783  (18,213 test rows)
+    Benign     precision 0.9525  recall 0.9939  F1 0.9727  (18,165 test rows)
+    NetBIOS    precision 0.7841  recall 0.8621  F1 0.8213  (18,054 test rows)
+    Portmap    precision 1.0000  recall 0.0016  F1 0.0031  (1,926 test rows)
+    WebDDoS    precision 0.0000  recall 0.0000  F1 0.0000  (71 test rows)
+
+=== Experiment: cross_day (all rows)
+  training on all 45,227 benign + 8,163,964 attack rows
+
+cross_day / detection / logistic_regression: macro-F1 0.5597, benign AUC-PR 0.3739
+    benign     precision 0.0976  recall 0.9593  F1 0.1772  (44,272 test rows)
+    attack     precision 0.9994  recall 0.8911  F1 0.9421  (3,604,220 test rows)
+
+cross_day / detection / decision_tree: macro-F1 0.7345, benign AUC-PR 0.1894
+    benign     precision 0.3246  recall 0.9318  F1 0.4815  (44,272 test rows)
+    attack     precision 0.9991  recall 0.9762  F1 0.9875  (3,604,220 test rows)
+26/10/03 09:41:31 WARN DAGScheduler: Broadcasting large task binary with size 1187.5 KiB
+26/10/03 09:42:03 WARN DAGScheduler: Broadcasting large task binary with size 1720.3 KiB
+26/10/03 09:42:39 WARN DAGScheduler: Broadcasting large task binary with size 2.3 MiB
+26/10/03 09:43:18 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+26/10/03 09:44:02 WARN DAGScheduler: Broadcasting large task binary with size 3.9 MiB
+26/10/03 09:44:39 WARN DAGScheduler: Broadcasting large task binary with size 4.8 MiB
+26/10/03 09:45:11 WARN DAGScheduler: Broadcasting large task binary with size 5.8 MiB
+26/10/03 09:45:45 WARN DAGScheduler: Broadcasting large task binary with size 6.8 MiB
+26/10/03 09:46:20 WARN DAGScheduler: Broadcasting large task binary with size 7.7 MiB
+26/10/03 09:46:55 WARN DAGScheduler: Broadcasting large task binary with size 8.7 MiB
+26/10/03 09:47:32 WARN DAGScheduler: Broadcasting large task binary with size 5.3 MiB
+26/10/03 09:47:53 WARN DAGScheduler: Broadcasting large task binary with size 5.3 MiB
+26/10/03 09:47:56 WARN DAGScheduler: Broadcasting large task binary with size 5.3 MiB
+26/10/03 09:47:56 WARN DAGScheduler: Broadcasting large task binary with size 5.3 MiB
+
+cross_day / detection / random_forest: macro-F1 0.9727, benign AUC-PR 0.9767
+    benign     precision 0.9374  recall 0.9548  F1 0.9460  (44,272 test rows)
+    attack     precision 0.9994  recall 0.9992  F1 0.9993  (3,604,220 test rows)
+
+cross_day / detection / gradient_boosted_trees: macro-F1 0.7161, benign AUC-PR 0.8448
+    benign     precision 0.2936  recall 0.9330  F1 0.4466  (44,272 test rows)
+    attack     precision 0.9992  recall 0.9724  F1 0.9856  (3,604,220 test rows)
+
+cross_day / detection / neural_network: macro-F1 0.8100, benign AUC-PR 0.8440
+    benign     precision 0.4832  recall 0.8909  F1 0.6266  (44,272 test rows)
+    attack     precision 0.9986  recall 0.9883  F1 0.9934  (3,604,220 test rows)

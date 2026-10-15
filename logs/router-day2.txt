@@ -1,0 +1,7 @@
+Loading all of day 2 into Kafka
+flows:0:19881726
+Running the router over the whole day
+Router test running: http://localhost:3000/d/ddos-router
+NOTICE:  table "router_learning_day2" does not exist, skipping
+Putting the 30% sample back into Kafka
+flows:0:5964207

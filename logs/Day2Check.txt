@@ -1,0 +1,109 @@
+26/10/06 13:17:55 INFO SparkContext: Running Spark version 3.5.5
+26/10/06 13:17:55 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/10/06 13:17:55 INFO SparkContext: Java version 11.0.26
+26/10/06 13:17:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/06 13:17:55 INFO ResourceUtils: ==============================================================
+26/10/06 13:17:55 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/06 13:17:55 INFO ResourceUtils: ==============================================================
+26/10/06 13:17:55 INFO SparkContext: Submitted application: Day2Check
+26/10/06 13:17:55 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/06 13:17:55 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/10/06 13:17:55 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/06 13:17:55 INFO SecurityManager: Changing view acls to: root
+26/10/06 13:17:55 INFO SecurityManager: Changing modify acls to: root
+26/10/06 13:17:55 INFO SecurityManager: Changing view acls groups to: 
+26/10/06 13:17:55 INFO SecurityManager: Changing modify acls groups to: 
+26/10/06 13:17:55 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/06 13:17:55 INFO Utils: Successfully started service 'sparkDriver' on port 40543.
+26/10/06 13:17:55 INFO SparkEnv: Registering MapOutputTracker
+26/10/06 13:17:55 INFO SparkEnv: Registering BlockManagerMaster
+26/10/06 13:17:55 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/06 13:17:55 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/06 13:17:55 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/06 13:17:55 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-fd762730-2e89-49cd-b224-1d24b0f0a7ce
+26/10/06 13:17:55 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/10/06 13:17:55 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/06 13:17:55 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/06 13:17:55 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/06 13:17:55 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:40543/jars/ddos-detection.jar with timestamp 1791292675164
+26/10/06 13:17:55 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/10/06 13:17:56 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.3:7077 after 28 ms (0 ms spent in bootstraps)
+26/10/06 13:17:56 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261006131756-0000
+26/10/06 13:17:56 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46251.
+26/10/06 13:17:56 INFO NettyBlockTransferService: Server created on spark-master:46251
+26/10/06 13:17:56 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/06 13:17:56 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 46251, None)
+26/10/06 13:17:56 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:46251 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 46251, None)
+26/10/06 13:17:56 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 46251, None)
+26/10/06 13:17:56 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 46251, None)
+26/10/06 13:17:56 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261006131756-0000/0 on worker-20261006131747-172.18.0.6-39673 (172.18.0.6:39673) with 3 core(s)
+26/10/06 13:17:56 INFO StandaloneSchedulerBackend: Granted executor ID app-20261006131756-0000/0 on hostPort 172.18.0.6:39673 with 3 core(s), 2.4 GiB RAM
+26/10/06 13:17:56 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261006131756-0000/1 on worker-20261006131747-172.18.0.6-39673 (172.18.0.6:39673) with 3 core(s)
+26/10/06 13:17:56 INFO StandaloneSchedulerBackend: Granted executor ID app-20261006131756-0000/1 on hostPort 172.18.0.6:39673 with 3 core(s), 2.4 GiB RAM
+26/10/06 13:17:56 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261006131756-0000/0 is now RUNNING
+26/10/06 13:17:56 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261006131756-0000/1 is now RUNNING
+26/10/06 13:17:56 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20261006131756-0000.inprogress
+26/10/06 13:17:57 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+26/10/06 13:18:19 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+26/10/06 13:18:35 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/06 13:19:23 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/10/06 13:19:24 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/10/06 13:19:25 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/10/06 13:19:26 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/10/06 13:19:26 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/10/06 13:19:26 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/10/06 13:19:27 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/10/06 13:19:29 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/10/06 13:19:31 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/10/06 13:19:34 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/10/06 13:19:35 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/10/06 13:19:37 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/06 13:19:46 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+RESULT
+RESULT Day 2: 19,881,726 flows in 3,623,156 distinct patterns
+RESULT Gate: a flow is unfamiliar when it is further than 5.49 from every day-1 cluster
+RESULT Unfamiliar flows: 22.6% of day 2
+RESULT
+RESULT 1a. Unfamiliar traffic by true attack type
+RESULT type                  flows   unfamiliar %
+RESULT MSSQL             5,787,453            0.2
+RESULT Syn               4,413,105           99.9
+RESULT UDP               3,867,155            0.1
+RESULT NetBIOS           3,657,497            0.6
+RESULT LDAP              1,915,122            0.1
+RESULT Portmap             186,960            0.7
+RESULT Benign               52,561           70.3
+RESULT UDPLag                1,873            8.7
+RESULT
+RESULT 1b. Gate: are the models worse on unfamiliar flows?
+RESULT model                     macro-F1   wrong % familiar   wrong % unfamiliar  mistakes in unfamiliar %
+RESULT random_forest               0.9669               0.00                 0.15                      96.3
+RESULT decision_tree               0.7574               0.02                 1.98                      96.2
+RESULT neural_network              0.6845               0.00                 3.38                      99.9
+RESULT gradient_boosted_trees      0.4847               0.01                56.37                      99.9
+RESULT logistic_regression         0.4578               0.38                86.00                      98.5
+RESULT
+RESULT 2. Pattern memory: how repetitive is day 2?
+RESULT The    100 most common patterns cover 33.8% of flows
+RESULT The  1,000 most common patterns cover 50.0% of flows
+RESULT The 10,000 most common patterns cover 67.0% of flows
+RESULT Flows whose pattern carries both benign and attack labels: 0.005%
+RESULT Flows whose exact pattern was already seen on day 1: 39.1%
+RESULT   of those, the day-1 label is right for: 99.99%
+RESULT
+RESULT 3. Trust map: best model per cluster, chosen with hindsight (an upper limit)
+RESULT Best single model:      0.9669 macro-F1
+RESULT Best model per cluster: 0.9821 macro-F1
+RESULT   random_forest            trusted in 33 of 50 clusters
+RESULT   decision_tree            trusted in  3 of 50 clusters
+RESULT   neural_network           trusted in  8 of 50 clusters
+RESULT   gradient_boosted_trees   trusted in  3 of 50 clusters
+RESULT   logistic_regression      trusted in  3 of 50 clusters
+RESULT
+RESULT 4. Confidence: are the models worse when less than 90% sure?
+RESULT model                     unsure flows %  wrong % sure  wrong % unsure  mistakes in unsure %
+RESULT random_forest                      22.81          0.00            0.14                  90.9
+RESULT decision_tree                       1.62          0.45            1.10                   3.8
+RESULT neural_network                      9.37          0.60            2.40                  29.4
+RESULT gradient_boosted_trees             23.33          0.05           54.45                  99.7
+RESULT logistic_regression                21.62          0.66           88.78                  97.4

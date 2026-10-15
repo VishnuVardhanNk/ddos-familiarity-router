@@ -1,0 +1,209 @@
+26/09/28 22:56:24 INFO SparkContext: Running Spark version 3.5.5
+26/09/28 22:56:24 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/09/28 22:56:24 INFO SparkContext: Java version 11.0.26
+26/09/28 22:56:24 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/09/28 22:56:24 INFO ResourceUtils: ==============================================================
+26/09/28 22:56:24 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/09/28 22:56:24 INFO ResourceUtils: ==============================================================
+26/09/28 22:56:24 INFO SparkContext: Submitted application: BuildFeatures
+26/09/28 22:56:24 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/09/28 22:56:24 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/09/28 22:56:24 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/09/28 22:56:24 INFO SecurityManager: Changing view acls to: root
+26/09/28 22:56:24 INFO SecurityManager: Changing modify acls to: root
+26/09/28 22:56:24 INFO SecurityManager: Changing view acls groups to: 
+26/09/28 22:56:24 INFO SecurityManager: Changing modify acls groups to: 
+26/09/28 22:56:24 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/09/28 22:56:25 INFO Utils: Successfully started service 'sparkDriver' on port 44677.
+26/09/28 22:56:25 INFO SparkEnv: Registering MapOutputTracker
+26/09/28 22:56:25 INFO SparkEnv: Registering BlockManagerMaster
+26/09/28 22:56:25 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/09/28 22:56:25 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/09/28 22:56:25 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/09/28 22:56:25 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-32099306-6b11-4393-b3a5-ad92d31a8e82
+26/09/28 22:56:25 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/09/28 22:56:25 INFO SparkEnv: Registering OutputCommitCoordinator
+26/09/28 22:56:25 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/09/28 22:56:25 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/09/28 22:56:25 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:44677/jars/ddos-detection.jar with timestamp 1790636184743
+26/09/28 22:56:25 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/09/28 22:56:25 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.5:7077 after 29 ms (0 ms spent in bootstraps)
+26/09/28 22:56:26 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20260928225625-0011
+26/09/28 22:56:26 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36253.
+26/09/28 22:56:26 INFO NettyBlockTransferService: Server created on spark-master:36253
+26/09/28 22:56:26 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/09/28 22:56:26 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 36253, None)
+26/09/28 22:56:26 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:36253 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 36253, None)
+26/09/28 22:56:26 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 36253, None)
+26/09/28 22:56:26 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 36253, None)
+26/09/28 22:56:26 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260928225625-0011/0 on worker-20260928195515-172.18.0.7-45377 (172.18.0.7:45377) with 3 core(s)
+26/09/28 22:56:26 INFO StandaloneSchedulerBackend: Granted executor ID app-20260928225625-0011/0 on hostPort 172.18.0.7:45377 with 3 core(s), 2.4 GiB RAM
+26/09/28 22:56:26 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260928225625-0011/1 on worker-20260928195515-172.18.0.7-45377 (172.18.0.7:45377) with 3 core(s)
+26/09/28 22:56:26 INFO StandaloneSchedulerBackend: Granted executor ID app-20260928225625-0011/1 on hostPort 172.18.0.7:45377 with 3 core(s), 2.4 GiB RAM
+26/09/28 22:56:26 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20260928225625-0011.inprogress
+26/09/28 22:56:27 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260928225625-0011/1 is now RUNNING
+26/09/28 22:56:27 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260928225625-0011/0 is now RUNNING
+26/09/28 22:56:27 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+
+[STAGE] Collapsing repeated measurement vectors (same features and label) into one row each
+26/09/28 22:56:37 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+  2019-01-12: 50,063,112 flows -> 8,209,191 distinct (vector, label) rows (16.4%); occurrences add back up to 50,063,112
+  2019-03-11: 19,881,726 flows -> 3,648,492 distinct (vector, label) rows (18.4%); occurrences add back up to 19,881,726
+
+[CHECK] Identical vectors that carry different labels (an upper bound on achievable accuracy)
++-----------+----------------------------+-------------------------+-----------------------------------+--------------------------------+
+|capture_day|vectors_with_family_conflict|flows_in_family_conflicts|vectors_with_attack_benign_conflict|flows_in_attack_benign_conflicts|
++-----------+----------------------------+-------------------------+-----------------------------------+--------------------------------+
+|2019-01-12 |190130                      |34687362                 |74                                 |4707                            |
+|2019-03-11 |24890                       |7738541                  |32                                 |1083                            |
++-----------+----------------------------+-------------------------+-----------------------------------+--------------------------------+
+
+
+[STAGE] Finding constant columns on the training split
+
+[STAGE] Finding columns that duplicate an earlier column
+26/09/28 23:04:09 WARN DAGScheduler: Broadcasting large task binary with size 2.2 MiB
+26/09/28 23:05:49 WARN DAGScheduler: Broadcasting large task binary with size 4.7 MiB
+
+  column               status    reason
+  flow_id              excluded  identifier of the connection, not behaviour
+  timestamp            excluded  capture time, identifies the attack schedule
+  src_ip               excluded  testbed address; every attack comes from 172.16.0.5
+  dst_ip               excluded  testbed address of the victim
+  src_port             excluded  ephemeral port chosen by the sender
+  dst_port             excluded  service port; attack tools use characteristic ports (known shortcut)
+  inbound              excluded  testbed direction flag; every attack arrives from outside
+  init_fwd_win_byts    excluded  initial TCP window fingerprints the sender's OS and tool
+  init_bwd_win_byts    excluded  initial TCP window fingerprints the victim host
+  fwd_seg_size_min     excluded  minimum TCP header size fingerprints the sender's TCP stack
+  similar_http         excluded  free-text CIC artefact, not a flow measurement
+  bwd_psh_flags        dropped   constant on the training split
+  fwd_urg_flags        dropped   constant on the training split
+  bwd_urg_flags        dropped   constant on the training split
+  fin_flag_cnt         dropped   constant on the training split
+  psh_flag_cnt         dropped   constant on the training split
+  ece_flag_cnt         dropped   constant on the training split
+  fwd_byts_b_avg       dropped   constant on the training split
+  fwd_pkts_b_avg       dropped   constant on the training split
+  fwd_blk_rate_avg     dropped   constant on the training split
+  bwd_byts_b_avg       dropped   constant on the training split
+  bwd_pkts_b_avg       dropped   constant on the training split
+  bwd_blk_rate_avg     dropped   constant on the training split
+  bwd_seg_size_avg     dropped   equal to bwd_pkt_len_mean on every training row (within 1e-9)
+  fwd_seg_size_avg     dropped   equal to fwd_pkt_len_mean on every training row (within 1e-9)
+  rst_flag_cnt         dropped   equal to fwd_psh_flags on every training row (within 1e-9)
+  subflow_bwd_byts     dropped   equal to totlen_bwd_pkts on every training row (within 1e-9)
+  subflow_bwd_pkts     dropped   equal to tot_bwd_pkts on every training row (within 1e-9)
+  subflow_fwd_byts     dropped   equal to totlen_fwd_pkts on every training row (within 1e-9)
+  subflow_fwd_pkts     dropped   equal to tot_fwd_pkts on every training row (within 1e-9)
+  protocol             used      
+  flow_duration        used      
+  tot_fwd_pkts         used      
+  tot_bwd_pkts         used      
+  totlen_fwd_pkts      used      
+  totlen_bwd_pkts      used      
+  fwd_pkt_len_max      used      
+  fwd_pkt_len_min      used      
+  fwd_pkt_len_mean     used      
+  fwd_pkt_len_std      used      
+  bwd_pkt_len_max      used      
+  bwd_pkt_len_min      used      
+  bwd_pkt_len_mean     used      
+  bwd_pkt_len_std      used      
+  pkt_len_min          used      
+  pkt_len_max          used      
+  pkt_len_mean         used      
+  pkt_len_std          used      
+  pkt_len_var          used      
+  flow_byts_s          used      
+  flow_pkts_s          used      
+  fwd_pkts_s           used      
+  bwd_pkts_s           used      
+  flow_iat_mean        used      
+  flow_iat_std         used      
+  flow_iat_max         used      
+  flow_iat_min         used      
+  fwd_iat_tot          used      
+  fwd_iat_mean         used      
+  fwd_iat_std          used      
+  fwd_iat_max          used      
+  fwd_iat_min          used      
+  bwd_iat_tot          used      
+  bwd_iat_mean         used      
+  bwd_iat_std          used      
+  bwd_iat_max          used      
+  bwd_iat_min          used      
+  fwd_psh_flags        used      
+  syn_flag_cnt         used      
+  ack_flag_cnt         used      
+  urg_flag_cnt         used      
+  cwe_flag_cnt         used      
+  fwd_header_len       used      
+  bwd_header_len       used      
+  down_up_ratio        used      
+  pkt_size_avg         used      
+  fwd_act_data_pkts    used      
+  active_mean          used      
+  active_std           used      
+  active_max           used      
+  active_min           used      
+  idle_mean            used      
+  idle_std             used      
+  idle_max             used      
+  idle_min             used      
+
+  55 model features: protocol, flow_duration, tot_fwd_pkts, tot_bwd_pkts, totlen_fwd_pkts, totlen_bwd_pkts, fwd_pkt_len_max, fwd_pkt_len_min, fwd_pkt_len_mean, fwd_pkt_len_std, bwd_pkt_len_max, bwd_pkt_len_min, bwd_pkt_len_mean, bwd_pkt_len_std, pkt_len_min, pkt_len_max, pkt_len_mean, pkt_len_std, pkt_len_var, flow_byts_s, flow_pkts_s, fwd_pkts_s, bwd_pkts_s, flow_iat_mean, flow_iat_std, flow_iat_max, flow_iat_min, fwd_iat_tot, fwd_iat_mean, fwd_iat_std, fwd_iat_max, fwd_iat_min, bwd_iat_tot, bwd_iat_mean, bwd_iat_std, bwd_iat_max, bwd_iat_min, fwd_psh_flags, syn_flag_cnt, ack_flag_cnt, urg_flag_cnt, cwe_flag_cnt, fwd_header_len, bwd_header_len, down_up_ratio, pkt_size_avg, fwd_act_data_pkts, active_mean, active_std, active_max, active_min, idle_mean, idle_std, idle_max, idle_min
+
+[STAGE] Fitting the encoder on the training split and saving it to /models/encoder
+
+  family index mapping:
+     0 -> TFTP
+     1 -> UDP
+     2 -> NTP
+     3 -> MSSQL
+     4 -> Syn
+     5 -> SSDP
+     6 -> SNMP
+     7 -> DNS
+     8 -> LDAP
+     9 -> UDPLag
+    10 -> Benign
+    11 -> NetBIOS
+    12 -> Portmap
+    13 -> WebDDoS
+
+[STAGE] Writing /data/features
+
+[CHECK] Rows per day and split (rows = distinct vectors; flows = rows weighted by occurrences)
++-----------+-----+-------+-----------+--------+------------+--------------+
+|capture_day|split|rows   |benign_rows|flows   |benign_flows|benign_row_pct|
++-----------+-----+-------+-----------+--------+------------+--------------+
+|2019-01-12 |test |1643307|9100       |7497288 |11011       |0.554         |
+|2019-01-12 |train|6565884|36127      |42565824|45852       |0.55          |
+|2019-03-11 |test |730332 |9065       |3908474 |9764        |1.241         |
+|2019-03-11 |train|2918160|35207      |15973252|42797       |1.206         |
++-----------+-----+-------+-----------+--------+------------+--------------+
+
+[CHECK] Distinct vectors per attack family and split
++------------+-------+------+
+|label_family|train  |test  |
++------------+-------+------+
+|Benign      |71334  |18165 |
+|DNS         |90395  |22231 |
+|LDAP        |75177  |18776 |
+|MSSQL       |814116 |204087|
+|NTP         |889534 |222686|
+|NetBIOS     |71167  |18054 |
+|Portmap     |7357   |1926  |
+|SNMP        |90713  |22677 |
+|SSDP        |707114 |176363|
+|Syn         |716806 |179867|
+|TFTP        |3503019|877491|
+|UDP         |2375174|593032|
+|UDPLag      |71870  |18213 |
+|WebDDoS     |268    |71    |
++------------+-------+------+
+
+
+[DONE] BuildFeatures finished in 11.1 min
+EXIT=0

@@ -1,0 +1,14 @@
+apiVersion: 1
+datasources:
+  - name: PostgreSQL
+    type: postgres
+    uid: ddos-pg
+    url: postgres:5432
+    user: ddos
+    isDefault: true
+    jsonData:
+      database: ddos
+      sslmode: disable
+      postgresVersion: 1600
+    secureJsonData:
+      password: $POSTGRES_PASSWORD

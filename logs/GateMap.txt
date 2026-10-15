@@ -1,0 +1,49 @@
+26/10/06 14:56:16 INFO SparkContext: Running Spark version 3.5.5
+26/10/06 14:56:16 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/10/06 14:56:16 INFO SparkContext: Java version 11.0.26
+26/10/06 14:56:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/06 14:56:16 INFO ResourceUtils: ==============================================================
+26/10/06 14:56:16 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/06 14:56:16 INFO ResourceUtils: ==============================================================
+26/10/06 14:56:16 INFO SparkContext: Submitted application: GateMap
+26/10/06 14:56:16 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/06 14:56:16 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/10/06 14:56:16 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/06 14:56:16 INFO SecurityManager: Changing view acls to: root
+26/10/06 14:56:16 INFO SecurityManager: Changing modify acls to: root
+26/10/06 14:56:16 INFO SecurityManager: Changing view acls groups to: 
+26/10/06 14:56:16 INFO SecurityManager: Changing modify acls groups to: 
+26/10/06 14:56:16 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/06 14:56:16 INFO Utils: Successfully started service 'sparkDriver' on port 36195.
+26/10/06 14:56:16 INFO SparkEnv: Registering MapOutputTracker
+26/10/06 14:56:16 INFO SparkEnv: Registering BlockManagerMaster
+26/10/06 14:56:16 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/06 14:56:16 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/06 14:56:16 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/06 14:56:16 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-f2f7895e-7694-49ab-86d1-4260ca364daf
+26/10/06 14:56:16 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/10/06 14:56:16 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/06 14:56:17 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/06 14:56:17 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/06 14:56:17 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:36195/jars/ddos-detection.jar with timestamp 1791298576431
+26/10/06 14:56:17 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/10/06 14:56:17 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.4:7077 after 28 ms (0 ms spent in bootstraps)
+26/10/06 14:56:17 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261006145617-0005
+26/10/06 14:56:17 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261006145617-0005/0 on worker-20261006135354-172.18.0.7-35955 (172.18.0.7:35955) with 3 core(s)
+26/10/06 14:56:17 INFO StandaloneSchedulerBackend: Granted executor ID app-20261006145617-0005/0 on hostPort 172.18.0.7:35955 with 3 core(s), 2.4 GiB RAM
+26/10/06 14:56:17 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261006145617-0005/1 on worker-20261006135354-172.18.0.7-35955 (172.18.0.7:35955) with 3 core(s)
+26/10/06 14:56:17 INFO StandaloneSchedulerBackend: Granted executor ID app-20261006145617-0005/1 on hostPort 172.18.0.7:35955 with 3 core(s), 2.4 GiB RAM
+26/10/06 14:56:17 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38985.
+26/10/06 14:56:17 INFO NettyBlockTransferService: Server created on spark-master:38985
+26/10/06 14:56:17 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/06 14:56:17 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 38985, None)
+26/10/06 14:56:17 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:38985 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 38985, None)
+26/10/06 14:56:17 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 38985, None)
+26/10/06 14:56:17 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 38985, None)
+26/10/06 14:56:17 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261006145617-0005/0 is now RUNNING
+26/10/06 14:56:17 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261006145617-0005/1 is now RUNNING
+26/10/06 14:56:17 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20261006145617-0005.inprogress
+26/10/06 14:56:18 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+26/10/06 14:56:40 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+26/10/06 14:56:55 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.lapack.JNILAPACK
+RESULT GateMap written, threshold 5.598

@@ -1,0 +1,141 @@
+26/10/09 15:15:32 INFO SparkContext: Running Spark version 3.5.5
+26/10/09 15:15:32 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/10/09 15:15:32 INFO SparkContext: Java version 11.0.26
+26/10/09 15:15:32 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/09 15:15:32 INFO ResourceUtils: ==============================================================
+26/10/09 15:15:32 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/09 15:15:32 INFO ResourceUtils: ==============================================================
+26/10/09 15:15:32 INFO SparkContext: Submitted application: RouterCheck
+26/10/09 15:15:32 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/09 15:15:32 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/10/09 15:15:32 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/09 15:15:32 INFO SecurityManager: Changing view acls to: root
+26/10/09 15:15:32 INFO SecurityManager: Changing modify acls to: root
+26/10/09 15:15:32 INFO SecurityManager: Changing view acls groups to: 
+26/10/09 15:15:32 INFO SecurityManager: Changing modify acls groups to: 
+26/10/09 15:15:32 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/09 15:15:33 INFO Utils: Successfully started service 'sparkDriver' on port 46583.
+26/10/09 15:15:33 INFO SparkEnv: Registering MapOutputTracker
+26/10/09 15:15:33 INFO SparkEnv: Registering BlockManagerMaster
+26/10/09 15:15:33 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/09 15:15:33 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/09 15:15:33 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/09 15:15:33 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-ba8d044b-cce8-47cc-8acd-a37ae7bfe454
+26/10/09 15:15:33 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/10/09 15:15:33 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/09 15:15:33 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/09 15:15:33 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/09 15:15:33 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:46583/jars/ddos-detection.jar with timestamp 1791558932603
+26/10/09 15:15:33 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/10/09 15:15:33 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.4:7077 after 28 ms (0 ms spent in bootstraps)
+26/10/09 15:15:33 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261009151533-0004
+26/10/09 15:15:33 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261009151533-0004/0 on worker-20261009143052-172.18.0.13-37467 (172.18.0.13:37467) with 3 core(s)
+26/10/09 15:15:33 INFO StandaloneSchedulerBackend: Granted executor ID app-20261009151533-0004/0 on hostPort 172.18.0.13:37467 with 3 core(s), 2.4 GiB RAM
+26/10/09 15:15:33 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261009151533-0004/1 on worker-20261009143052-172.18.0.13-37467 (172.18.0.13:37467) with 3 core(s)
+26/10/09 15:15:33 INFO StandaloneSchedulerBackend: Granted executor ID app-20261009151533-0004/1 on hostPort 172.18.0.13:37467 with 3 core(s), 2.4 GiB RAM
+26/10/09 15:15:33 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39899.
+26/10/09 15:15:33 INFO NettyBlockTransferService: Server created on spark-master:39899
+26/10/09 15:15:33 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/09 15:15:33 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 39899, None)
+26/10/09 15:15:33 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:39899 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 39899, None)
+26/10/09 15:15:33 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 39899, None)
+26/10/09 15:15:33 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 39899, None)
+26/10/09 15:15:33 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261009151533-0004/0 is now RUNNING
+26/10/09 15:15:33 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261009151533-0004/1 is now RUNNING
+26/10/09 15:15:34 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20261009151533-0004.inprogress
+26/10/09 15:15:34 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+26/10/09 15:15:58 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+RESULT
+RESULT Three-way router, by how far the memory may reach (as a multiple of the gate limit)
+RESULT reach 0.5    200 macro-F1 random_forest                           0.971 ±0.004
+RESULT reach 0.5    200 macro-F1 decision_tree                           0.957 ±0.004
+RESULT reach 0.5    200 macro-F1 neural_network                          0.972 ±0.004
+RESULT reach 0.5    200 macro-F1 gradient_boosted_trees                  0.963 ±0.004
+RESULT reach 0.5    200 macro-F1 logistic_regression                     0.802 ±0.003
+RESULT reach 0.5    200 % of all day-2 flows sent to the forest          12.092 ±3.359
+RESULT reach 0.5    200 % of memory answers that are wrong               0.003 ±0.002
+RESULT reach 0.5   1000 macro-F1 random_forest                           0.977 ±0.000
+RESULT reach 0.5   1000 macro-F1 decision_tree                           0.963 ±0.000
+RESULT reach 0.5   1000 macro-F1 neural_network                          0.978 ±0.000
+RESULT reach 0.5   1000 macro-F1 gradient_boosted_trees                  0.969 ±0.000
+RESULT reach 0.5   1000 macro-F1 logistic_regression                     0.806 ±0.000
+RESULT reach 0.5   1000 % of all day-2 flows sent to the forest          4.500 ±0.701
+RESULT reach 0.5   1000 % of memory answers that are wrong               0.008 ±0.000
+RESULT reach 0.5   2000 macro-F1 random_forest                           0.978 ±0.000
+RESULT reach 0.5   2000 macro-F1 decision_tree                           0.964 ±0.000
+RESULT reach 0.5   2000 macro-F1 neural_network                          0.979 ±0.000
+RESULT reach 0.5   2000 macro-F1 gradient_boosted_trees                  0.970 ±0.000
+RESULT reach 0.5   2000 macro-F1 logistic_regression                     0.806 ±0.000
+RESULT reach 0.5   2000 % of all day-2 flows sent to the forest          2.767 ±0.080
+RESULT reach 0.5   2000 % of memory answers that are wrong               0.010 ±0.001
+RESULT reach 0.5    200 stale case: % of flood flows called benign       0.058 ±0.005
+RESULT reach 0.5    500 stale case: % of flood flows called benign       0.056 ±0.007
+RESULT reach 1.0    200 macro-F1 random_forest                           0.976 ±0.000
+RESULT reach 1.0    200 macro-F1 decision_tree                           0.962 ±0.000
+RESULT reach 1.0    200 macro-F1 neural_network                          0.977 ±0.000
+RESULT reach 1.0    200 macro-F1 gradient_boosted_trees                  0.968 ±0.000
+RESULT reach 1.0    200 macro-F1 logistic_regression                     0.806 ±0.000
+RESULT reach 1.0    200 % of all day-2 flows sent to the forest          5.344 ±0.235
+RESULT reach 1.0    200 % of memory answers that are wrong               0.013 ±0.008
+RESULT reach 1.0   1000 macro-F1 random_forest                           0.981 ±0.002
+RESULT reach 1.0   1000 macro-F1 decision_tree                           0.966 ±0.002
+RESULT reach 1.0   1000 macro-F1 neural_network                          0.981 ±0.002
+RESULT reach 1.0   1000 macro-F1 gradient_boosted_trees                  0.972 ±0.002
+RESULT reach 1.0   1000 macro-F1 logistic_regression                     0.808 ±0.001
+RESULT reach 1.0   1000 % of all day-2 flows sent to the forest          2.498 ±0.737
+RESULT reach 1.0   1000 % of memory answers that are wrong               0.018 ±0.001
+RESULT reach 1.0   2000 macro-F1 random_forest                           0.982 ±0.001
+RESULT reach 1.0   2000 macro-F1 decision_tree                           0.967 ±0.001
+RESULT reach 1.0   2000 macro-F1 neural_network                          0.983 ±0.001
+RESULT reach 1.0   2000 macro-F1 gradient_boosted_trees                  0.974 ±0.001
+RESULT reach 1.0   2000 macro-F1 logistic_regression                     0.808 ±0.001
+RESULT reach 1.0   2000 % of all day-2 flows sent to the forest          1.521 ±0.009
+RESULT reach 1.0   2000 % of memory answers that are wrong               0.019 ±0.002
+RESULT reach 1.0    200 stale case: % of flood flows called benign       0.060 ±0.004
+RESULT reach 1.0    500 stale case: % of flood flows called benign       0.056 ±0.005
+RESULT reach 1.5    200 macro-F1 random_forest                           0.976 ±0.000
+RESULT reach 1.5    200 macro-F1 decision_tree                           0.962 ±0.000
+RESULT reach 1.5    200 macro-F1 neural_network                          0.977 ±0.000
+RESULT reach 1.5    200 macro-F1 gradient_boosted_trees                  0.968 ±0.000
+RESULT reach 1.5    200 macro-F1 logistic_regression                     0.806 ±0.000
+RESULT reach 1.5    200 % of all day-2 flows sent to the forest          2.505 ±0.858
+RESULT reach 1.5    200 % of memory answers that are wrong               0.024 ±0.008
+RESULT reach 1.5   1000 macro-F1 random_forest                           0.981 ±0.003
+RESULT reach 1.5   1000 macro-F1 decision_tree                           0.966 ±0.003
+RESULT reach 1.5   1000 macro-F1 neural_network                          0.981 ±0.003
+RESULT reach 1.5   1000 macro-F1 gradient_boosted_trees                  0.973 ±0.003
+RESULT reach 1.5   1000 macro-F1 logistic_regression                     0.808 ±0.002
+RESULT reach 1.5   1000 % of all day-2 flows sent to the forest          0.908 ±0.040
+RESULT reach 1.5   1000 % of memory answers that are wrong               0.032 ±0.005
+RESULT reach 1.5   2000 macro-F1 random_forest                           0.984 ±0.002
+RESULT reach 1.5   2000 macro-F1 decision_tree                           0.969 ±0.002
+RESULT reach 1.5   2000 macro-F1 neural_network                          0.984 ±0.002
+RESULT reach 1.5   2000 macro-F1 gradient_boosted_trees                  0.975 ±0.002
+RESULT reach 1.5   2000 macro-F1 logistic_regression                     0.809 ±0.001
+RESULT reach 1.5   2000 % of all day-2 flows sent to the forest          0.681 ±0.023
+RESULT reach 1.5   2000 % of memory answers that are wrong               0.032 ±0.006
+RESULT reach 1.5    200 stale case: % of flood flows called benign       0.064 ±0.003
+RESULT reach 1.5    500 stale case: % of flood flows called benign       18.692 ±26.342
+RESULT reach 2.0    200 macro-F1 random_forest                           0.969 ±0.005
+RESULT reach 2.0    200 macro-F1 decision_tree                           0.955 ±0.005
+RESULT reach 2.0    200 macro-F1 neural_network                          0.969 ±0.005
+RESULT reach 2.0    200 macro-F1 gradient_boosted_trees                  0.961 ±0.005
+RESULT reach 2.0    200 macro-F1 logistic_regression                     0.803 ±0.002
+RESULT reach 2.0    200 % of all day-2 flows sent to the forest          0.774 ±0.030
+RESULT reach 2.0    200 % of memory answers that are wrong               0.075 ±0.032
+RESULT reach 2.0   1000 macro-F1 random_forest                           0.981 ±0.003
+RESULT reach 2.0   1000 macro-F1 decision_tree                           0.966 ±0.003
+RESULT reach 2.0   1000 macro-F1 neural_network                          0.981 ±0.003
+RESULT reach 2.0   1000 macro-F1 gradient_boosted_trees                  0.973 ±0.003
+RESULT reach 2.0   1000 macro-F1 logistic_regression                     0.808 ±0.002
+RESULT reach 2.0   1000 % of all day-2 flows sent to the forest          0.387 ±0.006
+RESULT reach 2.0   1000 % of memory answers that are wrong               0.044 ±0.004
+RESULT reach 2.0   2000 macro-F1 random_forest                           0.985 ±0.003
+RESULT reach 2.0   2000 macro-F1 decision_tree                           0.970 ±0.003
+RESULT reach 2.0   2000 macro-F1 neural_network                          0.985 ±0.003
+RESULT reach 2.0   2000 macro-F1 gradient_boosted_trees                  0.977 ±0.003
+RESULT reach 2.0   2000 macro-F1 logistic_regression                     0.809 ±0.001
+RESULT reach 2.0   2000 % of all day-2 flows sent to the forest          0.265 ±0.033
+RESULT reach 2.0   2000 % of memory answers that are wrong               0.039 ±0.006
+RESULT reach 2.0    200 stale case: % of flood flows called benign       11.255 ±13.952
+RESULT reach 2.0    500 stale case: % of flood flows called benign       30.177 ±23.482

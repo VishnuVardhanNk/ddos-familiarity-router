@@ -1,0 +1,134 @@
+26/10/06 13:35:32 INFO SparkContext: Running Spark version 3.5.5
+26/10/06 13:35:32 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/10/06 13:35:32 INFO SparkContext: Java version 11.0.26
+26/10/06 13:35:32 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/06 13:35:32 INFO ResourceUtils: ==============================================================
+26/10/06 13:35:32 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/06 13:35:32 INFO ResourceUtils: ==============================================================
+26/10/06 13:35:32 INFO SparkContext: Submitted application: SpecialistCheck
+26/10/06 13:35:32 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/06 13:35:32 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/10/06 13:35:32 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/06 13:35:32 INFO SecurityManager: Changing view acls to: root
+26/10/06 13:35:32 INFO SecurityManager: Changing modify acls to: root
+26/10/06 13:35:32 INFO SecurityManager: Changing view acls groups to: 
+26/10/06 13:35:32 INFO SecurityManager: Changing modify acls groups to: 
+26/10/06 13:35:32 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/06 13:35:33 INFO Utils: Successfully started service 'sparkDriver' on port 34791.
+26/10/06 13:35:33 INFO SparkEnv: Registering MapOutputTracker
+26/10/06 13:35:33 INFO SparkEnv: Registering BlockManagerMaster
+26/10/06 13:35:33 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/06 13:35:33 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/06 13:35:33 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/06 13:35:33 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-c27bab5c-e903-4d21-ba38-ad3e790208e2
+26/10/06 13:35:33 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/10/06 13:35:33 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/06 13:35:33 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/06 13:35:33 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/06 13:35:33 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:34791/jars/ddos-detection.jar with timestamp 1791293732624
+26/10/06 13:35:33 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/10/06 13:35:33 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.3:7077 after 24 ms (0 ms spent in bootstraps)
+26/10/06 13:35:33 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261006133533-0001
+26/10/06 13:35:33 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41265.
+26/10/06 13:35:33 INFO NettyBlockTransferService: Server created on spark-master:41265
+26/10/06 13:35:33 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/06 13:35:33 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 41265, None)
+26/10/06 13:35:33 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:41265 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 41265, None)
+26/10/06 13:35:33 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 41265, None)
+26/10/06 13:35:33 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 41265, None)
+26/10/06 13:35:33 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261006133533-0001/0 on worker-20261006132552-172.18.0.6-34215 (172.18.0.6:34215) with 3 core(s)
+26/10/06 13:35:33 INFO StandaloneSchedulerBackend: Granted executor ID app-20261006133533-0001/0 on hostPort 172.18.0.6:34215 with 3 core(s), 2.4 GiB RAM
+26/10/06 13:35:33 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261006133533-0001/1 on worker-20261006132552-172.18.0.6-34215 (172.18.0.6:34215) with 3 core(s)
+26/10/06 13:35:33 INFO StandaloneSchedulerBackend: Granted executor ID app-20261006133533-0001/1 on hostPort 172.18.0.6:34215 with 3 core(s), 2.4 GiB RAM
+26/10/06 13:35:34 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261006133533-0001/0 is now RUNNING
+26/10/06 13:35:34 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261006133533-0001/1 is now RUNNING
+26/10/06 13:35:34 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20261006133533-0001.inprogress
+26/10/06 13:35:34 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+26/10/06 13:35:57 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+26/10/06 13:36:13 WARN DAGScheduler: Broadcasting large task binary with size 6.1 MiB
+RESULT
+RESULT Unfamiliar day-2 traffic: 761,454 attack patterns (4,453,251 flows), 31,568 benign patterns (36,965 flows)
+RESULT
+RESULT Asking about distinct unfamiliar patterns, 200 labels: 196 attack and 4 benign labels landed in unfamiliar traffic
+RESULT model                     frozen wrong %  specialist wrong %  benign flagged %  frozen macro-F1  with specialist
+  training on all 4 benign + 196 attack rows
+RESULT random_forest                       0.15                0.65             72.75           0.9669           0.8176
+RESULT decision_tree                       1.98                0.63             68.59           0.7574           0.8148
+RESULT neural_network                      3.38                0.62             67.62           0.6845           0.8316
+RESULT gradient_boosted_trees             56.37                0.63             68.59           0.4847           0.8165
+RESULT logistic_regression                86.01                0.55             58.77           0.4578           0.7104
+RESULT
+RESULT Asking about distinct unfamiliar patterns, 1000 labels: 961 attack and 39 benign labels landed in unfamiliar traffic
+RESULT model                     frozen wrong %  specialist wrong %  benign flagged %  frozen macro-F1  with specialist
+  training on all 39 benign + 961 attack rows
+RESULT random_forest                       0.15                0.22             18.81           0.9669           0.9488
+RESULT decision_tree                       1.98                0.27             18.39           0.7574           0.9260
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.5
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.25
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.125
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.0625
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.5
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.5
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.25
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.125
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.5
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.25
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.125
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.0625
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.03125
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.015625
+26/10/06 13:37:29 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.017578125
+26/10/06 13:37:29 ERROR LBFGS: Failure! Resetting history: breeze.optimize.FirstOrderException: Line search zoom failed
+26/10/06 13:37:30 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.5
+26/10/06 13:37:30 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.25
+26/10/06 13:37:30 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.5
+26/10/06 13:37:30 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.25
+26/10/06 13:37:30 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.125
+26/10/06 13:37:30 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.0625
+26/10/06 13:37:30 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.03125
+26/10/06 13:37:30 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.015625
+26/10/06 13:37:30 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.017578125
+26/10/06 13:37:30 ERROR LBFGS: Failure! Resetting history: breeze.optimize.FirstOrderException: Line search zoom failed
+26/10/06 13:37:31 ERROR LBFGS: Failure again! Giving up and returning. Maybe the objective is just poorly behaved?
+RESULT neural_network                      3.38                0.22             15.70           0.6845           0.9521
+RESULT gradient_boosted_trees             56.39                0.31             21.63           0.4847           0.9234
+RESULT logistic_regression                86.01                0.28             20.95           0.4578           0.7770
+RESULT
+RESULT Asking about distinct unfamiliar patterns, 5000 labels: 4807 attack and 193 benign labels landed in unfamiliar traffic
+RESULT model                     frozen wrong %  specialist wrong %  benign flagged %  frozen macro-F1  with specialist
+  training on all 193 benign + 4,807 attack rows
+RESULT random_forest                       0.15                0.09              1.92           0.9669           0.9795
+RESULT decision_tree                       1.97                0.12              3.66           0.7577           0.9605
+26/10/06 13:37:46 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.5
+26/10/06 13:37:46 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.25
+26/10/06 13:37:46 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.125
+26/10/06 13:37:46 ERROR StrongWolfeLineSearch: Encountered bad values in function evaluation. Decreasing step size to 0.09375
+26/10/06 13:37:46 ERROR LBFGS: Failure! Resetting history: breeze.optimize.FirstOrderException: Line search zoom failed
+RESULT neural_network                      3.38                0.11              8.48           0.6846           0.9759
+RESULT gradient_boosted_trees             56.49                0.13              2.18           0.4847           0.9649
+RESULT logistic_regression                86.03                0.23              9.50           0.4579           0.7921
+RESULT
+RESULT Asking about random flows, 200 labels: 37 attack and 0 benign labels landed in unfamiliar traffic
+RESULT model                     frozen wrong %  specialist wrong %  benign flagged %  frozen macro-F1  with specialist
+RESULT random_forest                       0.26                1.47            100.00           0.9669           0.7265
+RESULT decision_tree                       3.52                1.47            100.00           0.7573           0.7161
+RESULT neural_network                      6.02                1.47            100.00           0.6844           0.7268
+RESULT gradient_boosted_trees             25.61                1.47            100.00           0.5572           0.7132
+RESULT logistic_regression                81.50                1.47            100.00           0.4915           0.6186
+RESULT
+RESULT Asking about random flows, 1000 labels: 151 attack and 0 benign labels landed in unfamiliar traffic
+RESULT model                     frozen wrong %  specialist wrong %  benign flagged %  frozen macro-F1  with specialist
+RESULT random_forest                       0.31                1.72            100.00           0.9669           0.7264
+RESULT decision_tree                       4.14                1.72            100.00           0.7572           0.7161
+RESULT neural_network                      7.02                1.72            100.00           0.6851           0.7268
+RESULT gradient_boosted_trees             19.03                1.72            100.00           0.5913           0.7131
+RESULT logistic_regression                79.17                1.72            100.00           0.5008           0.6186
+RESULT
+RESULT Asking about random flows, 5000 labels: 919 attack and 17 benign labels landed in unfamiliar traffic
+RESULT model                     frozen wrong %  specialist wrong %  benign flagged %  frozen macro-F1  with specialist
+  training on all 17 benign + 919 attack rows
+RESULT random_forest                       0.35                0.39             12.47           0.9678           0.9632
+RESULT decision_tree                       4.84                0.70             26.45           0.7555           0.9184
+RESULT neural_network                      7.98                0.45             12.55           0.6885           0.9586
+RESULT gradient_boosted_trees             14.72                0.50             13.16           0.6283           0.9462
+RESULT logistic_regression                76.43                0.64             20.37           0.5100           0.7779

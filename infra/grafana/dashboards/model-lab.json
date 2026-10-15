@@ -1,0 +1,113 @@
+{
+  "uid": "ddos-lab",
+  "title": "Model Lab",
+  "tags": ["ddos"],
+  "schemaVersion": 39,
+  "version": 2,
+  "time": { "from": "now-6h", "to": "now" },
+  "panels": [
+    {
+      "id": 100, "type": "text", "title": "", "transparent": true,
+      "gridPos": { "h": 4, "w": 24, "x": 0, "y": 0 },
+      "options": { "mode": "markdown",
+        "content": "## Model Lab: how the detectors were trained and tested\n**Data:** CSE-CIC-DDoS2019, 69.9 million flows over two capture days, 55 features after removing identifiers and testbed fingerprints. &nbsp;&nbsp;|&nbsp;&nbsp; **Standard test:** train on 80% of the distinct traffic patterns, test on the other 20%. &nbsp;&nbsp;|&nbsp;&nbsp; **Cross-day test:** train on day 1, test on day 2. &nbsp;&nbsp;|&nbsp;&nbsp; **Sample:** all benign rows plus 20 attack rows per benign row. **All rows:** every training row. &nbsp;&nbsp;|&nbsp;&nbsp; **Macro-F1** averages the benign and attack F1 scores, so the rare benign class counts as much as the attack class." }
+    },
+    {
+      "id": 101, "type": "stat", "title": "Best model, standard test",
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 4 },
+      "datasource": { "type": "grafana-postgresql-datasource", "uid": "ddos-pg" },
+      "fieldConfig": { "defaults": { "color": { "mode": "fixed", "fixedColor": "green" } }, "overrides": [] },
+      "options": { "graphMode": "none", "colorMode": "value", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "/.*/", "values": false } },
+      "targets": [ { "refId": "A", "format": "table", "rawQuery": true, "editorMode": "code",
+        "rawSql": "select model || '  ' || round(macro_f1::numeric, 3) as best from model_summary where task = 'detection' and experiment = 'standard' order by macro_f1 desc limit 1" } ]
+    },
+    {
+      "id": 102, "type": "stat", "title": "Best model, cross-day test",
+      "gridPos": { "h": 4, "w": 6, "x": 6, "y": 4 },
+      "datasource": { "type": "grafana-postgresql-datasource", "uid": "ddos-pg" },
+      "fieldConfig": { "defaults": { "color": { "mode": "fixed", "fixedColor": "green" } }, "overrides": [] },
+      "options": { "graphMode": "none", "colorMode": "value", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "/.*/", "values": false } },
+      "targets": [ { "refId": "A", "format": "table", "rawQuery": true, "editorMode": "code",
+        "rawSql": "select model || '  ' || round(macro_f1::numeric, 3) as best from model_summary where task = 'detection' and experiment = 'cross_day' order by macro_f1 desc limit 1" } ]
+    },
+    {
+      "id": 103, "type": "stat", "title": "Random Forest cross-day: sample → all rows",
+      "gridPos": { "h": 4, "w": 6, "x": 12, "y": 4 },
+      "datasource": { "type": "grafana-postgresql-datasource", "uid": "ddos-pg" },
+      "fieldConfig": { "defaults": { "color": { "mode": "fixed", "fixedColor": "light-blue" } }, "overrides": [] },
+      "options": { "graphMode": "none", "colorMode": "value", "reduceOptions": { "calcs": ["lastNotNull"], "fields": "/.*/", "values": false } },
+      "targets": [ { "refId": "A", "format": "table", "rawQuery": true, "editorMode": "code",
+        "rawSql": "select round(max(case when training = 'sample' then macro_f1 end)::numeric, 2) || ' → ' || round(max(case when training = 'all_rows' then macro_f1 end)::numeric, 2) as change from model_summary where task = 'detection' and experiment = 'cross_day' and model = 'random_forest'" } ]
+    },
+    {
+      "id": 104, "type": "stat", "title": "Attack-type classifier, macro-F1 (14 families)",
+      "gridPos": { "h": 4, "w": 6, "x": 18, "y": 4 },
+      "datasource": { "type": "grafana-postgresql-datasource", "uid": "ddos-pg" },
+      "fieldConfig": { "defaults": { "decimals": 3, "color": { "mode": "fixed", "fixedColor": "orange" } }, "overrides": [] },
+      "options": { "graphMode": "none", "colorMode": "value" },
+      "targets": [ { "refId": "A", "format": "table", "rawQuery": true, "editorMode": "code",
+        "rawSql": "select macro_f1 from model_summary where task = 'family' and training = 'all_rows'" } ]
+    },
+    {
+      "id": 1, "type": "barchart", "title": "Standard test: macro-F1, sample vs all rows",
+      "gridPos": { "h": 9, "w": 12, "x": 0, "y": 8 },
+      "datasource": { "type": "grafana-postgresql-datasource", "uid": "ddos-pg" },
+      "fieldConfig": { "defaults": { "min": 0, "max": 1 }, "overrides": [] },
+      "options": { "xField": "model", "showValue": "always" },
+      "targets": [ { "refId": "A", "format": "table", "rawQuery": true, "editorMode": "code",
+        "rawSql": "select model, round(max(case when training = 'sample' then macro_f1 end)::numeric, 3) as sample, round(max(case when training = 'all_rows' then macro_f1 end)::numeric, 3) as all_rows from model_summary where task = 'detection' and experiment = 'standard' group by model order by model" } ]
+    },
+    {
+      "id": 2, "type": "barchart", "title": "Cross-day test (train day 1, test day 2): macro-F1, sample vs all rows",
+      "gridPos": { "h": 9, "w": 12, "x": 12, "y": 8 },
+      "datasource": { "type": "grafana-postgresql-datasource", "uid": "ddos-pg" },
+      "fieldConfig": { "defaults": { "min": 0, "max": 1 }, "overrides": [] },
+      "options": { "xField": "model", "showValue": "always" },
+      "targets": [ { "refId": "A", "format": "table", "rawQuery": true, "editorMode": "code",
+        "rawSql": "select model, round(max(case when training = 'sample' then macro_f1 end)::numeric, 3) as sample, round(max(case when training = 'all_rows' then macro_f1 end)::numeric, 3) as all_rows from model_summary where task = 'detection' and experiment = 'cross_day' group by model order by model" } ]
+    },
+    {
+      "id": 3, "type": "table", "title": "All detection results",
+      "gridPos": { "h": 10, "w": 12, "x": 0, "y": 17 },
+      "datasource": { "type": "grafana-postgresql-datasource", "uid": "ddos-pg" },
+      "fieldConfig": { "defaults": {}, "overrides": [
+        { "matcher": { "id": "byName", "options": "macro_f1" },
+          "properties": [
+            { "id": "custom.cellOptions", "value": { "type": "color-background", "mode": "gradient" } },
+            { "id": "thresholds", "value": { "mode": "absolute", "steps": [ { "color": "red", "value": null }, { "color": "yellow", "value": 0.8 }, { "color": "green", "value": 0.95 } ] } }
+          ] }
+      ] },
+      "targets": [ { "refId": "A", "format": "table", "rawQuery": true, "editorMode": "code",
+        "rawSql": "select experiment, training, model, round(macro_f1::numeric, 4) as macro_f1, round(benign_auc_pr::numeric, 4) as benign_auc_pr from model_summary where task = 'detection' order by experiment, training, macro_f1 desc" } ]
+    },
+    {
+      "id": 4, "type": "barchart", "title": "Random Forest: 15 most important features",
+      "gridPos": { "h": 10, "w": 12, "x": 12, "y": 17 },
+      "datasource": { "type": "grafana-postgresql-datasource", "uid": "ddos-pg" },
+      "options": { "xField": "feature", "orientation": "horizontal", "showValue": "never" },
+      "targets": [ { "refId": "A", "format": "table", "rawQuery": true, "editorMode": "code",
+        "rawSql": "select feature, importance from feature_importance order by importance desc limit 15" } ]
+    },
+    {
+      "id": 5, "type": "table", "title": "Tuning trials: every setting tried, scored on validation data (benign F1)",
+      "gridPos": { "h": 10, "w": 12, "x": 0, "y": 27 },
+      "datasource": { "type": "grafana-postgresql-datasource", "uid": "ddos-pg" },
+      "targets": [ { "refId": "A", "format": "table", "rawQuery": true, "editorMode": "code",
+        "rawSql": "select experiment, model, settings, round(validation_benign_f1::numeric, 4) as validation_benign_f1, case when chosen then 'chosen' else '' end as chosen from tuning order by experiment, model, validation_benign_f1 desc" } ]
+    },
+    {
+      "id": 6, "type": "table", "title": "Attack-type classifier (Random Forest, all rows): score per family",
+      "gridPos": { "h": 10, "w": 12, "x": 12, "y": 27 },
+      "datasource": { "type": "grafana-postgresql-datasource", "uid": "ddos-pg" },
+      "fieldConfig": { "defaults": {}, "overrides": [
+        { "matcher": { "id": "byName", "options": "f1_score" },
+          "properties": [
+            { "id": "custom.cellOptions", "value": { "type": "color-background", "mode": "gradient" } },
+            { "id": "thresholds", "value": { "mode": "absolute", "steps": [ { "color": "red", "value": null }, { "color": "yellow", "value": 0.6 }, { "color": "green", "value": 0.9 } ] } }
+          ] }
+      ] },
+      "targets": [ { "refId": "A", "format": "table", "rawQuery": true, "editorMode": "code",
+        "rawSql": "select label as family, round(\"precision\"::numeric, 3) as precision_score, round(recall::numeric, 3) as recall_score, round(f1::numeric, 3) as f1_score, support as test_rows from class_scores where task = 'family' and training = 'all_rows' order by support desc" } ]
+    }
+  ]
+}

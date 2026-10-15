@@ -1,0 +1,462 @@
+26/10/13 05:29:59 INFO SparkContext: Running Spark version 3.5.5
+26/10/13 05:29:59 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/10/13 05:29:59 INFO SparkContext: Java version 11.0.26
+26/10/13 05:29:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/13 05:29:59 INFO ResourceUtils: ==============================================================
+26/10/13 05:29:59 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/13 05:29:59 INFO ResourceUtils: ==============================================================
+26/10/13 05:29:59 INFO SparkContext: Submitted application: LiveScorer
+26/10/13 05:29:59 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/13 05:29:59 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/10/13 05:29:59 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/13 05:29:59 INFO SecurityManager: Changing view acls to: root
+26/10/13 05:29:59 INFO SecurityManager: Changing modify acls to: root
+26/10/13 05:29:59 INFO SecurityManager: Changing view acls groups to: 
+26/10/13 05:29:59 INFO SecurityManager: Changing modify acls groups to: 
+26/10/13 05:29:59 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/13 05:29:59 INFO Utils: Successfully started service 'sparkDriver' on port 44915.
+26/10/13 05:29:59 INFO SparkEnv: Registering MapOutputTracker
+26/10/13 05:29:59 INFO SparkEnv: Registering BlockManagerMaster
+26/10/13 05:29:59 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/13 05:29:59 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/13 05:29:59 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/13 05:30:00 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-1eb8abbc-b6e8-4d05-aa94-b3ef60b88b42
+26/10/13 05:30:00 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/10/13 05:30:00 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/13 05:30:00 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/13 05:30:00 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/13 05:30:00 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:44915/jars/ddos-detection.jar with timestamp 1791869399312
+26/10/13 05:30:00 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/10/13 05:30:00 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.6:7077 after 35 ms (0 ms spent in bootstraps)
+26/10/13 05:30:00 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261013053000-0000
+26/10/13 05:30:00 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45631.
+26/10/13 05:30:00 INFO NettyBlockTransferService: Server created on spark-master:45631
+26/10/13 05:30:00 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/13 05:30:00 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 45631, None)
+26/10/13 05:30:00 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261013053000-0000/0 on worker-20261013052933-172.18.0.9-37261 (172.18.0.9:37261) with 3 core(s)
+26/10/13 05:30:00 INFO StandaloneSchedulerBackend: Granted executor ID app-20261013053000-0000/0 on hostPort 172.18.0.9:37261 with 3 core(s), 2.4 GiB RAM
+26/10/13 05:30:00 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:45631 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 45631, None)
+26/10/13 05:30:00 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261013053000-0000/1 on worker-20261013052933-172.18.0.9-37261 (172.18.0.9:37261) with 3 core(s)
+26/10/13 05:30:00 INFO StandaloneSchedulerBackend: Granted executor ID app-20261013053000-0000/1 on hostPort 172.18.0.9:37261 with 3 core(s), 2.4 GiB RAM
+26/10/13 05:30:00 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 45631, None)
+26/10/13 05:30:00 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 45631, None)
+26/10/13 05:30:00 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261013053000-0000/1 is now RUNNING
+26/10/13 05:30:00 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261013053000-0000/0 is now RUNNING
+26/10/13 05:30:01 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20261013053000-0000.inprogress
+26/10/13 05:30:01 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+26/10/13 05:30:26 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/13 05:30:27 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:30:27 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+26/10/13 05:30:28 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/13 05:30:29 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:30:29 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 2000 milliseconds, but spent 2467 milliseconds
+26/10/13 05:30:31 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:30:41 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:30:48 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:30:51 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:30:54 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:30:57 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:00 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:01 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:04 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:06 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:08 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:10 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:12 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:13 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:16 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:18 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:21 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:22 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:25 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:26 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:29 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:30 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:33 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:34 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:37 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:39 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:41 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:44 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:48 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:50 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:53 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:31:55 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:31:58 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:00 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:32:04 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:06 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:32:09 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:11 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:32:14 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:16 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:32:20 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:21 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:32:22 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 2000 milliseconds, but spent 2219 milliseconds
+26/10/13 05:32:25 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:27 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:32:30 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:32 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:32:36 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:38 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:32:41 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:42 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:32:46 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:48 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:32:51 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:53 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:32:56 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:32:58 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:01 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:03 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:06 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:07 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:08 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 2000 milliseconds, but spent 2087 milliseconds
+26/10/13 05:33:10 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:12 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:15 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:17 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:20 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:21 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:25 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:26 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:29 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:30 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:33 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:34 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:37 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:39 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:42 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:44 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:47 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:49 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:51 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:53 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:33:56 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:33:57 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:01 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:02 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:05 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:07 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:09 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:11 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:14 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:16 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:19 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:21 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:24 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:26 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:29 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:31 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:34 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:35 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:36 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 2000 milliseconds, but spent 2232 milliseconds
+26/10/13 05:34:39 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:40 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:44 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:45 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:48 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:50 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:54 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:34:55 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:34:59 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:00 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:03 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:05 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:08 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:09 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:12 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:13 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:15 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:17 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:20 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:21 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:24 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:25 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:28 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:29 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:32 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:33 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:36 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:38 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:41 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:42 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:45 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:47 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:50 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:51 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:52 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 2000 milliseconds, but spent 2111 milliseconds
+26/10/13 05:35:54 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:35:56 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:35:59 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:00 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:03 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:04 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:07 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:09 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:12 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:13 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:16 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:17 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:20 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:21 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:24 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:26 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:28 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:30 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:33 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:34 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:37 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:38 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:41 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:42 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:45 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:47 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:50 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:52 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:36:52 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 2000 milliseconds, but spent 2226 milliseconds
+26/10/13 05:36:55 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:36:57 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:00 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:02 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:04 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:05 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:08 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:10 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:13 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:14 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:16 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:18 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:20 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:22 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:24 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:26 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:29 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:30 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:33 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:35 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:38 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:39 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:42 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:43 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:46 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:48 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:50 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:52 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:55 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:37:56 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:37:59 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:38:01 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/13 05:38:03 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/10/13 05:38:04 ERROR MicroBatchExecution: Query [id = b54f930e-e4dd-4f4b-89b8-2674c3bb0d5c, runId = a0b7b828-72a6-4b6e-b159-8f00e1ddcf44] terminated with error
+org.apache.spark.SparkException: Job 1671 cancelled because SparkContext was shut down
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$cleanUpAfterSchedulerStop$1(DAGScheduler.scala:1253)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$cleanUpAfterSchedulerStop$1$adapted(DAGScheduler.scala:1251)
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:79)
+	at org.apache.spark.scheduler.DAGScheduler.cleanUpAfterSchedulerStop(DAGScheduler.scala:1251)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onStop(DAGScheduler.scala:3087)
+	at org.apache.spark.util.EventLoop.stop(EventLoop.scala:84)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$stop$3(DAGScheduler.scala:2973)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.scheduler.DAGScheduler.stop(DAGScheduler.scala:2973)
+	at org.apache.spark.SparkContext.$anonfun$stop$12(SparkContext.scala:2258)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2258)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2211)
+	at org.apache.spark.SparkContext.$anonfun$new$34(SparkContext.scala:681)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2393)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2414)
+	at org.apache.spark.rdd.LocalRDDCheckpointData.doCheckpoint(LocalRDDCheckpointData.scala:54)
+	at org.apache.spark.rdd.RDDCheckpointData.checkpoint(RDDCheckpointData.scala:75)
+	at org.apache.spark.rdd.RDD.$anonfun$doCheckpoint$1(RDD.scala:1931)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDD.doCheckpoint(RDD.scala:1921)
+	at org.apache.spark.sql.Dataset.$anonfun$checkpoint$1(Dataset.scala:736)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$2(Dataset.scala:4323)
+	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$1(Dataset.scala:4321)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.Dataset.withAction(Dataset.scala:4321)
+	at org.apache.spark.sql.Dataset.checkpoint(Dataset.scala:727)
+	at org.apache.spark.sql.Dataset.localCheckpoint(Dataset.scala:701)
+	at ddos.stream.LiveScorer$.$anonfun$main$7(LiveScorer.scala:112)
+	at ddos.stream.LiveScorer$.$anonfun$main$7$adapted(LiveScorer.scala:110)
+	at org.apache.spark.sql.execution.streaming.sources.ForeachBatchSink.addBatch(ForeachBatchSink.scala:34)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:732)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+Exception in thread "main" org.apache.spark.sql.streaming.StreamingQueryException: Job 1671 cancelled because SparkContext was shut down
+=== Streaming Query ===
+Identifier: [id = b54f930e-e4dd-4f4b-89b8-2674c3bb0d5c, runId = a0b7b828-72a6-4b6e-b159-8f00e1ddcf44]
+Current Committed Offsets: {KafkaV2[Subscribe[flows]]: {"flows":{"0":5625155}}}
+Current Available Offsets: {KafkaV2[Subscribe[flows]]: {"flows":{"0":5637155}}}
+
+Current State: ACTIVE
+Thread State: RUNNABLE
+
+Logical Plan:
+WriteToMicroBatchDataSourceV1 ForeachBatchSink, b54f930e-e4dd-4f4b-89b8-2674c3bb0d5c, [checkpointLocation=/checkpoints/live_scorer], Append
++- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 50 more fields]
+   +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 54 more fields]
+      +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 53 more fields]
+         +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 52 more fields]
+            +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 51 more fields]
+               +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 50 more fields]
+                  +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 49 more fields]
+                     +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 52 more fields]
+                        +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 51 more fields]
+                           +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 50 more fields]
+                              +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 49 more fields]
+                                 +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 48 more fields]
+                                    +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 51 more fields]
+                                       +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 50 more fields]
+                                          +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 49 more fields]
+                                             +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 48 more fields]
+                                                +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 47 more fields]
+                                                   +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 50 more fields]
+                                                      +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 49 more fields]
+                                                         +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 48 more fields]
+                                                            +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 47 more fields]
+                                                               +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 46 more fields]
+                                                                  +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 49 more fields]
+                                                                     +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 48 more fields]
+                                                                        +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 47 more fields]
+                                                                           +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 46 more fields]
+                                                                              +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 45 more fields]
+                                                                                 +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 46 more fields]
+                                                                                    +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 45 more fields]
+                                                                                       +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 44 more fields]
+                                                                                          +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 43 more fields]
+                                                                                             +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 42 more fields]
+                                                                                                +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 41 more fields]
+                                                                                                   +- Project [flow_id#215, ts#216, src_ip#217, src_port#218L, dst_ip#219, dst_port#220L, label_family#221, is_attack#222, protocol#223, flow_duration#224, tot_fwd_pkts#225, tot_bwd_pkts#226, totlen_fwd_pkts#227, totlen_bwd_pkts#228, fwd_pkt_len_max#229, fwd_pkt_len_min#230, fwd_pkt_len_mean#231, fwd_pkt_len_std#232, bwd_pkt_len_max#233, bwd_pkt_len_min#234, bwd_pkt_len_mean#235, bwd_pkt_len_std#236, pkt_len_min#237, pkt_len_max#238, ... 40 more fields]
+                                                                                                      +- Project [flow#213.flow_id AS flow_id#215, flow#213.ts AS ts#216, flow#213.src_ip AS src_ip#217, flow#213.src_port AS src_port#218L, flow#213.dst_ip AS dst_ip#219, flow#213.dst_port AS dst_port#220L, flow#213.label_family AS label_family#221, flow#213.is_attack AS is_attack#222, flow#213.protocol AS protocol#223, flow#213.flow_duration AS flow_duration#224, flow#213.tot_fwd_pkts AS tot_fwd_pkts#225, flow#213.tot_bwd_pkts AS tot_bwd_pkts#226, flow#213.totlen_fwd_pkts AS totlen_fwd_pkts#227, flow#213.totlen_bwd_pkts AS totlen_bwd_pkts#228, flow#213.fwd_pkt_len_max AS fwd_pkt_len_max#229, flow#213.fwd_pkt_len_min AS fwd_pkt_len_min#230, flow#213.fwd_pkt_len_mean AS fwd_pkt_len_mean#231, flow#213.fwd_pkt_len_std AS fwd_pkt_len_std#232, flow#213.bwd_pkt_len_max AS bwd_pkt_len_max#233, flow#213.bwd_pkt_len_min AS bwd_pkt_len_min#234, flow#213.bwd_pkt_len_mean AS bwd_pkt_len_mean#235, flow#213.bwd_pkt_len_std AS bwd_pkt_len_std#236, flow#213.pkt_len_min AS pkt_len_min#237, flow#213.pkt_len_max AS pkt_len_max#238, ... 39 more fields]
+                                                                                                         +- Project [from_json(StructField(flow_id,StringType,true), StructField(ts,TimestampType,true), StructField(src_ip,StringType,true), StructField(src_port,LongType,true), StructField(dst_ip,StringType,true), StructField(dst_port,LongType,true), StructField(label_family,StringType,true), StructField(is_attack,IntegerType,true), StructField(protocol,DoubleType,true), StructField(flow_duration,DoubleType,true), StructField(tot_fwd_pkts,DoubleType,true), StructField(tot_bwd_pkts,DoubleType,true), StructField(totlen_fwd_pkts,DoubleType,true), StructField(totlen_bwd_pkts,DoubleType,true), StructField(fwd_pkt_len_max,DoubleType,true), StructField(fwd_pkt_len_min,DoubleType,true), StructField(fwd_pkt_len_mean,DoubleType,true), StructField(fwd_pkt_len_std,DoubleType,true), StructField(bwd_pkt_len_max,DoubleType,true), StructField(bwd_pkt_len_min,DoubleType,true), StructField(bwd_pkt_len_mean,DoubleType,true), StructField(bwd_pkt_len_std,DoubleType,true), StructField(pkt_len_min,DoubleType,true), StructField(pkt_len_max,DoubleType,true), ... 41 more fields) AS flow#213]
+                                                                                                            +- StreamingDataSourceV2Relation [key#199, value#200, topic#201, partition#202, offset#203L, timestamp#204, timestampType#205], org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaScan@34cfeb70, KafkaV2[Subscribe[flows]]
+
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:332)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)
+Caused by: org.apache.spark.SparkException: Job 1671 cancelled because SparkContext was shut down
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$cleanUpAfterSchedulerStop$1(DAGScheduler.scala:1253)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$cleanUpAfterSchedulerStop$1$adapted(DAGScheduler.scala:1251)
+	at scala.collection.mutable.HashSet.foreach(HashSet.scala:79)
+	at org.apache.spark.scheduler.DAGScheduler.cleanUpAfterSchedulerStop(DAGScheduler.scala:1251)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onStop(DAGScheduler.scala:3087)
+	at org.apache.spark.util.EventLoop.stop(EventLoop.scala:84)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$stop$3(DAGScheduler.scala:2973)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.scheduler.DAGScheduler.stop(DAGScheduler.scala:2973)
+	at org.apache.spark.SparkContext.$anonfun$stop$12(SparkContext.scala:2258)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1375)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2258)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2211)
+	at org.apache.spark.SparkContext.$anonfun$new$34(SparkContext.scala:681)
+	at org.apache.spark.util.SparkShutdownHook.run(ShutdownHookManager.scala:214)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$2(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:1928)
+	at org.apache.spark.util.SparkShutdownHookManager.$anonfun$runAll$1(ShutdownHookManager.scala:188)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.util.SparkShutdownHookManager.runAll(ShutdownHookManager.scala:188)
+	at org.apache.spark.util.SparkShutdownHookManager$$anon$2.run(ShutdownHookManager.scala:178)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2393)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2414)
+	at org.apache.spark.rdd.LocalRDDCheckpointData.doCheckpoint(LocalRDDCheckpointData.scala:54)
+	at org.apache.spark.rdd.RDDCheckpointData.checkpoint(RDDCheckpointData.scala:75)
+	at org.apache.spark.rdd.RDD.$anonfun$doCheckpoint$1(RDD.scala:1931)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDD.doCheckpoint(RDD.scala:1921)
+	at org.apache.spark.sql.Dataset.$anonfun$checkpoint$1(Dataset.scala:736)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$2(Dataset.scala:4323)
+	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+	at org.apache.spark.sql.Dataset.$anonfun$withAction$1(Dataset.scala:4321)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.Dataset.withAction(Dataset.scala:4321)
+	at org.apache.spark.sql.Dataset.checkpoint(Dataset.scala:727)
+	at org.apache.spark.sql.Dataset.localCheckpoint(Dataset.scala:701)
+	at ddos.stream.LiveScorer$.$anonfun$main$7(LiveScorer.scala:112)
+	at ddos.stream.LiveScorer$.$anonfun$main$7$adapted(LiveScorer.scala:110)
+	at org.apache.spark.sql.execution.streaming.sources.ForeachBatchSink.addBatch(ForeachBatchSink.scala:34)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:732)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:729)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)
+	at org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)
+	at org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)
+	... 4 more

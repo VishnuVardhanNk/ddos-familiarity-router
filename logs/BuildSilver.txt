@@ -1,0 +1,432 @@
+26/09/28 22:00:23 INFO SparkContext: Running Spark version 3.5.5
+26/09/28 22:00:23 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/09/28 22:00:23 INFO SparkContext: Java version 11.0.26
+26/09/28 22:00:24 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/09/28 22:00:24 INFO ResourceUtils: ==============================================================
+26/09/28 22:00:24 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/09/28 22:00:24 INFO ResourceUtils: ==============================================================
+26/09/28 22:00:24 INFO SparkContext: Submitted application: BuildSilver
+26/09/28 22:00:24 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/09/28 22:00:24 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/09/28 22:00:24 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/09/28 22:00:24 INFO SecurityManager: Changing view acls to: root
+26/09/28 22:00:24 INFO SecurityManager: Changing modify acls to: root
+26/09/28 22:00:24 INFO SecurityManager: Changing view acls groups to: 
+26/09/28 22:00:24 INFO SecurityManager: Changing modify acls groups to: 
+26/09/28 22:00:24 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/09/28 22:00:24 INFO Utils: Successfully started service 'sparkDriver' on port 37551.
+26/09/28 22:00:24 INFO SparkEnv: Registering MapOutputTracker
+26/09/28 22:00:24 INFO SparkEnv: Registering BlockManagerMaster
+26/09/28 22:00:24 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/09/28 22:00:24 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/09/28 22:00:24 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/09/28 22:00:24 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-fa8133a6-08b7-4477-ba60-a33b6900134a
+26/09/28 22:00:24 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/09/28 22:00:24 INFO SparkEnv: Registering OutputCommitCoordinator
+26/09/28 22:00:24 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/09/28 22:00:24 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/09/28 22:00:24 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:37551/jars/ddos-detection.jar with timestamp 1790632823946
+26/09/28 22:00:24 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/09/28 22:00:24 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.5:7077 after 22 ms (0 ms spent in bootstraps)
+26/09/28 22:00:25 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20260928220024-0009
+26/09/28 22:00:25 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35249.
+26/09/28 22:00:25 INFO NettyBlockTransferService: Server created on spark-master:35249
+26/09/28 22:00:25 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260928220024-0009/0 on worker-20260928195515-172.18.0.7-45377 (172.18.0.7:45377) with 3 core(s)
+26/09/28 22:00:25 INFO StandaloneSchedulerBackend: Granted executor ID app-20260928220024-0009/0 on hostPort 172.18.0.7:45377 with 3 core(s), 2.4 GiB RAM
+26/09/28 22:00:25 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/09/28 22:00:25 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260928220024-0009/1 on worker-20260928195515-172.18.0.7-45377 (172.18.0.7:45377) with 3 core(s)
+26/09/28 22:00:25 INFO StandaloneSchedulerBackend: Granted executor ID app-20260928220024-0009/1 on hostPort 172.18.0.7:45377 with 3 core(s), 2.4 GiB RAM
+26/09/28 22:00:25 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 35249, None)
+26/09/28 22:00:25 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:35249 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 35249, None)
+26/09/28 22:00:25 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 35249, None)
+26/09/28 22:00:25 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 35249, None)
+26/09/28 22:00:25 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20260928220024-0009.inprogress
+26/09/28 22:00:25 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260928220024-0009/1 is now RUNNING
+26/09/28 22:00:25 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260928220024-0009/0 is now RUNNING
+26/09/28 22:00:26 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+
+[STAGE] Merging copies of the same day-2 record (same connection key)
+26/09/28 22:00:35 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+  day-2 records 20,364,525 -> 19,881,726; 482,799 records had copies (482,799 extra copies merged)
+  missing feature values 140,724,684 -> 134,452,222; 6,272,462 restored exactly from another copy of the same record
+
+[STAGE] Validating recovery rules on complete day-1 rows
+  rule                           target               checked rows   hit rate  used
+  variance_from_std              pkt_len_var            50,063,112  100.0000%  yes
+  std_from_variance              pkt_len_std            50,063,112  100.0000%  yes
+  fwd_seg_from_mean              fwd_seg_size_avg       50,063,112  100.0000%  yes
+  fwd_mean_from_seg              fwd_pkt_len_mean       50,063,112  100.0000%  yes
+  bwd_seg_from_mean              bwd_seg_size_avg       50,063,112  100.0000%  yes
+  bwd_mean_from_seg              bwd_pkt_len_mean       50,063,112  100.0000%  yes
+  subflow_fwd_pkts_from_total    subflow_fwd_pkts       50,063,112  100.0000%  yes
+  fwd_pkts_from_subflow          tot_fwd_pkts           50,063,112  100.0000%  yes
+  subflow_bwd_pkts_from_total    subflow_bwd_pkts       50,063,112  100.0000%  yes
+  bwd_pkts_from_subflow          tot_bwd_pkts           50,063,112  100.0000%  yes
+  subflow_fwd_bytes_from_total   subflow_fwd_byts       50,063,112  100.0000%  yes
+  fwd_bytes_from_subflow         totlen_fwd_pkts        50,063,112  100.0000%  yes
+  subflow_bwd_bytes_from_total   subflow_bwd_byts       50,063,112  100.0000%  yes
+  bwd_bytes_from_subflow         totlen_bwd_pkts        50,063,112  100.0000%  yes
+  fwd_bytes_from_mean            totlen_fwd_pkts        50,063,112  100.0000%  yes
+  fwd_mean_from_bytes            fwd_pkt_len_mean       50,063,112  100.0000%  yes
+  bwd_bytes_from_mean            totlen_bwd_pkts        50,063,112  100.0000%  yes
+  bwd_mean_from_bytes            bwd_pkt_len_mean       50,063,112  100.0000%  yes
+  flow_bytes_rate                flow_byts_s            49,814,088  100.0000%  yes
+  flow_packets_rate              flow_pkts_s            50,063,112  100.0000%  yes
+  fwd_packets_rate               fwd_pkts_s             50,063,112   97.2770%  NO
+  bwd_packets_rate               bwd_pkts_s             50,063,112   97.2770%  NO
+  duration_from_iat_mean         flow_duration          50,063,112  100.0000%  yes
+  iat_mean_from_duration         flow_iat_mean          50,063,112  100.0000%  yes
+  duration_from_packet_rate      flow_duration          48,699,876  100.0000%  yes
+  fwd_pkts_from_rate             tot_fwd_pkts           48,699,876  100.0000%  yes
+  bwd_pkts_from_rate             tot_bwd_pkts           48,699,876  100.0000%  yes
+  fwd_iat_total_from_mean        fwd_iat_tot            50,045,295  100.0000%  yes
+  fwd_iat_mean_from_total        fwd_iat_mean           50,045,295  100.0000%  yes
+  bwd_iat_total_from_mean        bwd_iat_tot               331,660  100.0000%  yes
+  bwd_iat_mean_from_total        bwd_iat_mean              331,660  100.0000%  yes
+  avg_packet_size                pkt_size_avg           50,063,112    4.1790%  NO
+  max_packet_length              pkt_len_max            50,063,112  100.0000%  yes
+  min_packet_length              pkt_len_min            50,063,112  100.0000%  yes
+  down_up_ratio                  down_up_ratio          50,063,112  100.0000%  yes
+  32 of 35 rules hold on at least 99.9% of day-1 rows and will be used
+
+[STAGE] Measuring NaN and Infinity, and the day-1 caps used to replace Infinity
+  column               day                NaN        Inf    Inf replaced by
+  flow_byts_s          2019-01-12           0  1,114,212      2944000000.00
+  flow_byts_s          2019-03-11           0    710,239      2944000000.00
+  flow_pkts_s          2019-01-12           0  1,363,236         4000000.00
+  flow_pkts_s          2019-03-11           0    710,254         4000000.00
+
+[STAGE] Computing per-protocol medians from observed values for tier-2 recovery
+
+[STAGE] Fitting MLlib Imputer (median) for tier-3 recovery
+26/09/28 22:19:52 ERROR CodeGenerator: failed to compile: org.codehaus.commons.compiler.InternalCompilerException: Compiling "GeneratedClass" in File 'generated.java', Line 1, Column 1: File 'generated.java', Line 3020, Column 16: Compiling "processNext()"
+org.codehaus.commons.compiler.InternalCompilerException: Compiling "GeneratedClass" in File 'generated.java', Line 1, Column 1: File 'generated.java', Line 3020, Column 16: Compiling "processNext()"
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:402)
+	at org.codehaus.janino.UnitCompiler.access$000(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$2.visitCompilationUnit(UnitCompiler.java:363)
+	at org.codehaus.janino.UnitCompiler$2.visitCompilationUnit(UnitCompiler.java:361)
+	at org.codehaus.janino.Java$CompilationUnit.accept(Java.java:371)
+	at org.codehaus.janino.UnitCompiler.compileUnit(UnitCompiler.java:361)
+	at org.codehaus.janino.SimpleCompiler.cook(SimpleCompiler.java:264)
+	at org.codehaus.janino.ClassBodyEvaluator.cook(ClassBodyEvaluator.java:294)
+	at org.codehaus.janino.ClassBodyEvaluator.cook(ClassBodyEvaluator.java:288)
+	at org.codehaus.janino.ClassBodyEvaluator.cook(ClassBodyEvaluator.java:267)
+	at org.codehaus.commons.compiler.Cookable.cook(Cookable.java:82)
+	at org.apache.spark.sql.catalyst.expressions.codegen.CodeGenerator$.doCompile(CodeGenerator.scala:1497)
+	at org.apache.spark.sql.catalyst.expressions.codegen.CodeGenerator$.$anonfun$cache$1(CodeGenerator.scala:1589)
+	at org.apache.spark.util.NonFateSharingCache$$anon$1.load(NonFateSharingCache.scala:68)
+	at org.sparkproject.guava.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3599)
+	at org.sparkproject.guava.cache.LocalCache$Segment.loadSync(LocalCache.java:2379)
+	at org.sparkproject.guava.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2342)
+	at org.sparkproject.guava.cache.LocalCache$Segment.get(LocalCache.java:2257)
+	at org.sparkproject.guava.cache.LocalCache.get(LocalCache.java:4000)
+	at org.sparkproject.guava.cache.LocalCache.getOrLoad(LocalCache.java:4004)
+	at org.sparkproject.guava.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4874)
+	at org.apache.spark.util.NonFateSharingLoadingCache.$anonfun$get$2(NonFateSharingCache.scala:94)
+	at org.apache.spark.util.KeyLock.withLock(KeyLock.scala:64)
+	at org.apache.spark.util.NonFateSharingLoadingCache.get(NonFateSharingCache.scala:94)
+	at org.apache.spark.sql.catalyst.expressions.codegen.CodeGenerator$.compile(CodeGenerator.scala:1444)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.liftedTree1$1(WholeStageCodegenExec.scala:726)
+	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:725)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:195)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:246)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:243)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:191)
+	at org.apache.spark.sql.execution.DeserializeToObjectExec.doExecute(objects.scala:93)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:195)
+	at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:246)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:243)
+	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:191)
+	at org.apache.spark.sql.execution.QueryExecution.toRdd$lzycompute(QueryExecution.scala:207)
+	at org.apache.spark.sql.execution.QueryExecution.toRdd(QueryExecution.scala:206)
+	at org.apache.spark.sql.Dataset.rdd$lzycompute(Dataset.scala:3851)
+	at org.apache.spark.sql.Dataset.rdd(Dataset.scala:3849)
+	at org.apache.spark.sql.execution.stat.StatFunctions$.multipleApproxQuantiles(StatFunctions.scala:100)
+	at org.apache.spark.sql.DataFrameStatFunctions.approxQuantile(DataFrameStatFunctions.scala:104)
+	at org.apache.spark.ml.feature.Imputer.fit(Imputer.scala:176)
+	at ddos.ingest.BuildSilver$.main(BuildSilver.scala:286)
+	at ddos.ingest.BuildSilver.main(BuildSilver.scala)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.deploy.JavaMainApplication.start(SparkApplication.scala:52)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:1034)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:199)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:222)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:91)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1125)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1134)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+Caused by: org.codehaus.commons.compiler.InternalCompilerException: File 'generated.java', Line 3020, Column 16: Compiling "processNext()"
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:3333)
+	at org.codehaus.janino.UnitCompiler.compileDeclaredMethods(UnitCompiler.java:1447)
+	at org.codehaus.janino.UnitCompiler.compileDeclaredMethods(UnitCompiler.java:1420)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:829)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:1026)
+	at org.codehaus.janino.UnitCompiler.access$700(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$3.visitMemberClassDeclaration(UnitCompiler.java:425)
+	at org.codehaus.janino.UnitCompiler$3.visitMemberClassDeclaration(UnitCompiler.java:418)
+	at org.codehaus.janino.Java$MemberClassDeclaration.accept(Java.java:1533)
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:418)
+	at org.codehaus.janino.UnitCompiler.compileDeclaredMemberTypes(UnitCompiler.java:1397)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:864)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:442)
+	at org.codehaus.janino.UnitCompiler.access$400(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$3.visitPackageMemberClassDeclaration(UnitCompiler.java:422)
+	at org.codehaus.janino.UnitCompiler$3.visitPackageMemberClassDeclaration(UnitCompiler.java:418)
+	at org.codehaus.janino.Java$PackageMemberClassDeclaration.accept(Java.java:1688)
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:418)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:392)
+	... 58 more
+Caused by: java.lang.RuntimeException: File 'generated.java', Line 3021, Column 1
+	at org.codehaus.janino.UnitCompiler.compileStatements(UnitCompiler.java:1663)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:3658)
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:3329)
+	... 76 more
+Caused by: java.lang.RuntimeException: File 'generated.java', Line 3021, Column 1
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1604)
+	at org.codehaus.janino.UnitCompiler.compileStatements(UnitCompiler.java:1661)
+	... 78 more
+Caused by: java.lang.RuntimeException: File 'generated.java', Line 3021, Column 32
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1604)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:2001)
+	at org.codehaus.janino.UnitCompiler.access$2200(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$6.visitWhileStatement(UnitCompiler.java:1584)
+	at org.codehaus.janino.UnitCompiler$6.visitWhileStatement(UnitCompiler.java:1575)
+	at org.codehaus.janino.Java$WhileStatement.accept(Java.java:3389)
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1575)
+	... 79 more
+Caused by: java.lang.RuntimeException: File 'generated.java', Line 17725, Column 1
+	at org.codehaus.janino.UnitCompiler.compileStatements(UnitCompiler.java:1663)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:1646)
+	at org.codehaus.janino.UnitCompiler.access$1700(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$6.visitBlock(UnitCompiler.java:1579)
+	at org.codehaus.janino.UnitCompiler$6.visitBlock(UnitCompiler.java:1575)
+	at org.codehaus.janino.Java$Block.accept(Java.java:3115)
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1575)
+	... 85 more
+Caused by: java.lang.RuntimeException: File 'generated.java', Line 17725, Column 1
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1604)
+	at org.codehaus.janino.UnitCompiler.compileStatements(UnitCompiler.java:1661)
+	... 91 more
+Caused by: java.lang.RuntimeException: File 'generated.java', Line 17725, Column 4
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1604)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:1691)
+	at org.codehaus.janino.UnitCompiler.access$2600(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$6.visitDoStatement(UnitCompiler.java:1588)
+	at org.codehaus.janino.UnitCompiler$6.visitDoStatement(UnitCompiler.java:1575)
+	at org.codehaus.janino.Java$DoStatement.accept(Java.java:3794)
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1575)
+	... 92 more
+Caused by: java.lang.RuntimeException: File 'generated.java', Line 17727, Column 1
+	at org.codehaus.janino.UnitCompiler.compileStatements(UnitCompiler.java:1663)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:1646)
+	at org.codehaus.janino.UnitCompiler.access$1700(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$6.visitBlock(UnitCompiler.java:1579)
+	at org.codehaus.janino.UnitCompiler$6.visitBlock(UnitCompiler.java:1575)
+	at org.codehaus.janino.Java$Block.accept(Java.java:3115)
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1575)
+	... 98 more
+Caused by: java.lang.RuntimeException: File 'generated.java', Line 17727, Column 1
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1604)
+	at org.codehaus.janino.UnitCompiler.compileStatements(UnitCompiler.java:1661)
+	... 104 more
+Caused by: java.lang.RuntimeException: File 'generated.java', Line 17727, Column 4
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1604)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:1691)
+	at org.codehaus.janino.UnitCompiler.access$2600(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$6.visitDoStatement(UnitCompiler.java:1588)
+	at org.codehaus.janino.UnitCompiler$6.visitDoStatement(UnitCompiler.java:1575)
+	at org.codehaus.janino.Java$DoStatement.accept(Java.java:3794)
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1575)
+	... 105 more
+Caused by: java.lang.RuntimeException: File 'generated.java', Line 17729, Column 1
+	at org.codehaus.janino.UnitCompiler.compileStatements(UnitCompiler.java:1663)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:1646)
+	at org.codehaus.janino.UnitCompiler.access$1700(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$6.visitBlock(UnitCompiler.java:1579)
+	at org.codehaus.janino.UnitCompiler$6.visitBlock(UnitCompiler.java:1575)
+	at org.codehaus.janino.Java$Block.accept(Java.java:3115)
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1575)
+	... 111 more
+Caused by: java.lang.RuntimeException: File 'generated.java', Line 17729, Column 1
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1604)
+	at org.codehaus.janino.UnitCompiler.compileStatements(UnitCompiler.java:1661)
+	... 117 more
+Caused by: org.codehaus.commons.compiler.InternalCompilerException: File 'generated.java', Line 17729, Column 1
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:2525)
+	at org.codehaus.janino.UnitCompiler.access$1800(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$6.visitExpressionStatement(UnitCompiler.java:1580)
+	at org.codehaus.janino.UnitCompiler$6.visitExpressionStatement(UnitCompiler.java:1575)
+	at org.codehaus.janino.Java$ExpressionStatement.accept(Java.java:3209)
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:1575)
+	... 118 more
+Caused by: org.codehaus.commons.compiler.InternalCompilerException: File 'generated.java', Line 17729, Column 37: Compiling "!rdd_isNull_70 && Double.isNaN(rdd_value_70)"
+	at org.codehaus.janino.UnitCompiler.compileGetValue(UnitCompiler.java:5856)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:4101)
+	at org.codehaus.janino.UnitCompiler.access$6300(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$13.visitAssignment(UnitCompiler.java:4057)
+	at org.codehaus.janino.UnitCompiler$13.visitAssignment(UnitCompiler.java:4040)
+	at org.codehaus.janino.Java$Assignment.accept(Java.java:4864)
+	at org.codehaus.janino.UnitCompiler.compile(UnitCompiler.java:4040)
+	at org.codehaus.janino.UnitCompiler.compile2(UnitCompiler.java:2523)
+	... 123 more
+Caused by: org.codehaus.commons.compiler.InternalCompilerException: Code grows beyond 64 KB
+	at org.codehaus.janino.CodeContext.makeSpace(CodeContext.java:699)
+	at org.codehaus.janino.CodeContext.write(CodeContext.java:586)
+	at org.codehaus.janino.CodeContext.writeBranch(CodeContext.java:738)
+	at org.codehaus.janino.UnitCompiler.ifxx(UnitCompiler.java:12412)
+	at org.codehaus.janino.UnitCompiler.compileBoolean2(UnitCompiler.java:4319)
+	at org.codehaus.janino.UnitCompiler.access$6500(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$14$1.visitAmbiguousName(UnitCompiler.java:4262)
+	at org.codehaus.janino.UnitCompiler$14$1.visitAmbiguousName(UnitCompiler.java:4261)
+	at org.codehaus.janino.Java$AmbiguousName.accept(Java.java:4603)
+	at org.codehaus.janino.UnitCompiler$14.visitLvalue(UnitCompiler.java:4261)
+	at org.codehaus.janino.UnitCompiler$14.visitLvalue(UnitCompiler.java:4257)
+	at org.codehaus.janino.Java$Lvalue.accept(Java.java:4528)
+	at org.codehaus.janino.UnitCompiler.compileBoolean(UnitCompiler.java:4257)
+	at org.codehaus.janino.UnitCompiler.compileBoolean2(UnitCompiler.java:4329)
+	at org.codehaus.janino.UnitCompiler.access$6700(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$14.visitUnaryOperation(UnitCompiler.java:4275)
+	at org.codehaus.janino.UnitCompiler$14.visitUnaryOperation(UnitCompiler.java:4257)
+	at org.codehaus.janino.Java$UnaryOperation.accept(Java.java:5115)
+	at org.codehaus.janino.UnitCompiler.compileBoolean(UnitCompiler.java:4257)
+	at org.codehaus.janino.UnitCompiler.compileBoolean2(UnitCompiler.java:4401)
+	at org.codehaus.janino.UnitCompiler.access$6800(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$14.visitBinaryOperation(UnitCompiler.java:4276)
+	at org.codehaus.janino.UnitCompiler$14.visitBinaryOperation(UnitCompiler.java:4257)
+	at org.codehaus.janino.Java$BinaryOperation.accept(Java.java:5249)
+	at org.codehaus.janino.UnitCompiler.compileBoolean(UnitCompiler.java:4257)
+	at org.codehaus.janino.UnitCompiler.compileGet2(UnitCompiler.java:4765)
+	at org.codehaus.janino.UnitCompiler.compileGet2(UnitCompiler.java:5181)
+	at org.codehaus.janino.UnitCompiler.access$8700(UnitCompiler.java:236)
+	at org.codehaus.janino.UnitCompiler$16.visitBinaryOperation(UnitCompiler.java:4729)
+	at org.codehaus.janino.UnitCompiler$16.visitBinaryOperation(UnitCompiler.java:4711)
+	at org.codehaus.janino.Java$BinaryOperation.accept(Java.java:5249)
+	at org.codehaus.janino.UnitCompiler.compileGet(UnitCompiler.java:4711)
+	at org.codehaus.janino.UnitCompiler.compileGetValue(UnitCompiler.java:5854)
+	... 130 more
+26/09/28 22:19:52 WARN WholeStageCodegenExec: Whole-stage codegen disabled for plan (id=1):
+ *(1) Project [CASE WHEN (flow_duration#18814 = NaN) THEN null WHEN isnan(flow_duration#18814) THEN null ELSE flow_duration#18814 END AS flow_duration#26690, CASE WHEN (tot_fwd_pkts#18911 = NaN) THEN null WHEN isnan(tot_fwd_pkts#18911) THEN null ELSE tot_fwd_pkts#18911 END AS tot_fwd_pkts#26691, CASE WHEN (tot_bwd_pkts#19008 = NaN) THEN null WHEN isnan(tot_bwd_pkts#19008) THEN null ELSE tot_bwd_pkts#19008 END AS tot_bwd_pkts#26692, CASE WHEN (totlen_fwd_pkts#19105 = NaN) THEN null WHEN isnan(totlen_fwd_pkts#19105) THEN null ELSE totlen_fwd_pkts#19105 END AS totlen_fwd_pkts#26693, CASE WHEN (totlen_bwd_pkts#19202 = NaN) THEN null WHEN isnan(totlen_bwd_pkts#19202) THEN null ELSE totlen_bwd_pkts#19202 END AS totlen_bwd_pkts#26694, CASE WHEN (fwd_pkt_len_max#19299 = NaN) THEN null WHEN isnan(fwd_pkt_len_max#19299) THEN null ELSE fwd_pkt_len_max#19299 END AS fwd_pkt_len_max#26695, CASE WHEN (fwd_pkt_len_min#19396 = NaN) THEN null WHEN isnan(fwd_pkt_len_min#19396) THEN null ELSE fwd_pkt_len_min#19396 END AS fwd_pkt_len_min#26696, CASE WHEN (fwd_pkt_len_mean#19493 = NaN) THEN null WHEN isnan(fwd_pkt_len_mean#19493) THEN null ELSE fwd_pkt_len_mean#19493 END AS fwd_pkt_len_mean#26697, CASE WHEN (fwd_pkt_len_std#19590 = NaN) THEN null WHEN isnan(fwd_pkt_len_std#19590) THEN null ELSE fwd_pkt_len_std#19590 END AS fwd_pkt_len_std#26698, CASE WHEN (bwd_pkt_len_max#19687 = NaN) THEN null WHEN isnan(bwd_pkt_len_max#19687) THEN null ELSE bwd_pkt_len_max#19687 END AS bwd_pkt_len_max#26699, CASE WHEN (bwd_pkt_len_min#19784 = NaN) THEN null WHEN isnan(bwd_pkt_len_min#19784) THEN null ELSE bwd_pkt_len_min#19784 END AS bwd_pkt_len_min#26700, CASE WHEN (bwd_pkt_len_mean#19881 = NaN) THEN null WHEN isnan(bwd_pkt_len_mean#19881) THEN null ELSE bwd_pkt_len_mean#19881 END AS bwd_pkt_len_mean#26701, CASE WHEN (bwd_pkt_len_std#19978 = NaN) THEN null WHEN isnan(bwd_pkt_len_std#19978) THEN null ELSE bwd_pkt_len_std#19978 END AS bwd_pkt_len_std#26702, CASE WHEN (pkt_len_min#20075 = NaN) THEN null WHEN isnan(pkt_len_min#20075) THEN null ELSE pkt_len_min#20075 END AS pkt_len_min#26703, CASE WHEN (pkt_len_max#20172 = NaN) THEN null WHEN isnan(pkt_len_max#20172) THEN null ELSE pkt_len_max#20172 END AS pkt_len_max#26704, CASE WHEN (pkt_len_mean#20269 = NaN) THEN null WHEN isnan(pkt_len_mean#20269) THEN null ELSE pkt_len_mean#20269 END AS pkt_len_mean#26705, CASE WHEN (pkt_len_std#20366 = NaN) THEN null WHEN isnan(pkt_len_std#20366) THEN null ELSE pkt_len_std#20366 END AS pkt_len_std#26706, CASE WHEN (pkt_len_var#20463 = NaN) THEN null WHEN isnan(pkt_len_var#20463) THEN null ELSE pkt_len_var#20463 END AS pkt_len_var#26707, CASE WHEN (flow_byts_s#20560 = NaN) THEN null WHEN isnan(flow_byts_s#20560) THEN null ELSE flow_byts_s#20560 END AS flow_byts_s#26708, CASE WHEN (flow_pkts_s#20657 = NaN) THEN null WHEN isnan(flow_pkts_s#20657) THEN null ELSE flow_pkts_s#20657 END AS flow_pkts_s#26709, CASE WHEN (fwd_pkts_s#20754 = NaN) THEN null WHEN isnan(fwd_pkts_s#20754) THEN null ELSE fwd_pkts_s#20754 END AS fwd_pkts_s#26710, CASE WHEN (bwd_pkts_s#20851 = NaN) THEN null WHEN isnan(bwd_pkts_s#20851) THEN null ELSE bwd_pkts_s#20851 END AS bwd_pkts_s#26711, CASE WHEN (flow_iat_mean#20948 = NaN) THEN null WHEN isnan(flow_iat_mean#20948) THEN null ELSE flow_iat_mean#20948 END AS flow_iat_mean#26712, CASE WHEN (flow_iat_std#21045 = NaN) THEN null WHEN isnan(flow_iat_std#21045) THEN null ELSE flow_iat_std#21045 END AS flow_iat_std#26713, ... 53 more fields]
++- *(1) Project [coalesce(flow_duration#10913, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 1.11048237E8 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 1.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 3501369.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 2.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 47.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 1.0 END END END END END END) AS flow_duration#18814, coalesce(tot_fwd_pkts#10914, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 39.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 2.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 9.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 2.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 2.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 2.0 END END END END END END) AS tot_fwd_pkts#18911, coalesce(tot_bwd_pkts#10915, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS tot_bwd_pkts#19008, coalesce(CASE WHEN isnan(totlen_fwd_pkts#10916) THEN 0.0 WHEN (totlen_fwd_pkts#10916 = Infinity) THEN 1.5266416E7 WHEN (totlen_fwd_pkts#10916 = -Infinity) THEN 0.0 ELSE totlen_fwd_pkts#10916 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 902.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 2064.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 12.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS totlen_fwd_pkts#19105, coalesce(CASE WHEN isnan(totlen_bwd_pkts#10917) THEN 0.0 WHEN (totlen_bwd_pkts#10917 = Infinity) THEN 1.0993758E7 WHEN (totlen_bwd_pkts#10917 = -Infinity) THEN 0.0 ELSE totlen_bwd_pkts#10917 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS totlen_bwd_pkts#19202, coalesce(CASE WHEN isnan(fwd_pkt_len_max#10918) THEN 0.0 WHEN (fwd_pkt_len_max#10918 = Infinity) THEN 32120.0 WHEN (fwd_pkt_len_max#10918 = -Infinity) THEN 0.0 ELSE fwd_pkt_len_max#10918 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 403.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 516.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 6.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS fwd_pkt_len_max#19299, coalesce(CASE WHEN isnan(fwd_pkt_len_min#10919) THEN 0.0 WHEN (fwd_pkt_len_min#10919 = Infinity) THEN 2021.0 WHEN (fwd_pkt_len_min#10919 = -Infinity) THEN 0.0 ELSE fwd_pkt_len_min#10919 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 403.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 516.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 6.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS fwd_pkt_len_min#19396, coalesce(CASE WHEN isnan(fwd_pkt_len_mean#10920) THEN 0.0 WHEN (fwd_pkt_len_mean#10920 = Infinity) THEN 3015.2905392059947 WHEN (fwd_pkt_len_mean#10920 = -Infinity) THEN 0.0 ELSE fwd_pkt_len_mean#10920 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 403.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 516.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 6.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS fwd_pkt_len_mean#19493, coalesce(CASE WHEN isnan(fwd_pkt_len_std#10921) THEN 0.0 WHEN (fwd_pkt_len_std#10921 = Infinity) THEN 2221.556055317442 WHEN (fwd_pkt_len_std#10921 = -Infinity) THEN 0.0 ELSE fwd_pkt_len_std#10921 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS fwd_pkt_len_std#19590, coalesce(CASE WHEN isnan(bwd_pkt_len_max#10922) THEN 0.0 WHEN (bwd_pkt_len_max#10922 = Infinity) THEN 37960.0 WHEN (bwd_pkt_len_max#10922 = -Infinity) THEN 0.0 ELSE bwd_pkt_len_max#10922 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS bwd_pkt_len_max#19687, coalesce(CASE WHEN isnan(bwd_pkt_len_min#10923) THEN 0.0 WHEN (bwd_pkt_len_min#10923 = Infinity) THEN 1460.0 WHEN (bwd_pkt_len_min#10923 = -Infinity) THEN 0.0 ELSE bwd_pkt_len_min#10923 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS bwd_pkt_len_min#19784, coalesce(CASE WHEN isnan(bwd_pkt_len_mean#10924) THEN 0.0 WHEN (bwd_pkt_len_mean#10924 = Infinity) THEN 5011.060158910329 WHEN (bwd_pkt_len_mean#10924 = -Infinity) THEN 0.0 ELSE bwd_pkt_len_mean#10924 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS bwd_pkt_len_mean#19881, coalesce(CASE WHEN isnan(bwd_pkt_len_std#10925) THEN 0.0 WHEN (bwd_pkt_len_std#10925 = Infinity) THEN 7045.095259550461 WHEN (bwd_pkt_len_std#10925 = -Infinity) THEN 0.0 ELSE bwd_pkt_len_std#10925 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS bwd_pkt_len_std#19978, coalesce(CASE WHEN isnan(pkt_len_min#10926) THEN 0.0 WHEN (pkt_len_min#10926 = Infinity) THEN 1472.0 WHEN (pkt_len_min#10926 = -Infinity) THEN 0.0 ELSE pkt_len_min#10926 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 403.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 516.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 6.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS pkt_len_min#20075, coalesce(CASE WHEN isnan(pkt_len_max#10927) THEN 0.0 WHEN (pkt_len_max#10927 = Infinity) THEN 37960.0 WHEN (pkt_len_max#10927 = -Infinity) THEN 0.0 ELSE pkt_len_max#10927 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 403.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 516.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 6.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS pkt_len_max#20172, coalesce(CASE WHEN isnan(pkt_len_mean#10928) THEN 0.0 WHEN (pkt_len_mean#10928 = Infinity) THEN 4023.9453551912575 WHEN (pkt_len_mean#10928 = -Infinity) THEN 0.0 ELSE pkt_len_mean#10928 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 403.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 516.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 6.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS pkt_len_mean#20269, coalesce(CASE WHEN isnan(pkt_len_std#10929) THEN 0.0 WHEN (pkt_len_std#10929 = Infinity) THEN 6616.562066006961 WHEN (pkt_len_std#10929 = -Infinity) THEN 0.0 ELSE pkt_len_std#10929 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS pkt_len_std#20366, coalesce(CASE WHEN isnan(pkt_len_var#10930) THEN 0.0 WHEN (pkt_len_var#10930 = Infinity) THEN 4.3778893573322296E7 WHEN (pkt_len_var#10930 = -Infinity) THEN 0.0 ELSE pkt_len_var#10930 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS pkt_len_var#20463, coalesce(CASE WHEN isnan(flow_byts_s#10931) THEN 0.0 WHEN (flow_byts_s#10931 = Infinity) THEN 2.944E9 WHEN (flow_byts_s#10931 = -Infinity) THEN 0.0 ELSE flow_byts_s#10931 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 7.5E8 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 7.5E8 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 452830.1886792453 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS flow_byts_s#20560, coalesce(CASE WHEN isnan(flow_pkts_s#10932) THEN 0.0 WHEN (flow_pkts_s#10932 = Infinity) THEN 4000000.0 WHEN (flow_pkts_s#10932 = -Infinity) THEN 0.030517510604262728 ELSE flow_pkts_s#10932 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.5660737863382443 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 2000000.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 58.25056509760384 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 1000000.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 75471.69811320755 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 2000000.0 END END END END END END) AS flow_pkts_s#20657, coalesce(CASE WHEN isnan(fwd_pkts_s#10933) THEN 0.0 WHEN (fwd_pkts_s#10933 = Infinity) THEN 4000000.0 WHEN (fwd_pkts_s#10933 = -Infinity) THEN 0.0 ELSE fwd_pkts_s#10933 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.4488630949519553 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 2000000.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 24.508272337314164 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 1000000.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 39215.68627450981 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 2000000.0 END END END END END END) AS fwd_pkts_s#20754, coalesce(CASE WHEN isnan(bwd_pkts_s#10934) THEN 0.0 WHEN (bwd_pkts_s#10934 = Infinity) THEN 2000000.0 WHEN (bwd_pkts_s#10934 = -Infinity) THEN 0.0 ELSE bwd_pkts_s#10934 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS bwd_pkts_s#20851, coalesce(CASE WHEN isnan(flow_iat_mean#10935) THEN 0.0 WHEN (flow_iat_mean#10935 = Infinity) THEN 6.5536145E7 WHEN (flow_iat_mean#10935 = -Infinity) THEN 0.0 ELSE flow_iat_mean#10935 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 1929625.8 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 1.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 17169.673156764504 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 2.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 17.666666666666664 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 1.0 END END END END END END) AS flow_iat_mean#20948, coalesce(CASE WHEN isnan(flow_iat_std#10936) THEN 0.0 WHEN (flow_iat_std#10936 = Infinity) THEN 6.808292544583908E7 WHEN (flow_iat_std#10936 = -Infinity) THEN 0.0 ELSE flow_iat_std#10936 END, CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 0)) THEN 4004722.055642257 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 0)) THEN 51338.57142833201 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 17)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-03-11) AND (protocol#10903L = 6)) THEN 0.0 ELSE CASE WHEN ((capture_day#10908 = 2019-01-12) AND (protocol#10903L = 6)) THEN 0.0 END END END END END END) AS flow_iat_std#21045, ... 53 more fields]
+   +- *(1) Scan ExistingRDD[flow_id#10897,timestamp#10898,src_ip#10899,src_port#10900L,dst_ip#10901,dst_port#10902L,protocol#10903L,label#10904,similar_http#10905,source_file#10906,source_format#10907,capture_day#10908,label_family#10909,is_attack#10910,ts#10911,copies#10912L,flow_duration#10913,tot_fwd_pkts#10914,tot_bwd_pkts#10915,totlen_fwd_pkts#10916,totlen_bwd_pkts#10917,fwd_pkt_len_max#10918,fwd_pkt_len_min#10919,fwd_pkt_len_mean#10920,... 71 more fields]
+
+
+[STAGE] Writing /data/silver
+26/09/28 22:27:27 WARN DAGScheduler: Broadcasting large task binary with size 1095.8 KiB
+
+[CHECK] Rows per day, uniqueness of the connection key, and timestamp parsing
+  2019-01-12: bronze 50,063,112 -> silver 50,063,112 (copies merged 0); distinct connection keys 50,063,112; timestamps that failed to parse: 0
+  2019-03-11: bronze 20,364,525 -> silver 19,881,726 (copies merged 482,799); distinct connection keys 19,881,726; timestamps that failed to parse: 0
+
+[CHECK] Label families per day
++-----------+------------+--------+
+|capture_day|label_family|count   |
++-----------+------------+--------+
+|2019-01-12 |Benign      |56863   |
+|2019-01-12 |DNS         |5071011 |
+|2019-01-12 |LDAP        |2179930 |
+|2019-01-12 |MSSQL       |4522492 |
+|2019-01-12 |NTP         |1202642 |
+|2019-01-12 |NetBIOS     |4093279 |
+|2019-01-12 |SNMP        |5159870 |
+|2019-01-12 |SSDP        |2610611 |
+|2019-01-12 |Syn         |1582289 |
+|2019-01-12 |TFTP        |20082580|
+|2019-01-12 |UDP         |3134645 |
+|2019-01-12 |UDPLag      |366461  |
+|2019-01-12 |WebDDoS     |439     |
+|2019-03-11 |Benign      |52561   |
+|2019-03-11 |LDAP        |1915122 |
+|2019-03-11 |MSSQL       |5787453 |
+|2019-03-11 |NetBIOS     |3657497 |
+|2019-03-11 |Portmap     |186960  |
+|2019-03-11 |Syn         |4413105 |
+|2019-03-11 |UDP         |3867155 |
+|2019-03-11 |UDPLag      |1873    |
++-----------+------------+--------+
+
+
+[CHECK] Missing values recovered per field and tier
+
+  2019-01-12: 249,024 missing values in total
+  field                     missing  tier 1 rule  tier 2 median  tier 3 imputer
+  flow_byts_s               249,024      249,024              0               0
+  ALL                       249,024      249,024              0               0
+
+  2019-03-11: 134,452,222 missing values in total
+  field                     missing  tier 1 rule  tier 2 median  tier 3 imputer
+  active_max              3,899,012            0      3,899,012               0
+  active_mean             3,902,646            0      3,902,646               0
+  active_min              3,900,621            0      3,900,621               0
+  active_std              3,899,831            0      3,899,831               0
+  bwd_blk_rate_avg        1,944,231            0      1,944,231               0
+  bwd_byts_b_avg          1,946,194            0      1,946,194               0
+  bwd_header_len            968,485            0        968,485               0
+  bwd_iat_max             1,950,098            0      1,950,098               0
+  bwd_iat_mean            1,941,030      150,292      1,790,738               0
+  bwd_iat_min             1,945,726            0      1,945,726               0
+  bwd_iat_std             1,945,813            0      1,945,813               0
+  bwd_iat_tot             1,944,073      150,615      1,793,458               0
+  bwd_pkt_len_max         1,551,365            0      1,551,365               0
+  bwd_pkt_len_mean        1,556,467    1,555,234          1,233               0
+  bwd_pkt_len_min         1,557,484            0      1,557,484               0
+  bwd_pkt_len_std         1,551,689            0      1,551,689               0
+  bwd_pkts_b_avg          1,947,293            0      1,947,293               0
+  bwd_pkts_s              2,333,538            0      2,333,538               0
+  bwd_seg_size_avg        1,943,692    1,942,459          1,233               0
+  down_up_ratio           1,945,666    1,938,668          6,998               0
+  flow_byts_s             2,339,166    2,329,234          9,932               0
+  flow_duration           2,918,829    2,837,819         81,010               0
+  flow_iat_max            1,943,826            0      1,943,826               0
+  flow_iat_mean           1,938,608    1,887,660         50,948               0
+  flow_iat_min            1,943,432            0      1,943,432               0
+  flow_iat_std            1,943,583            0      1,943,583               0
+  flow_pkts_s             2,332,864    2,290,569         42,295               0
+  fwd_act_data_pkts       1,944,013            0      1,944,013               0
+  fwd_blk_rate_avg        1,943,418            0      1,943,418               0
+  fwd_byts_b_avg          1,947,900            0      1,947,900               0
+  fwd_header_len            971,626            0        971,626               0
+  fwd_iat_max             1,944,746            0      1,944,746               0
+  fwd_iat_mean            1,946,535    1,748,996        197,539               0
+  fwd_iat_min             1,940,703            0      1,940,703               0
+  fwd_iat_std             1,942,542            0      1,942,542               0
+  fwd_iat_tot             1,940,666    1,742,966        197,700               0
+  fwd_pkt_len_max         1,552,983            0      1,552,983               0
+  fwd_pkt_len_mean        1,556,703    1,555,447          1,256               0
+  fwd_pkt_len_min         1,555,110            0      1,555,110               0
+  fwd_pkt_len_std         1,554,366            0      1,554,366               0
+  fwd_pkts_b_avg          1,941,608            0      1,941,608               0
+  fwd_pkts_s              2,338,768            0      2,338,768               0
+  fwd_seg_size_avg        1,944,312    1,943,056          1,256               0
+  fwd_seg_size_min        1,947,687            0      1,947,687               0
+  idle_max                3,903,935            0      3,903,935               0
+  idle_mean               3,903,278            0      3,903,278               0
+  idle_min                3,896,518            0      3,896,518               0
+  idle_std                3,906,632            0      3,906,632               0
+  inbound                 1,947,091            0      1,947,091               0
+  init_bwd_win_byts       1,948,059            0      1,948,059               0
+  init_fwd_win_byts       1,942,586            0      1,942,586               0
+  pkt_len_max             1,552,986    1,310,685        242,301               0
+  pkt_len_mean            1,555,565            0      1,555,565               0
+  pkt_len_min             1,555,115    1,310,226        244,889               0
+  pkt_len_std             1,555,107    1,431,095        124,012               0
+  pkt_len_var             1,552,815    1,428,803        124,012               0
+  pkt_size_avg            1,943,848            0      1,943,848               0
+  subflow_bwd_byts        1,558,602    1,557,446          1,156               0
+  subflow_bwd_pkts        1,553,008    1,517,742         35,266               0
+  subflow_fwd_byts        1,553,735    1,552,445          1,290               0
+  subflow_fwd_pkts        1,556,754    1,522,133         34,621               0
+  tot_bwd_pkts            1,555,961    1,520,695         35,266               0
+  tot_fwd_pkts            1,552,394    1,517,773         34,621               0
+  totlen_bwd_pkts         1,555,356    1,554,200          1,156               0
+  totlen_fwd_pkts         1,553,929    1,552,639          1,290               0
+  ALL                   134,452,222   39,848,897     94,603,325               0
+
+[CHECK] Null feature values left in silver: 0
+
+[DONE] BuildSilver finished in 45.1 min
+EXIT=0

@@ -1,0 +1,18 @@
+1/6 Starting the cluster
+2/6 Stopping any earlier live run
+3/6 Checking the traffic waiting in Kafka
+    5964207 flows ready
+4/6 Checking the familiarity gate
+5/6 Resetting the live results and the label memory
+6/6 Starting the live scorer
+
+Live. Open:
+  My Network          http://localhost:8090
+  Familiarity router  http://localhost:3000/d/ddos-router
+  Live detection      http://localhost:3000/d/ddos-live
+  Model Lab           http://localhost:3000/d/ddos-lab
+  Spark jobs          http://localhost:4040
+  Spark cluster       http://localhost:8080
+  HDFS                http://localhost:9870
+
+Stop the live run with:  docker exec spark-master pkill -f LiveScorer

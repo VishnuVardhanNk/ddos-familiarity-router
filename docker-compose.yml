@@ -1,0 +1,192 @@
+name: ddos
+
+services:
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: namenode
+    hostname: namenode
+    restart: unless-stopped
+    ports:
+      - "9870:9870"
+      - "9000:9000"
+    environment:
+      CLUSTER_NAME: ddos-cluster
+      HADOOP_HEAPSIZE_MAX: 512m
+    env_file: ./infra/hadoop/hadoop.env
+    volumes:
+      - namenode_data:/hadoop/dfs/name
+      - ./data:/data:ro
+
+  datanode1:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode1
+    hostname: datanode1
+    restart: unless-stopped
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870"
+      HADOOP_HEAPSIZE_MAX: 256m
+    env_file: ./infra/hadoop/hadoop.env
+    volumes:
+      - datanode1_data:/hadoop/dfs/data
+    depends_on: [namenode]
+
+  datanode2:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode2
+    hostname: datanode2
+    restart: unless-stopped
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870"
+      HADOOP_HEAPSIZE_MAX: 256m
+    env_file: ./infra/hadoop/hadoop.env
+    volumes:
+      - datanode2_data:/hadoop/dfs/data
+    depends_on: [namenode]
+
+  datanode3:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode3
+    hostname: datanode3
+    restart: unless-stopped
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870"
+      HADOOP_HEAPSIZE_MAX: 256m
+    env_file: ./infra/hadoop/hadoop.env
+    volumes:
+      - datanode3_data:/hadoop/dfs/data
+    depends_on: [namenode]
+
+  spark-master:
+    image: apache/spark:3.5.5
+    container_name: spark-master
+    hostname: spark-master
+    user: root
+    restart: unless-stopped
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.master.Master", "--host", "spark-master"]
+    environment:
+      SPARK_DAEMON_MEMORY: 512m
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+      - "4040-4042:4040-4042"
+    volumes:
+      - ./infra/spark/conf:/opt/spark/conf:ro
+      - ./spark/target/scala-2.12:/opt/jobs:ro
+      - ./logs:/logs
+    depends_on: [namenode]
+
+  spark-worker:
+    image: apache/spark:3.5.5
+    container_name: spark-worker
+    hostname: spark-worker
+    user: root
+    restart: unless-stopped
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "spark://spark-master:7077"]
+    environment:
+      SPARK_WORKER_CORES: 6
+      SPARK_WORKER_MEMORY: 5g
+      SPARK_DAEMON_MEMORY: 512m
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./infra/spark/conf:/opt/spark/conf:ro
+    depends_on: [spark-master]
+
+  spark-history:
+    image: apache/spark:3.5.5
+    container_name: spark-history
+    hostname: spark-history
+    user: root
+    restart: unless-stopped
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.history.HistoryServer"]
+    environment:
+      SPARK_DAEMON_MEMORY: 512m
+    ports:
+      - "18080:18080"
+    volumes:
+      - ./infra/spark/conf:/opt/spark/conf:ro
+    depends_on: [spark-master]
+
+  kafka:
+    image: apache/kafka:3.7.0
+    container_name: kafka
+    hostname: kafka
+    restart: unless-stopped
+    ports:
+      - "9094:9094"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:9094
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_HEAP_OPTS: "-Xmx768m -Xms768m"
+
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    hostname: postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ddos
+      POSTGRES_USER: ddos
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    container_name: grafana
+    hostname: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD}
+      GF_DASHBOARDS_MIN_REFRESH_INTERVAL: 1s
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./infra/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./infra/grafana/dashboards:/etc/grafana/dashboards:ro
+    depends_on: [postgres]
+
+  api:
+    image: postgrest/postgrest:v12.2.3
+    container_name: api
+    hostname: api
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      PGRST_DB_URI: postgres://ddos:${POSTGRES_PASSWORD}@postgres:5432/ddos
+      PGRST_DB_SCHEMAS: public
+      PGRST_DB_ANON_ROLE: web_reader
+    depends_on: [postgres]
+
+  web:
+    image: nginx:1.27-alpine
+    container_name: web
+    hostname: web
+    restart: unless-stopped
+    ports:
+      - "8090:80"
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
+
+volumes:
+  namenode_data:
+  datanode1_data:
+  datanode2_data:
+  datanode3_data:
+  postgres_data:
+  grafana_data:

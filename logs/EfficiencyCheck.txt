@@ -1,0 +1,268 @@
+26/10/11 04:32:50 INFO SparkContext: Running Spark version 3.5.5
+26/10/11 04:32:50 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/10/11 04:32:50 INFO SparkContext: Java version 11.0.26
+26/10/11 04:32:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/11 04:32:50 INFO ResourceUtils: ==============================================================
+26/10/11 04:32:50 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/11 04:32:50 INFO ResourceUtils: ==============================================================
+26/10/11 04:32:50 INFO SparkContext: Submitted application: EfficiencyCheck
+26/10/11 04:32:50 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/11 04:32:50 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/10/11 04:32:50 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/11 04:32:50 INFO SecurityManager: Changing view acls to: root
+26/10/11 04:32:50 INFO SecurityManager: Changing modify acls to: root
+26/10/11 04:32:50 INFO SecurityManager: Changing view acls groups to: 
+26/10/11 04:32:50 INFO SecurityManager: Changing modify acls groups to: 
+26/10/11 04:32:50 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/11 04:32:50 INFO Utils: Successfully started service 'sparkDriver' on port 36209.
+26/10/11 04:32:50 INFO SparkEnv: Registering MapOutputTracker
+26/10/11 04:32:50 INFO SparkEnv: Registering BlockManagerMaster
+26/10/11 04:32:50 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/11 04:32:50 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/11 04:32:50 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/11 04:32:50 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-88f9f071-b5b9-4155-a975-4215f46ff4b2
+26/10/11 04:32:50 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/10/11 04:32:50 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/11 04:32:50 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/11 04:32:50 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/11 04:32:50 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:36209/jars/ddos-detection.jar with timestamp 1791693169995
+26/10/11 04:32:51 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/10/11 04:32:51 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.8:7077 after 21 ms (0 ms spent in bootstraps)
+26/10/11 04:32:51 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261011043251-0011
+26/10/11 04:32:51 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37421.
+26/10/11 04:32:51 INFO NettyBlockTransferService: Server created on spark-master:37421
+26/10/11 04:32:51 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261011043251-0011/0 on worker-20261010213455-172.18.0.13-36807 (172.18.0.13:36807) with 3 core(s)
+26/10/11 04:32:51 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/11 04:32:51 INFO StandaloneSchedulerBackend: Granted executor ID app-20261011043251-0011/0 on hostPort 172.18.0.13:36807 with 3 core(s), 2.4 GiB RAM
+26/10/11 04:32:51 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261011043251-0011/1 on worker-20261010213455-172.18.0.13-36807 (172.18.0.13:36807) with 3 core(s)
+26/10/11 04:32:51 INFO StandaloneSchedulerBackend: Granted executor ID app-20261011043251-0011/1 on hostPort 172.18.0.13:36807 with 3 core(s), 2.4 GiB RAM
+26/10/11 04:32:51 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 37421, None)
+26/10/11 04:32:51 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:37421 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 37421, None)
+26/10/11 04:32:51 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 37421, None)
+26/10/11 04:32:51 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 37421, None)
+26/10/11 04:32:51 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261011043251-0011/0 is now RUNNING
+26/10/11 04:32:51 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261011043251-0011/1 is now RUNNING
+26/10/11 04:32:51 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20261011043251-0011.inprogress
+26/10/11 04:32:52 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+26/10/11 04:33:07 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+26/10/11 04:33:07 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:33:14 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:33:16 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:17 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:33:17 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:18 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:21 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:33:25 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:33:26 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:26 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:27 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:33:31 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:33:31 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:32 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:32 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:33:36 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:33:37 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:37 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:38 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:33:41 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:33:42 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:42 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:43 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:33:46 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:33:47 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:47 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:48 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:33:51 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:33:52 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:53 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:53 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:33:56 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:33:57 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:57 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:33:58 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:34:01 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:34:02 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:02 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:03 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:34:06 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:34:06 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:07 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:07 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:34:11 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:34:11 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:12 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:12 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:34:18 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:34:19 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:19 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:20 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:34:24 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:34:25 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:25 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:26 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:34:31 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:34:31 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:32 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:32 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:34:37 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:34:37 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:38 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:38 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:34:42 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:34:43 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:43 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:44 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:34:48 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:34:48 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:49 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:49 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:34:53 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:34:53 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:54 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:54 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:34:58 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:34:59 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:34:59 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:00 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:35:04 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:35:05 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:05 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:05 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:35:10 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:35:10 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:11 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:11 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:35:16 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:35:16 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:17 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:17 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:35:21 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:35:22 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:22 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:22 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:35:27 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:35:28 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:28 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:29 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:35:33 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:35:33 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:34 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:34 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:35:38 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:35:39 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:39 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:40 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:35:44 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:35:44 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:45 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:45 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:35:49 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:35:49 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:50 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:50 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:35:54 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:35:55 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:55 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:35:56 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:36:00 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:36:01 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:01 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:02 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:36:08 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:36:09 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:10 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:10 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:36:15 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:36:16 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:17 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:17 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:36:22 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:36:22 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:23 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:23 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:36:28 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:36:28 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:29 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:29 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:36:33 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:36:34 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:34 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:35 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:36:39 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:36:40 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:40 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:40 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:36:45 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:36:46 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:46 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:46 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:36:51 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:36:52 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:52 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:36:53 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:36:58 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:36:59 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:00 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:01 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:37:07 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:37:08 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:09 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:10 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:37:14 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:37:15 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:16 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:17 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:37:22 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:37:22 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:23 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:24 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:37:29 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:37:30 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:31 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:31 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:37:35 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:37:36 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:37 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:37 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:37:42 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:37:43 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:44 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:44 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:37:49 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:37:50 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:51 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:51 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:37:56 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:37:56 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:57 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:37:58 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:38:03 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:38:03 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:38:04 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:38:05 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:38:10 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:38:10 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:38:11 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:38:12 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/11 04:38:16 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/11 04:38:17 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/11 04:38:18 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+RESULT
+RESULT 5,964,207 connections in stream order, in chunks of 120,000 (six cores, model work only)
+RESULT Labels are asked only for connections sent to the forest and are used from the next chunk on.
+RESULT
+RESULT method                                          seconds    flows/s  forest %  copied %  front %  speed  macro-F1
+RESULT Random forest on every connection                  36.5    163,516    100.00      0.00     0.00   1.00    0.9667
+RESULT Router: tree if familiar, forest if not            25.8    231,164     22.50      0.00    77.50   1.41    0.9524
+RESULT Router with label copying                          22.8    261,828      2.11     20.38    77.50   1.60    0.9662
+RESULT Labels asked: 1,000 (0.0168% of connections)
+RESULT Choosing which labels to ask, in 5 of 50 chunks: 4.5 seconds in total
+RESULT Unfamiliar connections: 22.50%
+RESULT
+RESULT Each model in front: alone, with the router, and with the router plus label copying
+RESULT model in front              alone   router  + copying  missed alone  missed router  missed + copying  false alarms alone   router  + copying
+RESULT logistic_regression        0.4577   0.7984     0.8081     1,175,164         18,127            17,752                 551    1,223        718
+RESULT decision_tree              0.7561   0.9524     0.9662        26,851          1,993             1,618                 917    1,066        561
+RESULT random_forest              0.9667   0.9667     0.9810           999            999               624               1,071    1,071        566
+RESULT gradient_boosted_trees     0.4846   0.9586     0.9728       758,456          1,225               850                 900    1,350        845
+RESULT neural_network             0.6848   0.9672     0.9815        43,219            971               596               2,127    1,067        562

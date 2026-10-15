@@ -1,0 +1,165 @@
+26/09/28 20:06:01 INFO SparkContext: Running Spark version 3.5.5
+26/09/28 20:06:01 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/09/28 20:06:01 INFO SparkContext: Java version 11.0.26
+26/09/28 20:06:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/09/28 20:06:01 INFO ResourceUtils: ==============================================================
+26/09/28 20:06:01 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/09/28 20:06:01 INFO ResourceUtils: ==============================================================
+26/09/28 20:06:01 INFO SparkContext: Submitted application: BuildBronze
+26/09/28 20:06:01 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/09/28 20:06:01 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/09/28 20:06:01 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/09/28 20:06:01 INFO SecurityManager: Changing view acls to: root
+26/09/28 20:06:01 INFO SecurityManager: Changing modify acls to: root
+26/09/28 20:06:01 INFO SecurityManager: Changing view acls groups to: 
+26/09/28 20:06:01 INFO SecurityManager: Changing modify acls groups to: 
+26/09/28 20:06:01 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/09/28 20:06:01 INFO Utils: Successfully started service 'sparkDriver' on port 42165.
+26/09/28 20:06:01 INFO SparkEnv: Registering MapOutputTracker
+26/09/28 20:06:02 INFO SparkEnv: Registering BlockManagerMaster
+26/09/28 20:06:02 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/09/28 20:06:02 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/09/28 20:06:02 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/09/28 20:06:02 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-07a51abc-d152-4eb5-8bfb-fb663fad6567
+26/09/28 20:06:02 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/09/28 20:06:02 INFO SparkEnv: Registering OutputCommitCoordinator
+26/09/28 20:06:02 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/09/28 20:06:02 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/09/28 20:06:02 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:42165/jars/ddos-detection.jar with timestamp 1790625961488
+26/09/28 20:06:02 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/09/28 20:06:02 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.5:7077 after 22 ms (0 ms spent in bootstraps)
+26/09/28 20:06:02 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20260928200602-0001
+26/09/28 20:06:02 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260928200602-0001/0 on worker-20260928195515-172.18.0.7-45377 (172.18.0.7:45377) with 3 core(s)
+26/09/28 20:06:02 INFO StandaloneSchedulerBackend: Granted executor ID app-20260928200602-0001/0 on hostPort 172.18.0.7:45377 with 3 core(s), 2.4 GiB RAM
+26/09/28 20:06:02 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260928200602-0001/1 on worker-20260928195515-172.18.0.7-45377 (172.18.0.7:45377) with 3 core(s)
+26/09/28 20:06:02 INFO StandaloneSchedulerBackend: Granted executor ID app-20260928200602-0001/1 on hostPort 172.18.0.7:45377 with 3 core(s), 2.4 GiB RAM
+26/09/28 20:06:02 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39845.
+26/09/28 20:06:02 INFO NettyBlockTransferService: Server created on spark-master:39845
+26/09/28 20:06:02 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/09/28 20:06:02 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 39845, None)
+26/09/28 20:06:02 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:39845 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 39845, None)
+26/09/28 20:06:02 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 39845, None)
+26/09/28 20:06:02 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 39845, None)
+26/09/28 20:06:02 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260928200602-0001/0 is now RUNNING
+26/09/28 20:06:02 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260928200602-0001/1 is now RUNNING
+26/09/28 20:06:03 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20260928200602-0001.inprogress
+26/09/28 20:06:03 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+
+[STAGE] Writing /data/bronze
+26/09/28 20:06:09 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+
+[STAGE] Rows per day and source file
++-----------+-------------+-----------------+--------+
+|capture_day|source_format|source_file      |count   |
++-----------+-------------+-----------------+--------+
+|2019-01-12 |csv          |DrDoS_DNS.csv    |5074413 |
+|2019-01-12 |csv          |DrDoS_LDAP.csv   |2181542 |
+|2019-01-12 |csv          |DrDoS_MSSQL.csv  |4524498 |
+|2019-01-12 |csv          |DrDoS_NTP.csv    |1217007 |
+|2019-01-12 |csv          |DrDoS_NetBIOS.csv|4094986 |
+|2019-01-12 |csv          |DrDoS_SNMP.csv   |5161377 |
+|2019-01-12 |csv          |DrDoS_SSDP.csv   |2611374 |
+|2019-01-12 |csv          |DrDoS_UDP.csv    |3136802 |
+|2019-01-12 |csv          |Syn.csv          |1582681 |
+|2019-01-12 |csv          |TFTP.csv         |20107827|
+|2019-01-12 |csv          |UDPLag.csv       |370605  |
+|2019-03-11 |json         |LDAP.jsonl       |2113234 |
+|2019-03-11 |json         |MSSQL.jsonl      |5775786 |
+|2019-03-11 |json         |NetBIOS.jsonl    |3455899 |
+|2019-03-11 |json         |Portmap.jsonl    |191694  |
+|2019-03-11 |json         |Syn.jsonl        |4320541 |
+|2019-03-11 |json         |UDP.jsonl        |3782206 |
+|2019-03-11 |json         |UDPLag.jsonl     |725165  |
++-----------+-------------+-----------------+--------+
+
+
+[QUALITY] 2019-01-12: 50,063,112 rows
+  column                       null   null %        NaN        Inf
+  flow_byts_s               249,024    0.50%          0  1,114,212
+  flow_pkts_s                     0    0.00%          0  1,363,236
+  (84 of 86 columns have no null, NaN or Inf values)
+
+[QUALITY] 2019-03-11: 20,364,525 rows
+  column                       null   null %        NaN        Inf
+  flow_duration           3,053,037   14.99%          0          0
+  tot_fwd_pkts            1,626,301    7.99%          0          0
+  tot_bwd_pkts            1,629,905    8.00%          0          0
+  totlen_fwd_pkts         1,628,286    8.00%          0          0
+  totlen_bwd_pkts         1,629,485    8.00%          0          0
+  fwd_pkt_len_max         1,626,653    7.99%          0          0
+  fwd_pkt_len_min         1,629,066    8.00%          0          0
+  fwd_pkt_len_mean        1,631,005    8.01%          0          0
+  fwd_pkt_len_std         1,628,483    8.00%          0          0
+  bwd_pkt_len_max         1,625,712    7.98%          0          0
+  bwd_pkt_len_min         1,631,741    8.01%          0          0
+  bwd_pkt_len_mean        1,630,217    8.01%          0          0
+  bwd_pkt_len_std         1,625,971    7.98%          0          0
+  pkt_len_min             1,628,967    8.00%          0          0
+  pkt_len_max             1,627,136    7.99%          0          0
+  pkt_len_mean            1,629,430    8.00%          0          0
+  pkt_len_std             1,629,218    8.00%          0          0
+  pkt_len_var             1,627,072    7.99%          0          0
+  flow_byts_s             2,448,303   12.02%          0    710,239
+  flow_pkts_s             2,441,427   11.99%          0    710,254
+  fwd_pkts_s              2,447,560   12.02%          0          0
+  bwd_pkts_s              2,442,347   11.99%          0          0
+  flow_iat_mean           2,030,052    9.97%          0          0
+  flow_iat_std            2,035,175    9.99%          0          0
+  flow_iat_max            2,035,851   10.00%          0          0
+  flow_iat_min            2,035,364    9.99%          0          0
+  fwd_iat_tot             2,032,419    9.98%          0          0
+  fwd_iat_mean            2,037,914   10.01%          0          0
+  fwd_iat_std             2,034,256    9.99%          0          0
+  fwd_iat_max             2,036,369   10.00%          0          0
+  fwd_iat_min             2,032,574    9.98%          0          0
+  bwd_iat_tot             2,035,362    9.99%          0          0
+  bwd_iat_mean            2,032,239    9.98%          0          0
+  bwd_iat_std             2,037,362   10.00%          0          0
+  bwd_iat_max             2,042,270   10.03%          0          0
+  bwd_iat_min             2,037,448   10.00%          0          0
+  fwd_psh_flags          15,437,140   75.80%          0          0
+  bwd_psh_flags          15,437,140   75.80%          0          0
+  fwd_urg_flags          15,437,140   75.80%          0          0
+  bwd_urg_flags          15,437,140   75.80%          0          0
+  fin_flag_cnt           15,437,140   75.80%          0          0
+  syn_flag_cnt           15,437,140   75.80%          0          0
+  rst_flag_cnt           15,437,140   75.80%          0          0
+  psh_flag_cnt           15,437,140   75.80%          0          0
+  ack_flag_cnt           15,437,140   75.80%          0          0
+  urg_flag_cnt           15,437,140   75.80%          0          0
+  cwe_flag_cnt           15,437,140   75.80%          0          0
+  ece_flag_cnt           15,437,140   75.80%          0          0
+  fwd_header_len          1,018,691    5.00%          0          0
+  bwd_header_len          1,015,721    4.99%          0          0
+  down_up_ratio           2,037,118   10.00%          0          0
+  pkt_size_avg            2,035,631   10.00%          0          0
+  fwd_seg_size_avg        2,036,210   10.00%          0          0
+  bwd_seg_size_avg        2,035,332    9.99%          0          0
+  fwd_byts_b_avg          2,040,143   10.02%          0          0
+  fwd_pkts_b_avg          2,033,485    9.99%          0          0
+  fwd_blk_rate_avg        2,035,246    9.99%          0          0
+  bwd_byts_b_avg          2,037,841   10.01%          0          0
+  bwd_pkts_b_avg          2,039,351   10.01%          0          0
+  bwd_blk_rate_avg        2,036,060   10.00%          0          0
+  subflow_fwd_pkts        1,631,216    8.01%          0          0
+  subflow_fwd_byts        1,627,488    7.99%          0          0
+  subflow_bwd_pkts        1,626,935    7.99%          0          0
+  subflow_bwd_byts        1,632,783    8.02%          0          0
+  init_fwd_win_byts       2,034,355    9.99%          0          0
+  init_bwd_win_byts       2,039,472   10.01%          0          0
+  fwd_act_data_pkts       2,035,878   10.00%          0          0
+  fwd_seg_size_min        2,039,661   10.02%          0          0
+  active_mean             4,077,203   20.02%          0          0
+  active_std              4,073,752   20.00%          0          0
+  active_max              4,073,104   20.00%          0          0
+  active_min              4,074,700   20.01%          0          0
+  idle_mean               4,077,327   20.02%          0          0
+  idle_std                4,080,086   20.04%          0          0
+  idle_max                4,078,573   20.03%          0          0
+  idle_min                4,070,351   19.99%          0          0
+  inbound                 2,038,994   10.01%          0          0
+  similar_http            2,036,522   10.00%          0          0
+  (8 of 86 columns have no null, NaN or Inf values)
+
+[DONE] BuildBronze finished in 8.8 min
+EXIT=0

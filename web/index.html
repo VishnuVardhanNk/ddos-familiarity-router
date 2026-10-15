@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Network</title>
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo"></span>My Network</div>
+    <div id="status" class="status waiting">
+      <span class="dot"></span>
+      <div>
+        <strong id="statusTitle">Connecting</strong>
+        <span id="statusDetail">Looking for the detection stream</span>
+      </div>
+    </div>
+    <div class="controls">
+      <span id="mode" class="mode">Starting</span>
+      <div id="speeds" class="speeds" hidden>
+        <button data-speed="1" class="on">1×</button>
+        <button data-speed="4">4×</button>
+        <button data-speed="16">16×</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="left">
+      <section class="numbers">
+        <div class="card number"><span>Connections checked</span><strong id="numChecked">0</strong></div>
+        <div class="card number"><span>Flagged as attack</span><strong id="numFlagged" class="attack">0</strong></div>
+        <div class="card number"><span>Attacks seen</span><strong id="numIncidents">0</strong></div>
+        <div class="card number"><span>Traffic time</span><strong id="numClock">--:--:--</strong></div>
+      </section>
+
+      <section class="card stream">
+        <div class="cardHead">
+          <strong>Traffic replayed through Kafka</strong>
+          <ul class="legend">
+            <li><i class="normal"></i>Normal</li>
+            <li><i class="flagged"></i>Attack, flagged</li>
+            <li><i class="missed"></i>Attack, not flagged</li>
+          </ul>
+        </div>
+        <div id="bands" class="bands"></div>
+        <canvas id="chart"></canvas>
+        <div class="axis"><span id="axisStart"></span><span id="axisEnd"></span></div>
+      </section>
+
+      <section class="card answered">
+        <div class="cardHead">
+          <strong>How the traffic was answered</strong>
+          <span id="answeredHint" class="hint"></span>
+        </div>
+        <div id="split" class="split"></div>
+        <ul id="splitKey" class="splitKey"></ul>
+      </section>
+
+      <section class="card attacks">
+        <div class="cardHead">
+          <strong>Attacks</strong>
+          <span class="hint">Select one to see why it was flagged</span>
+        </div>
+        <div id="incidents" class="incidents"></div>
+        <div id="evidence" class="evidence" hidden></div>
+      </section>
+    </div>
+
+    <aside class="card chat">
+      <div class="cardHead">
+        <strong>Assistant</strong>
+        <span id="assistantState" class="assistantState">checking</span>
+      </div>
+      <div id="messages" class="messages"></div>
+      <div id="chips" class="chips"></div>
+      <form id="ask" class="ask">
+        <input id="question" autocomplete="off" placeholder="Ask about your network">
+        <button type="submit">Send</button>
+      </form>
+    </aside>
+  </main>
+
+  <footer>
+    A replay of CSE-CIC-DDoS2019 day 2, scored by Spark through Kafka. The assistant runs on this computer.
+  </footer>
+
+  <script src="app.js?v=6"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+26/10/09 15:12:58 INFO SparkContext: Running Spark version 3.5.5
+26/10/09 15:12:58 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/10/09 15:12:58 INFO SparkContext: Java version 11.0.26
+26/10/09 15:12:58 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/09 15:12:58 INFO ResourceUtils: ==============================================================
+26/10/09 15:12:58 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/09 15:12:58 INFO ResourceUtils: ==============================================================
+26/10/09 15:12:58 INFO SparkContext: Submitted application: ThroughputCheck
+26/10/09 15:12:58 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/09 15:12:58 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/10/09 15:12:58 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/09 15:12:58 INFO SecurityManager: Changing view acls to: root
+26/10/09 15:12:58 INFO SecurityManager: Changing modify acls to: root
+26/10/09 15:12:58 INFO SecurityManager: Changing view acls groups to: 
+26/10/09 15:12:58 INFO SecurityManager: Changing modify acls groups to: 
+26/10/09 15:12:58 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/09 15:12:59 INFO Utils: Successfully started service 'sparkDriver' on port 36367.
+26/10/09 15:12:59 INFO SparkEnv: Registering MapOutputTracker
+26/10/09 15:12:59 INFO SparkEnv: Registering BlockManagerMaster
+26/10/09 15:12:59 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/09 15:12:59 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/09 15:12:59 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/09 15:12:59 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-329a6ccf-1239-4c14-bedb-ac1f185217b9
+26/10/09 15:12:59 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/10/09 15:12:59 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/09 15:12:59 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/09 15:12:59 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/09 15:12:59 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:36367/jars/ddos-detection.jar with timestamp 1791558778559
+26/10/09 15:12:59 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/10/09 15:12:59 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.4:7077 after 26 ms (0 ms spent in bootstraps)
+26/10/09 15:12:59 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261009151259-0002
+26/10/09 15:12:59 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46205.
+26/10/09 15:12:59 INFO NettyBlockTransferService: Server created on spark-master:46205
+26/10/09 15:12:59 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/09 15:12:59 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 46205, None)
+26/10/09 15:12:59 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:46205 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 46205, None)
+26/10/09 15:12:59 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 46205, None)
+26/10/09 15:12:59 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 46205, None)
+26/10/09 15:12:59 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261009151259-0002/0 on worker-20261009143052-172.18.0.13-37467 (172.18.0.13:37467) with 3 core(s)
+26/10/09 15:12:59 INFO StandaloneSchedulerBackend: Granted executor ID app-20261009151259-0002/0 on hostPort 172.18.0.13:37467 with 3 core(s), 2.4 GiB RAM
+26/10/09 15:12:59 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261009151259-0002/1 on worker-20261009143052-172.18.0.13-37467 (172.18.0.13:37467) with 3 core(s)
+26/10/09 15:12:59 INFO StandaloneSchedulerBackend: Granted executor ID app-20261009151259-0002/1 on hostPort 172.18.0.13:37467 with 3 core(s), 2.4 GiB RAM
+26/10/09 15:13:00 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261009151259-0002/1 is now RUNNING
+26/10/09 15:13:00 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261009151259-0002/0 is now RUNNING
+26/10/09 15:13:00 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20261009151259-0002.inprogress
+26/10/09 15:13:00 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+26/10/09 15:13:15 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+26/10/09 15:13:16 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+RESULT
+RESULT 954,274 flows from the Kafka topic between 70% and 86%, memory of 1000 labels
+RESULT method                                        seconds   flows per second  macro-F1
+26/10/09 15:13:51 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/09 15:13:54 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+26/10/09 15:13:57 WARN DAGScheduler: Broadcasting large task binary with size 5.4 MiB
+RESULT random forest on every flow                      2.89            329,696    0.9619
+RESULT decision tree on every flow                      0.18          5,258,042    0.5945
+RESULT gate only (no model)                             0.85          1,116,146    0.3441
+26/10/09 15:14:03 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/09 15:14:07 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+26/10/09 15:14:10 WARN DAGScheduler: Broadcasting large task binary with size 5.5 MiB
+RESULT three-way router, decision tree in front         3.35            284,489    0.9778
+RESULT Where the router sent the flows:
+RESULT   front model   47.66%
+RESULT   memory        47.52%
+RESULT   forest         4.82%

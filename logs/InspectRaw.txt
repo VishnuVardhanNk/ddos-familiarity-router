@@ -1,0 +1,178 @@
+26/09/28 15:37:11 INFO SparkContext: Running Spark version 3.5.5
+26/09/28 15:37:11 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/09/28 15:37:11 INFO SparkContext: Java version 11.0.26
+26/09/28 15:37:11 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/09/28 15:37:12 INFO ResourceUtils: ==============================================================
+26/09/28 15:37:12 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/09/28 15:37:12 INFO ResourceUtils: ==============================================================
+26/09/28 15:37:12 INFO SparkContext: Submitted application: InspectRaw
+26/09/28 15:37:12 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/09/28 15:37:12 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/09/28 15:37:12 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/09/28 15:37:12 INFO SecurityManager: Changing view acls to: root
+26/09/28 15:37:12 INFO SecurityManager: Changing modify acls to: root
+26/09/28 15:37:12 INFO SecurityManager: Changing view acls groups to: 
+26/09/28 15:37:12 INFO SecurityManager: Changing modify acls groups to: 
+26/09/28 15:37:12 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/09/28 15:37:12 INFO Utils: Successfully started service 'sparkDriver' on port 44563.
+26/09/28 15:37:12 INFO SparkEnv: Registering MapOutputTracker
+26/09/28 15:37:12 INFO SparkEnv: Registering BlockManagerMaster
+26/09/28 15:37:12 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/09/28 15:37:12 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/09/28 15:37:12 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/09/28 15:37:12 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-d47e0b77-9ded-468c-bcae-ac26efcb1300
+26/09/28 15:37:12 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/09/28 15:37:12 INFO SparkEnv: Registering OutputCommitCoordinator
+26/09/28 15:37:12 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/09/28 15:37:12 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/09/28 15:37:12 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:44563/jars/ddos-detection.jar with timestamp 1790609831889
+26/09/28 15:37:12 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/09/28 15:37:12 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.6:7077 after 23 ms (0 ms spent in bootstraps)
+26/09/28 15:37:13 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20260928153713-0001
+26/09/28 15:37:13 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35785.
+26/09/28 15:37:13 INFO NettyBlockTransferService: Server created on spark-master:35785
+26/09/28 15:37:13 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/09/28 15:37:13 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260928153713-0001/0 on worker-20260928132416-172.18.0.7-41515 (172.18.0.7:41515) with 3 core(s)
+26/09/28 15:37:13 INFO StandaloneSchedulerBackend: Granted executor ID app-20260928153713-0001/0 on hostPort 172.18.0.7:41515 with 3 core(s), 2.4 GiB RAM
+26/09/28 15:37:13 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260928153713-0001/1 on worker-20260928132416-172.18.0.7-41515 (172.18.0.7:41515) with 3 core(s)
+26/09/28 15:37:13 INFO StandaloneSchedulerBackend: Granted executor ID app-20260928153713-0001/1 on hostPort 172.18.0.7:41515 with 3 core(s), 2.4 GiB RAM
+26/09/28 15:37:13 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 35785, None)
+26/09/28 15:37:13 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:35785 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 35785, None)
+26/09/28 15:37:13 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 35785, None)
+26/09/28 15:37:13 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 35785, None)
+26/09/28 15:37:13 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260928153713-0001/0 is now RUNNING
+26/09/28 15:37:13 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260928153713-0001/1 is now RUNNING
+26/09/28 15:37:13 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20260928153713-0001.inprogress
+26/09/28 15:37:14 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+
+Day 1 (CSV): 88 columns
++-----------------------------------------------------+--------+
+|file                                                 |count   |
++-----------------------------------------------------+--------+
+|hdfs://namenode:9000/data/raw/01-12/DrDoS_DNS.csv    |5074413 |
+|hdfs://namenode:9000/data/raw/01-12/DrDoS_LDAP.csv   |2181542 |
+|hdfs://namenode:9000/data/raw/01-12/DrDoS_MSSQL.csv  |4524498 |
+|hdfs://namenode:9000/data/raw/01-12/DrDoS_NTP.csv    |1217007 |
+|hdfs://namenode:9000/data/raw/01-12/DrDoS_NetBIOS.csv|4094986 |
+|hdfs://namenode:9000/data/raw/01-12/DrDoS_SNMP.csv   |5161377 |
+|hdfs://namenode:9000/data/raw/01-12/DrDoS_SSDP.csv   |2611374 |
+|hdfs://namenode:9000/data/raw/01-12/DrDoS_UDP.csv    |3136802 |
+|hdfs://namenode:9000/data/raw/01-12/Syn.csv          |1582681 |
+|hdfs://namenode:9000/data/raw/01-12/TFTP.csv         |20107827|
+|hdfs://namenode:9000/data/raw/01-12/UDPLag.csv       |370605  |
++-----------------------------------------------------+--------+
+
+
+Day 2 (JSON) structure:
+root
+ |-- activity: struct (nullable = true)
+ |    |-- active_max: double (nullable = true)
+ |    |-- active_mean: double (nullable = true)
+ |    |-- active_min: double (nullable = true)
+ |    |-- active_std: double (nullable = true)
+ |    |-- idle_max: double (nullable = true)
+ |    |-- idle_mean: double (nullable = true)
+ |    |-- idle_min: double (nullable = true)
+ |    |-- idle_std: double (nullable = true)
+ |-- bulk: struct (nullable = true)
+ |    |-- bwd_avg_bulk_rate: double (nullable = true)
+ |    |-- bwd_avg_bytes_bulk: double (nullable = true)
+ |    |-- bwd_avg_packets_bulk: double (nullable = true)
+ |    |-- fwd_avg_bulk_rate: double (nullable = true)
+ |    |-- fwd_avg_bytes_bulk: double (nullable = true)
+ |    |-- fwd_avg_packets_bulk: double (nullable = true)
+ |-- dest_ip: string (nullable = true)
+ |-- dest_port: long (nullable = true)
+ |-- flow: struct (nullable = true)
+ |    |-- duration: long (nullable = true)
+ |    |-- tot_bwd_pkts: long (nullable = true)
+ |    |-- tot_fwd_pkts: long (nullable = true)
+ |    |-- totlen_bwd_bytes: double (nullable = true)
+ |    |-- totlen_fwd_bytes: double (nullable = true)
+ |-- flow_id: string (nullable = true)
+ |-- header: struct (nullable = true)
+ |    |-- bwd_header_len: long (nullable = true)
+ |    |-- fwd_header_len: long (nullable = true)
+ |-- iat: struct (nullable = true)
+ |    |-- bwd_max: double (nullable = true)
+ |    |-- bwd_mean: double (nullable = true)
+ |    |-- bwd_min: double (nullable = true)
+ |    |-- bwd_std: double (nullable = true)
+ |    |-- bwd_total: double (nullable = true)
+ |    |-- flow_max: double (nullable = true)
+ |    |-- flow_mean: double (nullable = true)
+ |    |-- flow_min: double (nullable = true)
+ |    |-- flow_std: double (nullable = true)
+ |    |-- fwd_max: double (nullable = true)
+ |    |-- fwd_mean: double (nullable = true)
+ |    |-- fwd_min: double (nullable = true)
+ |    |-- fwd_std: double (nullable = true)
+ |    |-- fwd_total: double (nullable = true)
+ |-- label: string (nullable = true)
+ |-- misc: struct (nullable = true)
+ |    |-- inbound: long (nullable = true)
+ |    |-- similar_http: long (nullable = true)
+ |-- packet_length: struct (nullable = true)
+ |    |-- bwd_max: double (nullable = true)
+ |    |-- bwd_mean: double (nullable = true)
+ |    |-- bwd_min: double (nullable = true)
+ |    |-- bwd_std: double (nullable = true)
+ |    |-- fwd_max: double (nullable = true)
+ |    |-- fwd_mean: double (nullable = true)
+ |    |-- fwd_min: double (nullable = true)
+ |    |-- fwd_std: double (nullable = true)
+ |    |-- max_len: double (nullable = true)
+ |    |-- mean_len: double (nullable = true)
+ |    |-- min_len: double (nullable = true)
+ |    |-- std_len: double (nullable = true)
+ |    |-- variance: double (nullable = true)
+ |-- proto: long (nullable = true)
+ |-- rate: struct (nullable = true)
+ |    |-- bwd_packets_s: double (nullable = true)
+ |    |-- flow_bytes_s: double (nullable = true)
+ |    |-- flow_packets_s: double (nullable = true)
+ |    |-- fwd_packets_s: double (nullable = true)
+ |-- segment: struct (nullable = true)
+ |    |-- avg_bwd_segment_size: double (nullable = true)
+ |    |-- avg_fwd_segment_size: double (nullable = true)
+ |    |-- avg_packet_size: double (nullable = true)
+ |    |-- down_up_ratio: double (nullable = true)
+ |-- src_ip: string (nullable = true)
+ |-- src_port: long (nullable = true)
+ |-- subflow: struct (nullable = true)
+ |    |-- bwd_bytes: double (nullable = true)
+ |    |-- bwd_packets: long (nullable = true)
+ |    |-- fwd_bytes: double (nullable = true)
+ |    |-- fwd_packets: long (nullable = true)
+ |-- tcp_flags: struct (nullable = true)
+ |    |-- ack_count: long (nullable = true)
+ |    |-- bwd_psh: long (nullable = true)
+ |    |-- bwd_urg: long (nullable = true)
+ |    |-- cwe_count: long (nullable = true)
+ |    |-- ece_count: long (nullable = true)
+ |    |-- fin_count: long (nullable = true)
+ |    |-- fwd_psh: long (nullable = true)
+ |    |-- fwd_urg: long (nullable = true)
+ |    |-- psh_count: long (nullable = true)
+ |    |-- rst_count: long (nullable = true)
+ |    |-- syn_count: long (nullable = true)
+ |    |-- urg_count: long (nullable = true)
+ |-- timestamp: string (nullable = true)
+ |-- window: struct (nullable = true)
+ |    |-- act_data_pkt_fwd: long (nullable = true)
+ |    |-- init_win_bwd: long (nullable = true)
+ |    |-- init_win_fwd: long (nullable = true)
+ |    |-- min_seg_size_fwd: long (nullable = true)
+
++------------------------------------------------------+-------+
+|file                                                  |count  |
++------------------------------------------------------+-------+
+|hdfs://namenode:9000/data/raw/03-11-json/LDAP.jsonl   |2113234|
+|hdfs://namenode:9000/data/raw/03-11-json/MSSQL.jsonl  |5775786|
+|hdfs://namenode:9000/data/raw/03-11-json/NetBIOS.jsonl|3455899|
+|hdfs://namenode:9000/data/raw/03-11-json/Portmap.jsonl|191694 |
+|hdfs://namenode:9000/data/raw/03-11-json/Syn.jsonl    |4320541|
+|hdfs://namenode:9000/data/raw/03-11-json/UDP.jsonl    |3782206|
+|hdfs://namenode:9000/data/raw/03-11-json/UDPLag.jsonl |725165 |
++------------------------------------------------------+-------+
+

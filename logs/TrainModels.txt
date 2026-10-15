@@ -1,0 +1,257 @@
+26/09/29 17:18:55 INFO SparkContext: Running Spark version 3.5.5
+26/09/29 17:18:55 INFO SparkContext: OS info Linux, 6.6.114.1-microsoft-standard-WSL2, amd64
+26/09/29 17:18:55 INFO SparkContext: Java version 11.0.26
+26/09/29 17:18:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/09/29 17:18:56 INFO ResourceUtils: ==============================================================
+26/09/29 17:18:56 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/09/29 17:18:56 INFO ResourceUtils: ==============================================================
+26/09/29 17:18:56 INFO SparkContext: Submitted application: TrainModels
+26/09/29 17:18:56 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 3, script: , vendor: , memory -> name: memory, amount: 2500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/09/29 17:18:56 INFO ResourceProfile: Limiting resource is cpus at 3 tasks per executor
+26/09/29 17:18:56 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/09/29 17:18:56 INFO SecurityManager: Changing view acls to: root
+26/09/29 17:18:56 INFO SecurityManager: Changing modify acls to: root
+26/09/29 17:18:56 INFO SecurityManager: Changing view acls groups to: 
+26/09/29 17:18:56 INFO SecurityManager: Changing modify acls groups to: 
+26/09/29 17:18:56 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/09/29 17:18:56 INFO Utils: Successfully started service 'sparkDriver' on port 36329.
+26/09/29 17:18:56 INFO SparkEnv: Registering MapOutputTracker
+26/09/29 17:18:56 INFO SparkEnv: Registering BlockManagerMaster
+26/09/29 17:18:56 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/09/29 17:18:56 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/09/29 17:18:56 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/09/29 17:18:56 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-24c35bb2-a61c-402b-96c5-db8b3a85f3fd
+26/09/29 17:18:56 INFO MemoryStore: MemoryStore started with capacity 1048.8 MiB
+26/09/29 17:18:56 INFO SparkEnv: Registering OutputCommitCoordinator
+26/09/29 17:18:56 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/09/29 17:18:56 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/09/29 17:18:56 INFO SparkContext: Added JAR file:/opt/jobs/ddos-detection.jar at spark://spark-master:36329/jars/ddos-detection.jar with timestamp 1790702335900
+26/09/29 17:18:56 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/09/29 17:18:56 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.3:7077 after 27 ms (0 ms spent in bootstraps)
+26/09/29 17:18:56 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20260929171856-0000
+26/09/29 17:18:56 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39239.
+26/09/29 17:18:56 INFO NettyBlockTransferService: Server created on spark-master:39239
+26/09/29 17:18:56 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/09/29 17:18:56 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-master, 39239, None)
+26/09/29 17:18:56 INFO BlockManagerMasterEndpoint: Registering block manager spark-master:39239 with 1048.8 MiB RAM, BlockManagerId(driver, spark-master, 39239, None)
+26/09/29 17:18:56 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-master, 39239, None)
+26/09/29 17:18:56 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-master, 39239, None)
+26/09/29 17:18:56 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260929171856-0000/0 on worker-20260929171829-172.18.0.8-34603 (172.18.0.8:34603) with 3 core(s)
+26/09/29 17:18:56 INFO StandaloneSchedulerBackend: Granted executor ID app-20260929171856-0000/0 on hostPort 172.18.0.8:34603 with 3 core(s), 2.4 GiB RAM
+26/09/29 17:18:56 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260929171856-0000/1 on worker-20260929171829-172.18.0.8-34603 (172.18.0.8:34603) with 3 core(s)
+26/09/29 17:18:56 INFO StandaloneSchedulerBackend: Granted executor ID app-20260929171856-0000/1 on hostPort 172.18.0.8:34603 with 3 core(s), 2.4 GiB RAM
+26/09/29 17:18:57 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260929171856-0000/1 is now RUNNING
+26/09/29 17:18:57 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260929171856-0000/0 is now RUNNING
+26/09/29 17:18:57 INFO SingleEventLogFileWriter: Logging events to hdfs://namenode:9000/spark-logs/app-20260929171856-0000.inprogress
+26/09/29 17:18:57 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+
+=== Experiment: standard
+  training on 71,334 benign + 1,427,698 attack rows
+26/09/29 17:19:29 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+
+standard / detection / logistic_regression: macro-F1 0.8881, benign AUC-PR 0.8777
+    benign     precision 0.6408  recall 0.9912  F1 0.7784  (18,165 test rows)
+    attack     precision 0.9999  recall 0.9957  F1 0.9978  (2,355,474 test rows)
+
+standard / detection / decision_tree: macro-F1 0.9692, benign AUC-PR 0.9719
+    benign     precision 0.8860  recall 0.9986  F1 0.9389  (18,165 test rows)
+    attack     precision 1.0000  recall 0.9990  F1 0.9995  (2,355,474 test rows)
+26/09/29 17:20:46 WARN DAGScheduler: Broadcasting large task binary with size 1092.8 KiB
+26/09/29 17:21:15 WARN DAGScheduler: Broadcasting large task binary with size 1379.2 KiB
+26/09/29 17:21:21 WARN DAGScheduler: Broadcasting large task binary with size 2045.5 KiB
+26/09/29 17:21:26 WARN DAGScheduler: Broadcasting large task binary with size 1511.0 KiB
+26/09/29 17:21:42 WARN DAGScheduler: Broadcasting large task binary with size 1092.7 KiB
+26/09/29 17:21:45 WARN DAGScheduler: Broadcasting large task binary with size 1502.0 KiB
+26/09/29 17:21:47 WARN DAGScheduler: Broadcasting large task binary with size 1980.9 KiB
+26/09/29 17:21:50 WARN DAGScheduler: Broadcasting large task binary with size 2.5 MiB
+26/09/29 17:21:52 WARN DAGScheduler: Broadcasting large task binary with size 3.0 MiB
+26/09/29 17:21:55 WARN DAGScheduler: Broadcasting large task binary with size 1959.8 KiB
+26/09/29 17:22:16 WARN DAGScheduler: Broadcasting large task binary with size 1379.3 KiB
+26/09/29 17:22:21 WARN DAGScheduler: Broadcasting large task binary with size 2046.6 KiB
+26/09/29 17:22:26 WARN DAGScheduler: Broadcasting large task binary with size 2.8 MiB
+26/09/29 17:22:30 WARN DAGScheduler: Broadcasting large task binary with size 3.7 MiB
+26/09/29 17:22:35 WARN DAGScheduler: Broadcasting large task binary with size 4.8 MiB
+26/09/29 17:22:40 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/09/29 17:22:46 WARN DAGScheduler: Broadcasting large task binary with size 3.7 MiB
+26/09/29 17:23:02 WARN DAGScheduler: Broadcasting large task binary with size 1092.8 KiB
+26/09/29 17:23:04 WARN DAGScheduler: Broadcasting large task binary with size 1501.7 KiB
+26/09/29 17:23:06 WARN DAGScheduler: Broadcasting large task binary with size 1979.0 KiB
+26/09/29 17:23:09 WARN DAGScheduler: Broadcasting large task binary with size 2.4 MiB
+26/09/29 17:23:11 WARN DAGScheduler: Broadcasting large task binary with size 3.0 MiB
+26/09/29 17:23:14 WARN DAGScheduler: Broadcasting large task binary with size 3.6 MiB
+26/09/29 17:23:16 WARN DAGScheduler: Broadcasting large task binary with size 4.1 MiB
+26/09/29 17:23:19 WARN DAGScheduler: Broadcasting large task binary with size 4.7 MiB
+26/09/29 17:23:21 WARN DAGScheduler: Broadcasting large task binary with size 5.2 MiB
+26/09/29 17:23:24 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+26/09/29 17:23:46 WARN DAGScheduler: Broadcasting large task binary with size 1379.3 KiB
+26/09/29 17:23:51 WARN DAGScheduler: Broadcasting large task binary with size 2046.6 KiB
+26/09/29 17:23:55 WARN DAGScheduler: Broadcasting large task binary with size 2.8 MiB
+26/09/29 17:24:00 WARN DAGScheduler: Broadcasting large task binary with size 3.7 MiB
+26/09/29 17:24:05 WARN DAGScheduler: Broadcasting large task binary with size 4.7 MiB
+26/09/29 17:24:10 WARN DAGScheduler: Broadcasting large task binary with size 5.9 MiB
+26/09/29 17:24:14 WARN DAGScheduler: Broadcasting large task binary with size 7.0 MiB
+26/09/29 17:24:19 WARN DAGScheduler: Broadcasting large task binary with size 8.1 MiB
+26/09/29 17:24:25 WARN DAGScheduler: Broadcasting large task binary with size 9.2 MiB
+26/09/29 17:24:30 WARN DAGScheduler: Broadcasting large task binary with size 10.3 MiB
+26/09/29 17:24:35 WARN DAGScheduler: Broadcasting large task binary with size 6.0 MiB
+26/09/29 17:25:09 WARN DAGScheduler: Broadcasting large task binary with size 1406.8 KiB
+26/09/29 17:25:17 WARN DAGScheduler: Broadcasting large task binary with size 2.0 MiB
+26/09/29 17:25:30 WARN DAGScheduler: Broadcasting large task binary with size 2.9 MiB
+26/09/29 17:25:39 WARN DAGScheduler: Broadcasting large task binary with size 3.9 MiB
+26/09/29 17:25:49 WARN DAGScheduler: Broadcasting large task binary with size 5.0 MiB
+26/09/29 17:25:59 WARN DAGScheduler: Broadcasting large task binary with size 6.3 MiB
+26/09/29 17:26:07 WARN DAGScheduler: Broadcasting large task binary with size 7.6 MiB
+26/09/29 17:26:16 WARN DAGScheduler: Broadcasting large task binary with size 8.9 MiB
+26/09/29 17:26:24 WARN DAGScheduler: Broadcasting large task binary with size 10.1 MiB
+26/09/29 17:26:33 WARN DAGScheduler: Broadcasting large task binary with size 11.3 MiB
+    tuning random_forest            maxDepth=8, numTrees=50    validation benign F1 0.9598
+    tuning random_forest            maxDepth=8, numTrees=100   validation benign F1 0.9603
+    tuning random_forest            maxDepth=12, numTrees=50   validation benign F1 0.9873
+    tuning random_forest            maxDepth=12, numTrees=100  validation benign F1 0.9869
+    tuning random_forest            maxDepth=16, numTrees=50   validation benign F1 0.9932
+    tuning random_forest            maxDepth=16, numTrees=100  validation benign F1 0.9935  <- chosen
+26/09/29 17:26:41 WARN DAGScheduler: Broadcasting large task binary with size 6.5 MiB
+26/09/29 17:26:54 WARN DAGScheduler: Broadcasting large task binary with size 6.5 MiB
+26/09/29 17:26:55 WARN DAGScheduler: Broadcasting large task binary with size 6.5 MiB
+26/09/29 17:26:55 WARN DAGScheduler: Broadcasting large task binary with size 6.5 MiB
+
+standard / detection / random_forest: macro-F1 0.9793, benign AUC-PR 0.9980
+    benign     precision 0.9216  recall 0.9992  F1 0.9588  (18,165 test rows)
+    attack     precision 1.0000  recall 0.9993  F1 0.9997  (2,355,474 test rows)
+26/09/29 17:26:59 WARN TaskSetManager: Stage 576 contains a task of very large size (1092 KiB). The maximum recommended task size is 1000 KiB.
+    tuning gradient_boosted_trees   maxDepth=4, maxIter=20     validation benign F1 0.9471
+    tuning gradient_boosted_trees   maxDepth=6, maxIter=20     validation benign F1 0.9789
+    tuning gradient_boosted_trees   maxDepth=4, maxIter=40     validation benign F1 0.9569
+    tuning gradient_boosted_trees   maxDepth=6, maxIter=40     validation benign F1 0.9823  <- chosen
+
+standard / detection / gradient_boosted_trees: macro-F1 0.9462, benign AUC-PR 0.9841
+    benign     precision 0.8076  recall 0.9993  F1 0.8933  (18,165 test rows)
+    attack     precision 1.0000  recall 0.9982  F1 0.9991  (2,355,474 test rows)
+
+standard / detection / neural_network: macro-F1 0.9729, benign AUC-PR 0.9895
+    benign     precision 0.9042  recall 0.9924  F1 0.9463  (18,165 test rows)
+    attack     precision 0.9999  recall 0.9992  F1 0.9996  (2,355,474 test rows)
+26/09/29 17:34:22 WARN DAGScheduler: Broadcasting large task binary with size 1028.7 KiB
+26/09/29 17:34:31 WARN DAGScheduler: Broadcasting large task binary with size 1915.8 KiB
+26/09/29 17:34:42 WARN DAGScheduler: Broadcasting large task binary with size 3.4 MiB
+26/09/29 17:34:56 WARN DAGScheduler: Broadcasting large task binary with size 6.2 MiB
+26/09/29 17:35:12 WARN DAGScheduler: Broadcasting large task binary with size 1509.4 KiB
+26/09/29 17:35:14 WARN DAGScheduler: Broadcasting large task binary with size 8.9 MiB
+26/09/29 17:35:28 WARN DAGScheduler: Broadcasting large task binary with size 1905.1 KiB
+26/09/29 17:35:31 WARN DAGScheduler: Broadcasting large task binary with size 10.0 MiB
+26/09/29 17:35:43 WARN DAGScheduler: Broadcasting large task binary with size 1900.0 KiB
+26/09/29 17:35:47 WARN DAGScheduler: Broadcasting large task binary with size 11.4 MiB
+26/09/29 17:35:56 WARN DAGScheduler: Broadcasting large task binary with size 1902.6 KiB
+26/09/29 17:35:59 WARN DAGScheduler: Broadcasting large task binary with size 12.9 MiB
+26/09/29 17:36:07 WARN DAGScheduler: Broadcasting large task binary with size 1904.3 KiB
+26/09/29 17:36:10 WARN DAGScheduler: Broadcasting large task binary with size 11.8 MiB
+26/09/29 17:36:19 WARN DAGScheduler: Broadcasting large task binary with size 1897.7 KiB
+26/09/29 17:36:22 WARN DAGScheduler: Broadcasting large task binary with size 12.5 MiB
+26/09/29 17:36:31 WARN DAGScheduler: Broadcasting large task binary with size 1901.9 KiB
+26/09/29 17:36:34 WARN DAGScheduler: Broadcasting large task binary with size 10.9 MiB
+26/09/29 17:36:42 WARN DAGScheduler: Broadcasting large task binary with size 1752.8 KiB
+26/09/29 17:36:45 WARN DAGScheduler: Broadcasting large task binary with size 5.2 MiB
+26/09/29 17:36:53 WARN DAGScheduler: Broadcasting large task binary with size 4.8 MiB
+26/09/29 17:36:59 WARN DAGScheduler: Broadcasting large task binary with size 6.9 MiB
+26/09/29 17:37:07 WARN TaskSetManager: Stage 2606 contains a task of very large size (4087 KiB). The maximum recommended task size is 1000 KiB.
+26/09/29 17:37:11 WARN DAGScheduler: Broadcasting large task binary with size 24.3 MiB
+26/09/29 17:37:48 WARN DAGScheduler: Broadcasting large task binary with size 24.3 MiB
+26/09/29 17:37:50 WARN DAGScheduler: Broadcasting large task binary with size 24.3 MiB
+
+standard / family / random_forest: macro-F1 0.6528, benign AUC-PR NaN
+    TFTP       precision 0.9994  recall 0.9975  F1 0.9984  (877,491 test rows)
+    UDP        precision 0.7647  recall 0.9911  F1 0.8633  (593,032 test rows)
+    NTP        precision 0.9930  recall 0.9966  F1 0.9948  (222,686 test rows)
+    MSSQL      precision 0.9288  recall 0.9617  F1 0.9450  (204,087 test rows)
+    Syn        precision 0.9865  recall 0.9956  F1 0.9911  (179,867 test rows)
+    SSDP       precision 0.7061  recall 0.0011  F1 0.0022  (176,363 test rows)
+    SNMP       precision 0.5670  recall 0.8883  F1 0.6922  (22,677 test rows)
+    DNS        precision 0.7775  recall 0.3254  F1 0.4588  (22,231 test rows)
+    LDAP       precision 0.6812  recall 0.5745  F1 0.6233  (18,776 test rows)
+    UDPLag     precision 0.9147  recall 0.6747  F1 0.7766  (18,213 test rows)
+    Benign     precision 0.9111  recall 0.9972  F1 0.9522  (18,165 test rows)
+    NetBIOS    precision 0.8309  recall 0.8526  F1 0.8416  (18,054 test rows)
+    Portmap    precision 0.0000  recall 0.0000  F1 0.0000  (1,926 test rows)
+    WebDDoS    precision 0.0000  recall 0.0000  F1 0.0000  (71 test rows)
+
+=== Experiment: cross_day
+  training on 45,227 benign + 905,631 attack rows
+
+cross_day / detection / logistic_regression: macro-F1 0.5571, benign AUC-PR 0.3771
+    benign     precision 0.0953  recall 0.9531  F1 0.1732  (44,272 test rows)
+    attack     precision 0.9994  recall 0.8888  F1 0.9409  (3,604,220 test rows)
+
+cross_day / detection / decision_tree: macro-F1 0.6824, benign AUC-PR 0.1426
+    benign     precision 0.2454  recall 0.8638  F1 0.3823  (44,272 test rows)
+    attack     precision 0.9983  recall 0.9674  F1 0.9826  (3,604,220 test rows)
+26/09/29 17:39:26 WARN DAGScheduler: Broadcasting large task binary with size 1165.2 KiB
+26/09/29 17:39:31 WARN DAGScheduler: Broadcasting large task binary with size 1620.8 KiB
+26/09/29 17:39:35 WARN DAGScheduler: Broadcasting large task binary with size 1258.9 KiB
+26/09/29 17:39:50 WARN DAGScheduler: Broadcasting large task binary with size 1219.8 KiB
+26/09/29 17:39:52 WARN DAGScheduler: Broadcasting large task binary with size 1552.6 KiB
+26/09/29 17:39:53 WARN DAGScheduler: Broadcasting large task binary with size 1901.8 KiB
+26/09/29 17:39:55 WARN DAGScheduler: Broadcasting large task binary with size 2.2 MiB
+26/09/29 17:39:57 WARN DAGScheduler: Broadcasting large task binary with size 1473.5 KiB
+26/09/29 17:40:12 WARN DAGScheduler: Broadcasting large task binary with size 1165.2 KiB
+26/09/29 17:40:14 WARN DAGScheduler: Broadcasting large task binary with size 1620.8 KiB
+26/09/29 17:40:17 WARN DAGScheduler: Broadcasting large task binary with size 2.1 MiB
+26/09/29 17:40:20 WARN DAGScheduler: Broadcasting large task binary with size 2.7 MiB
+26/09/29 17:40:23 WARN DAGScheduler: Broadcasting large task binary with size 3.3 MiB
+26/09/29 17:40:26 WARN DAGScheduler: Broadcasting large task binary with size 4.0 MiB
+26/09/29 17:40:29 WARN DAGScheduler: Broadcasting large task binary with size 2.6 MiB
+26/09/29 17:40:41 WARN DAGScheduler: Broadcasting large task binary with size 1221.3 KiB
+26/09/29 17:40:42 WARN DAGScheduler: Broadcasting large task binary with size 1562.7 KiB
+26/09/29 17:40:44 WARN DAGScheduler: Broadcasting large task binary with size 1916.9 KiB
+26/09/29 17:40:45 WARN DAGScheduler: Broadcasting large task binary with size 2.2 MiB
+26/09/29 17:40:47 WARN DAGScheduler: Broadcasting large task binary with size 2.5 MiB
+26/09/29 17:40:49 WARN DAGScheduler: Broadcasting large task binary with size 2.8 MiB
+26/09/29 17:40:50 WARN DAGScheduler: Broadcasting large task binary with size 3.1 MiB
+26/09/29 17:40:52 WARN DAGScheduler: Broadcasting large task binary with size 3.2 MiB
+26/09/29 17:40:54 WARN DAGScheduler: Broadcasting large task binary with size 2045.7 KiB
+26/09/29 17:41:09 WARN DAGScheduler: Broadcasting large task binary with size 1168.5 KiB
+26/09/29 17:41:12 WARN DAGScheduler: Broadcasting large task binary with size 1636.6 KiB
+26/09/29 17:41:15 WARN DAGScheduler: Broadcasting large task binary with size 2.1 MiB
+26/09/29 17:41:17 WARN DAGScheduler: Broadcasting large task binary with size 2.7 MiB
+26/09/29 17:41:20 WARN DAGScheduler: Broadcasting large task binary with size 3.4 MiB
+26/09/29 17:41:23 WARN DAGScheduler: Broadcasting large task binary with size 4.1 MiB
+26/09/29 17:41:26 WARN DAGScheduler: Broadcasting large task binary with size 4.7 MiB
+26/09/29 17:41:29 WARN DAGScheduler: Broadcasting large task binary with size 5.3 MiB
+26/09/29 17:41:32 WARN DAGScheduler: Broadcasting large task binary with size 5.8 MiB
+26/09/29 17:41:35 WARN DAGScheduler: Broadcasting large task binary with size 6.2 MiB
+26/09/29 17:41:39 WARN DAGScheduler: Broadcasting large task binary with size 3.8 MiB
+26/09/29 17:42:04 WARN DAGScheduler: Broadcasting large task binary with size 1201.7 KiB
+26/09/29 17:42:08 WARN DAGScheduler: Broadcasting large task binary with size 1706.4 KiB
+26/09/29 17:42:12 WARN DAGScheduler: Broadcasting large task binary with size 2.2 MiB
+26/09/29 17:42:17 WARN DAGScheduler: Broadcasting large task binary with size 2.9 MiB
+26/09/29 17:42:21 WARN DAGScheduler: Broadcasting large task binary with size 3.7 MiB
+26/09/29 17:42:26 WARN DAGScheduler: Broadcasting large task binary with size 4.4 MiB
+26/09/29 17:42:31 WARN DAGScheduler: Broadcasting large task binary with size 5.2 MiB
+26/09/29 17:42:36 WARN DAGScheduler: Broadcasting large task binary with size 5.8 MiB
+26/09/29 17:42:40 WARN DAGScheduler: Broadcasting large task binary with size 6.4 MiB
+26/09/29 17:42:44 WARN DAGScheduler: Broadcasting large task binary with size 6.9 MiB
+    tuning random_forest            maxDepth=8, numTrees=50    validation benign F1 0.9641
+    tuning random_forest            maxDepth=8, numTrees=100   validation benign F1 0.9694
+    tuning random_forest            maxDepth=12, numTrees=50   validation benign F1 0.9935
+    tuning random_forest            maxDepth=12, numTrees=100  validation benign F1 0.9931
+    tuning random_forest            maxDepth=16, numTrees=50   validation benign F1 0.9963
+    tuning random_forest            maxDepth=16, numTrees=100  validation benign F1 0.9966  <- chosen
+26/09/29 17:42:50 WARN DAGScheduler: Broadcasting large task binary with size 4.1 MiB
+26/09/29 17:43:08 WARN DAGScheduler: Broadcasting large task binary with size 4.2 MiB
+26/09/29 17:43:09 WARN DAGScheduler: Broadcasting large task binary with size 4.2 MiB
+26/09/29 17:43:09 WARN DAGScheduler: Broadcasting large task binary with size 4.2 MiB
+
+cross_day / detection / random_forest: macro-F1 0.6903, benign AUC-PR 0.9589
+    benign     precision 0.2507  recall 0.9770  F1 0.3990  (44,272 test rows)
+    attack     precision 0.9997  recall 0.9641  F1 0.9816  (3,604,220 test rows)
+    tuning gradient_boosted_trees   maxDepth=4, maxIter=20     validation benign F1 0.9413
+    tuning gradient_boosted_trees   maxDepth=6, maxIter=20     validation benign F1 0.9771
+    tuning gradient_boosted_trees   maxDepth=4, maxIter=40     validation benign F1 0.9485
+    tuning gradient_boosted_trees   maxDepth=6, maxIter=40     validation benign F1 0.9806  <- chosen
+
+cross_day / detection / gradient_boosted_trees: macro-F1 0.7203, benign AUC-PR 0.7228
+    benign     precision 0.3034  recall 0.9023  F1 0.4541  (44,272 test rows)
+    attack     precision 0.9988  recall 0.9746  F1 0.9865  (3,604,220 test rows)
+
+cross_day / detection / neural_network: macro-F1 0.8147, benign AUC-PR 0.9145
+    benign     precision 0.4750  recall 0.9631  F1 0.6363  (44,272 test rows)
+    attack     precision 0.9995  recall 0.9869  F1 0.9932  (3,604,220 test rows)

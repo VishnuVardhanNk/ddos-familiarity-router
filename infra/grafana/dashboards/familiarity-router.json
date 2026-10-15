@@ -1,0 +1,1458 @@
+{
+  "uid": "ddos-router",
+  "title": "Familiarity Router",
+  "tags": [
+    "ddos"
+  ],
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "2s",
+  "time": {
+    "from": "now-10m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "1s",
+      "2s",
+      "5s",
+      "10s",
+      "30s"
+    ]
+  },
+  "templating": {
+    "list": [
+      {
+        "name": "flow",
+        "label": "Incoming connection",
+        "type": "query",
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "ddos-pg"
+        },
+        "query": "select name from gate_examples order by distance desc",
+        "refresh": 1,
+        "sort": 0,
+        "multi": false,
+        "includeAll": false,
+        "current": {
+          "text": "Syn connection, unfamiliar",
+          "value": "Syn connection, unfamiliar"
+        }
+      },
+      {
+        "name": "model",
+        "label": "Model",
+        "type": "custom",
+        "query": "gradient_boosted_trees,neural_network,decision_tree,logistic_regression,random_forest",
+        "options": [
+          {
+            "text": "gradient_boosted_trees",
+            "value": "gradient_boosted_trees",
+            "selected": true
+          },
+          {
+            "text": "neural_network",
+            "value": "neural_network",
+            "selected": false
+          },
+          {
+            "text": "decision_tree",
+            "value": "decision_tree",
+            "selected": false
+          },
+          {
+            "text": "logistic_regression",
+            "value": "logistic_regression",
+            "selected": false
+          },
+          {
+            "text": "random_forest",
+            "value": "random_forest",
+            "selected": false
+          }
+        ],
+        "current": {
+          "text": "gradient_boosted_trees",
+          "value": "gradient_boosted_trees"
+        },
+        "multi": false,
+        "includeAll": false
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "text",
+      "title": "",
+      "transparent": true,
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "## 1. How the gate decides whether traffic is familiar\nThe five detectors were trained on day 1. K-Means groups the day-1 traffic into 50 clusters. For every new connection the gate measures the distance to the nearest cluster centre. Further than the threshold means **unfamiliar**: the detectors have never seen traffic like it. Pick a connection at the top left to see its verdict."
+      }
+    },
+    {
+      "id": 2,
+      "type": "xychart",
+      "title": "Map of the traffic (55 features flattened to 2)",
+      "description": "Each dot is one traffic pattern. Blue is day-1 traffic, which the detectors were trained on. White dots are the 50 cluster centres. Green and red are day-2 traffic the gate calls familiar and unfamiliar. The large yellow dot is the selected connection and the dotted yellow line joins it to its nearest centre. The map squeezes 55 features into 2, so distances on screen are approximate; the verdict on the right uses the real distance.",
+      "gridPos": {
+        "h": 14,
+        "w": 16,
+        "x": 0,
+        "y": 3
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "min": -18,
+          "max": 36,
+          "custom": {
+            "show": "points",
+            "pointSize": {
+              "fixed": 4,
+              "min": 4,
+              "max": 4
+            },
+            "fillOpacity": 70,
+            "pointStrokeWidth": 0
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "x"
+            },
+            "properties": [
+              {
+                "id": "min",
+                "value": -4
+              },
+              {
+                "id": "max",
+                "value": 64
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Day 1 traffic"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5a78d6"
+                }
+              },
+              {
+                "id": "custom.pointColor",
+                "value": {
+                  "fixed": "#5a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Day 2, familiar"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#35d6a0"
+                }
+              },
+              {
+                "id": "custom.pointColor",
+                "value": {
+                  "fixed": "#35d6a0"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Day 2, unfamiliar"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#ff5470"
+                }
+              },
+              {
+                "id": "custom.pointColor",
+                "value": {
+                  "fixed": "#ff5470"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Cluster centres"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#ffffff"
+                }
+              },
+              {
+                "id": "custom.pointSize",
+                "value": {
+                  "fixed": 8,
+                  "min": 8,
+                  "max": 8
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 100
+              },
+              {
+                "id": "custom.pointColor",
+                "value": {
+                  "fixed": "#ffffff"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Distance to nearest centre"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#ffd23f"
+                }
+              },
+              {
+                "id": "custom.pointSize",
+                "value": {
+                  "fixed": 3,
+                  "min": 3,
+                  "max": 3
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 100
+              },
+              {
+                "id": "custom.pointColor",
+                "value": {
+                  "fixed": "#ffd23f"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Selected connection"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#ffd23f"
+                }
+              },
+              {
+                "id": "custom.pointSize",
+                "value": {
+                  "fixed": 20,
+                  "min": 20,
+                  "max": 20
+                }
+              },
+              {
+                "id": "custom.fillOpacity",
+                "value": 100
+              },
+              {
+                "id": "custom.pointColor",
+                "value": {
+                  "fixed": "#ffd23f"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "mapping": "auto",
+        "series": [
+          {}
+        ],
+        "legend": {
+          "showLegend": true,
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        },
+        "seriesMapping": "auto",
+        "dims": {
+          "frame": 0
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select x, case when kind = 'a' then y else -1000 end as \"Day 1 traffic\", case when kind = 'b' then y else -1000 end as \"Day 2, familiar\", case when kind = 'c' then y else -1000 end as \"Day 2, unfamiliar\", case when kind = 'd' then y else -1000 end as \"Cluster centres\", case when kind = 'e' then y else -1000 end as \"Distance to nearest centre\", case when kind = 'f' then y else -1000 end as \"Selected connection\" from (select x, y, 'a' as kind from gate_points where day = 'day 1' union all select x, y, 'b' from gate_points where day = 'day 2' and not unfamiliar union all select x, y, 'c' from gate_points where day = 'day 2' and unfamiliar union all select centre_x, centre_y, 'd' from gate_centres union all select x + (centre_x - x) * step / 60.0, y + (centre_y - y) * step / 60.0, 'e' from gate_examples, generate_series(1, 59) as step where name = '$flow' union all select x + 0.5 * ring / 7.0 * cos(angle / 28.0 * 2 * pi()), y + 1.4 * ring / 7.0 * sin(angle / 28.0 * 2 * pi()), 'f' from gate_examples, generate_series(0, 7) as ring, generate_series(1, 28) as angle where name = '$flow') points"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Verdict for the selected connection",
+      "gridPos": {
+        "h": 4,
+        "w": 8,
+        "x": 16,
+        "y": 3
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "UNFAMILIAR": {
+                  "color": "red",
+                  "index": 0
+                },
+                "FAMILIAR": {
+                  "color": "green",
+                  "index": 1
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "graphMode": "none",
+        "colorMode": "background",
+        "textMode": "value",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select case when unfamiliar then 'UNFAMILIAR' else 'FAMILIAR' end as verdict from gate_examples where name = '$flow'"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Its distance to the nearest centre",
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 7
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 2,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#ffd23f"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "graphMode": "none",
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select distance from gate_examples where name = '$flow'"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "stat",
+      "title": "Familiarity threshold",
+      "description": "99% of day-1 traffic lies closer to a cluster centre than this.",
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 7
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 2,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "text"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "graphMode": "none",
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select max(threshold) as threshold from gate_examples"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "barchart",
+      "title": "Exact view: how far each pattern is from its nearest centre",
+      "description": "The same sample of patterns, counted by real distance in all 55 features. The threshold is 5.6: everything to the right of it is unfamiliar. Almost no day-1 traffic is out there, but a large part of day 2 is.",
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 16,
+        "y": 11
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "fillOpacity": 85,
+            "lineWidth": 0
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Day 1"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5a78d6"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Day 2, familiar"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#35d6a0"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Day 2, unfamiliar"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#ff5470"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "xField": "distance",
+        "stacking": "normal",
+        "showValue": "never",
+        "xTickLabelSpacing": 60,
+        "legend": {
+          "showLegend": true,
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select to_char(least(floor(distance / 0.8), 24) * 0.8, 'FM990.0') as distance, count(*) filter (where day = 'day 1') as \"Day 1\", count(*) filter (where day = 'day 2' and not unfamiliar) as \"Day 2, familiar\", count(*) filter (where day = 'day 2' and unfamiliar) as \"Day 2, unfamiliar\" from gate_points group by least(floor(distance / 0.8), 24) order by least(floor(distance / 0.8), 24)"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "title": "",
+      "transparent": true,
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "## 2. Does the gate find the mistakes?\nOn day 2 the gate marks about 22% of the traffic as unfamiliar. If the idea is right, the detectors' mistakes should be concentrated there. They are: nearly every mistake of every model falls in the unfamiliar traffic, and that traffic is mostly a SYN flood that looks different from day 1, plus normal traffic that changed."
+      }
+    },
+    {
+      "id": 11,
+      "type": "barchart",
+      "title": "Share of each model's day-2 mistakes that fall in unfamiliar traffic (%)",
+      "description": "If mistakes were spread evenly, each bar would be about 22, the share of traffic that is unfamiliar. Every bar is above 96.",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 20
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 100,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#ff5470"
+          },
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "xField": "model",
+        "showValue": "always",
+        "legend": {
+          "showLegend": false
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select replace(model, '_', ' ') as model, round(avg(mistakes_in_unfamiliar_pct)::numeric, 1) as \"mistakes in unfamiliar traffic\" from ablation_asking group by model order by 2 desc"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "barchart",
+      "title": "How much of each traffic type looks unfamiliar on day 2 (%)",
+      "description": "Portmap never appeared on day 1, yet it looks familiar because it resembles other reflection attacks. The SYN flood did appear on day 1, but on day 2 it looks different.",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 20
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 100,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#ffb547"
+          },
+          "decimals": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "xField": "type",
+        "showValue": "always",
+        "legend": {
+          "showLegend": false
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select label_family as type, round(unfamiliar_pct::numeric, 1) as \"unfamiliar\" from gate_families order by unfamiliar_pct desc"
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "type": "text",
+      "title": "",
+      "transparent": true,
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 28
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "## 3. The router, live\nEach connection takes one of three paths. **Familiar** traffic is answered by the day-1 model. **Unfamiliar traffic close to a pattern already labelled** copies that label from a memory. **Unfamiliar traffic with nothing similar in the memory** is answered by the random forest, and its true label is requested through Kafka. Nothing is retrained. Grey is the day-1 model alone; green is the same model with the router."
+      }
+    },
+    {
+      "id": 102,
+      "type": "stat",
+      "title": "Labels asked for so far",
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 32
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#ffd23f"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "graphMode": "none",
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select coalesce(max(labels_asked), 0) as labels from live_routing"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "type": "stat",
+      "title": "Unfamiliar traffic right now",
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 32
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "decimals": 1,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 10
+              },
+              {
+                "color": "red",
+                "value": 50
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "graphMode": "area",
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select processed_at as time, 100.0 * unfamiliar_flows / nullif(flows, 0) as unfamiliar from live_routing where model = 'random_forest' and $__timeFilter(processed_at) order by 1"
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "type": "stat",
+      "title": "$model: day-1 model alone (macro-F1 so far)",
+      "gridPos": {
+        "h": 4,
+        "w": 5,
+        "x": 12,
+        "y": 32
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 3,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#9aa3c0"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "graphMode": "none",
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select (2.0 * sum(alone_tp) / nullif(2 * sum(alone_tp) + sum(alone_fn) + sum(alone_fp), 0) + 2.0 * sum(alone_tn) / nullif(2 * sum(alone_tn) + sum(alone_fn) + sum(alone_fp), 0)) / 2 as f1 from live_routing where model = '$model'"
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "type": "stat",
+      "title": "$model: with the router (macro-F1 so far)",
+      "gridPos": {
+        "h": 4,
+        "w": 7,
+        "x": 17,
+        "y": 32
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 3,
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#35d6a0"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "graphMode": "none",
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select (2.0 * sum(routed_tp) / nullif(2 * sum(routed_tp) + sum(routed_fn) + sum(routed_fp), 0) + 2.0 * sum(routed_tn) / nullif(2 * sum(routed_tn) + sum(routed_fn) + sum(routed_fp), 0)) / 2 as f1 from live_routing where model = '$model'"
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "type": "timeseries",
+      "title": "$model: score over the last 15 ticks, alone and with the router",
+      "description": "Macro-F1 over a moving window of 15 ticks (180,000 connections). The two lines are identical until a specialist is deployed.",
+      "gridPos": {
+        "h": 10,
+        "w": 16,
+        "x": 0,
+        "y": 36
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 1,
+          "decimals": 3,
+          "custom": {
+            "lineWidth": 3,
+            "fillOpacity": 0,
+            "showPoints": "never",
+            "lineInterpolation": "smooth"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "day-1 model alone"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#9aa3c0"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "with the router"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#35d6a0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "showLegend": true,
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "with moving as (select processed_at as time, sum(alone_tp) over w as ftp, sum(alone_fn) over w as ffn, sum(alone_fp) over w as ffp, sum(alone_tn) over w as ftn, sum(routed_tp) over w as atp, sum(routed_fn) over w as afn, sum(routed_fp) over w as afp, sum(routed_tn) over w as atn from live_routing where model = '$model' window w as (order by batch_id rows between 14 preceding and current row)) select time, (2.0 * ftp / nullif(2 * ftp + ffn + ffp, 0) + 2.0 * ftn / nullif(2 * ftn + ffn + ffp, 0)) / 2 as \"day-1 model alone\", (2.0 * atp / nullif(2 * atp + afn + afp, 0) + 2.0 * atn / nullif(2 * atn + afn + afp, 0)) / 2 as \"with the router\" from moving where $__timeFilter(time) order by time"
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "type": "table",
+      "title": "All five models, whole run so far",
+      "description": "Macro-F1 and attack connections missed, over every connection scored in this run.",
+      "gridPos": {
+        "h": 10,
+        "w": 8,
+        "x": 16,
+        "y": 36
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/^(alone|with the router)$/"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "missed with the router"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#35d6a0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "with totals as (select model, sum(alone_tp) ftp, sum(alone_fn) ffn, sum(alone_fp) ffp, sum(alone_tn) ftn, sum(routed_tp) atp, sum(routed_fn) afn, sum(routed_fp) afp, sum(routed_tn) atn from live_routing group by model), scores as (select model, ffn, afn, (2.0 * ftp / nullif(2 * ftp + ffn + ffp, 0) + 2.0 * ftn / nullif(2 * ftn + ffn + ffp, 0)) / 2 as alone, (2.0 * atp / nullif(2 * atp + afn + afp, 0) + 2.0 * atn / nullif(2 * atn + afn + afp, 0)) / 2 as helped from totals) select replace(model, '_', ' ') as model, alone as \"alone\", helped as \"with the router\", ffn as \"missed alone\", afn as \"missed with the router\" from scores order by helped desc"
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "type": "timeseries",
+      "title": "$model: attacks missed per tick, alone and with the router",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 46
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "custom": {
+            "lineWidth": 2,
+            "fillOpacity": 15,
+            "showPoints": "never"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "day-1 model alone"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#ff5470"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "with the router"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#35d6a0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "showLegend": true,
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select processed_at as time, alone_fn as \"day-1 model alone\", routed_fn as \"with the router\" from live_routing where model = '$model' and $__timeFilter(processed_at) order by 1"
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "type": "stat",
+      "title": "Sent to the forest (so far)",
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 32
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed",
+            "fixedColor": "#ffb547"
+          },
+          "unit": "percent",
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "options": {
+        "graphMode": "none",
+        "colorMode": "value"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select 100.0 * sum(forest_flows) / nullif(sum(flows), 0) as forest from live_routing where model = 'random_forest'"
+        }
+      ],
+      "description": "Share of all connections so far that the random forest had to score (router mode)."
+    },
+    {
+      "id": 111,
+      "type": "timeseries",
+      "title": "Where unfamiliar connections went each tick",
+      "description": "When a flood starts the forest takes nearly all of it. As labels arrive, the memory answers more and the forest less.",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 46
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "custom": {
+            "drawStyle": "bars",
+            "fillOpacity": 80,
+            "lineWidth": 0,
+            "showPoints": "never",
+            "stacking": {
+              "mode": "normal",
+              "group": "A"
+            }
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "answered from memory"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5ee0ff"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sent to the forest"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#ffb547"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "showLegend": true,
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select processed_at as time, memory_flows as \"answered from memory\", forest_flows as \"sent to the forest\" from live_routing where model = 'random_forest' and $__timeFilter(processed_at) order by 1"
+        }
+      ]
+    },
+    {
+      "id": 200,
+      "type": "text",
+      "title": "",
+      "transparent": true,
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 54
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "## 4. Results\nThe router run live over all of day 2 through Kafka, and the speed of each method on the same slice of traffic."
+      }
+    },
+    {
+      "id": 201,
+      "type": "barchart",
+      "title": "All of day 2, live: each model alone and with the router (macro-F1)",
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 57
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 1,
+          "decimals": 3
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "day-1 model alone"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#6b7396"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "with router"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#35d6a0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "xField": "model",
+        "showValue": "always",
+        "legend": {
+          "showLegend": true,
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select replace(model, '_', ' ') as model, round(alone_f1::numeric, 3) as \"day-1 model alone\", round(adaptive_f1::numeric, 3) as \"with router\" from live_runs where run = 'routerday2' order by 3 desc"
+        }
+      ]
+    },
+    {
+      "id": 202,
+      "type": "table",
+      "title": "All of day 2, live: what the router changed and what it cost",
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 57
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select replace(model, '_', ' ') as \"model in front\", missed_alone::bigint as \"attacks missed alone\", missed_adaptive::bigint as \"attacks missed with router\", false_alarms_alone::bigint as \"false alarms alone\", false_alarms_adaptive::bigint as \"false alarms with router\", labels as \"labels asked\", round(forest_pct::numeric, 2) as \"sent to forest %\" from live_runs where run = 'routerday2' order by adaptive_f1 desc"
+        }
+      ]
+    },
+    {
+      "id": 203,
+      "type": "table",
+      "title": "Efficiency: 5,964,207 connections in stream order, forest alone against the two ideas",
+      "description": "Six cores, best of two timed runs.",
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 66
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "macro-F1"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 3
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "seconds"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "times faster"
+            },
+            "properties": [
+              {
+                "id": "decimals",
+                "value": 2
+              }
+            ]
+          }
+        ]
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select method, seconds, round(flows_per_second) as \"connections per second\", speed as \"times faster\", forest_pct as \"answered by forest %\", copied_pct as \"answered by copied label %\", front_pct as \"answered by decision tree %\", macro_f1 as \"macro-F1\" from efficiency order by position"
+        }
+      ]
+    },
+    {
+      "id": 204,
+      "type": "barchart",
+      "title": "What each idea adds to the score (macro-F1): model alone, with the router, with router and label copying",
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 73
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "ddos-pg"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 1,
+          "decimals": 3
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "day-1 model alone"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#6b7396"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "idea 1: router"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#e8b04a"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "idea 1 + 2: router with label copying"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#35d6a0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "xField": "model",
+        "showValue": "always",
+        "legend": {
+          "showLegend": true,
+          "placement": "bottom"
+        }
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "editorMode": "code",
+          "rawSql": "select replace(model, '_', ' ') as model, round(alone, 3) as \"day-1 model alone\", round(router, 3) as \"idea 1: router\", round(copying, 3) as \"idea 1 + 2: router with label copying\" from efficiency_scores order by 4 desc"
+        }
+      ]
+    }
+  ]
+}
